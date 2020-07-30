@@ -13,7 +13,7 @@
     "preserveConstEnums": true,
     "resolveJsonModule": true,
     "strict": true,
-    "target": "ESNext"
+    "target": "ES6"
   },
   "include": [
     "src/*.ts",
