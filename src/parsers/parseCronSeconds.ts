@@ -1,8 +1,8 @@
-import { CronSeconds } from "../types/CronSeconds";
 import { parseCronPart } from "./parseCronPart";
+import { parseCronSecondsValue } from "./parseCronSecondsValue";
 
 /**
  * Parses given source CronSeconds to string.
  * @param source Source CronSeconds.
  */
-export const parseCronSeconds = (source: CronSeconds) => parseCronPart(source);
+export const parseCronSeconds = parseCronPart(parseCronSecondsValue);

@@ -4,9 +4,9 @@
  * @returns Curried function with `validations` in context.
  */
 export const validateOr = (
-	validations: readonly ((value: string) => boolean)[]
+	validations: readonly ((value: unknown) => boolean)[]
 ) =>
 	/**
 	 * @param value Value to check.
 	 */
-	(value: string) => validations.some(validation => validation(value));
+	(value: unknown) => validations.some(validation => validation(value));

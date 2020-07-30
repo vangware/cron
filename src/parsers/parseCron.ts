@@ -1,3 +1,4 @@
+import { isUndefined } from "@vangware/utils";
 import { CronOptional } from "../types/CronOptional";
 import { parseCronDayOfMonth } from "./parseCronDayOfMonth";
 import { parseCronDayOfWeek } from "./parseCronDayOfWeek";
@@ -19,8 +20,8 @@ export const parseCron = ({
 	month,
 	dayOfWeek,
 	year = "*"
-}: CronOptional): string =>
-	[
+}: CronOptional) => {
+	const parts = [
 		parseCronSeconds(seconds),
 		parseCronMinutes(minutes),
 		parseCronHours(hours),
@@ -28,4 +29,7 @@ export const parseCron = ({
 		parseCronMonth(month),
 		parseCronDayOfWeek(dayOfWeek),
 		parseCronYear(year)
-	].join(" ");
+	];
+
+	return parts.some(isUndefined) ? undefined : parts.join(" ");
+};
