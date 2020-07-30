@@ -1,3 +1,5 @@
+import { isString } from "@vangware/utils";
+
 /**
  * Checks if given search value appears just onces in given value.
  * @param search Value to search.
@@ -7,6 +9,7 @@ export const stringIncludesOnlyOnce = (search: string) =>
 	/**
 	 * @param value Value to search on.
 	 */
-	(value: string) =>
+	(value: unknown): value is string =>
+		isString(value) &&
 		value.includes(search) &&
 		value.indexOf(search) === value.lastIndexOf(search);

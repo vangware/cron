@@ -15,7 +15,7 @@ export default test([
 		must: "return true",
 		received: validateOr([
 			item => item === "1",
-			item => parseInt(item, 10) === 1
+			item => parseInt(item as string, 10) === 1
 		])(value),
 		wanted: true
 	},
@@ -24,7 +24,7 @@ export default test([
 		must: "return true",
 		received: validateOr([
 			item => item === "1",
-			item => parseInt(item, 10) === 2
+			item => parseInt(item as string, 10) === 2
 		])(value),
 		wanted: true
 	},
@@ -33,7 +33,7 @@ export default test([
 		must: "return false",
 		received: validateOr([
 			item => item === "2",
-			item => parseInt(item, 10) === 2
+			item => parseInt(item as string, 10) === 2
 		])(value),
 		wanted: false
 	}

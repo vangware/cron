@@ -1,4 +1,4 @@
-import { arrayMap, ReadOnlyObject } from "@vangware/utils";
+import { arrayMap, isUndefined, ReadOnlyObject } from "@vangware/utils";
 import { CRON_LIST_SEPARATOR } from "../constants";
 import { CronList } from "../types/CronList";
 import { CronListItem } from "../types/CronListItem";
@@ -26,7 +26,7 @@ export const parseStringList = <Value>(parser: StringValueParser<Value>) =>
 				>
 		)(isStringList(source) ? source.split(CRON_LIST_SEPARATOR) : []);
 
-		return list.length === 0 || list.some(item => item === undefined)
+		return list.length === 0 || list.some(isUndefined)
 			? undefined
 			: (list as CronList<Value>);
 	};

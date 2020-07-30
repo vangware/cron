@@ -1,3 +1,4 @@
+import { CronSpecificDayOfWeek } from "../types/CronSpecificDayOfWeek";
 import { isCronSpecificDayOfWeek } from "../validations/isCronSpecificDayOfWeek";
 
 /**
@@ -5,8 +6,8 @@ import { isCronSpecificDayOfWeek } from "../validations/isCronSpecificDayOfWeek"
  * @param source Source CronSpecificDayOfWeek.
  */
 export const parseCronSpecificDayOfWeek = (
-	source: unknown
-): string | undefined =>
+	source: CronSpecificDayOfWeek | string
+) =>
 	isCronSpecificDayOfWeek(source)
 		? `${source.day}#${source.week}`
 		: undefined;

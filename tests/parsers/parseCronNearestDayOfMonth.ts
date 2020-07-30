@@ -1,5 +1,6 @@
 import { test } from "@vangware/test";
 import { parseCronNearestDayOfMonth } from "../../src/parsers/parseCronNearestDayOfMonth";
+import { CronDayOfMonthValue } from "../../src/types/CronDayOfMonthValue";
 
 export default test([
 	{
@@ -11,7 +12,9 @@ export default test([
 	{
 		given: "an invalid W",
 		must: "return undefined",
-		received: parseCronNearestDayOfMonth("INVALID"),
+		received: parseCronNearestDayOfMonth({
+			nearest: 99 as CronDayOfMonthValue
+		}),
 		wanted: undefined
 	}
 ]);
