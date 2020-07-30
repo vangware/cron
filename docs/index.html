@@ -1,0 +1,532 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@vangware/cron</title>
+	<meta name="description" content="Documentation for @vangware/cron">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@vangware/cron</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>@vangware/cron</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<p><img src="https://i.imgur.com/dWxWFJe.png" alt="@vangware/cron logo"></p>
+				<p><img src="https://img.shields.io/travis/vangware/cron.svg?style=for-the-badge&labelColor=333&color=20b075&link=https://travis-ci.org/github/vangware/cron" alt="Build Status">
+					<img src="https://img.shields.io/npm/l/@vangware/cron.svg?style=for-the-badge&labelColor=333&color=20b075&link=https://github.com/vangware/cron/blob/master/LICENSE" alt="License">
+					<img src="https://img.shields.io/npm/v/@vangware/cron.svg?style=for-the-badge&labelColor=333&color=20b075&link=https://npm.im/@vangware/cron" alt="NPM Version">
+					<img src="https://img.shields.io/github/issues/vangware/cron.svg?style=for-the-badge&labelColor=333&color=20b075&link=https://github.com/vangware/cron/issues" alt="Open Issues">
+				<img src="https://img.shields.io/bundlephobia/minzip/@vangware/cron.svg?style=for-the-badge&labelColor=333&color=20b075&label=size&link=https://bundlephobia.com/result?p=@vangware/cron" alt="Size"></p>
+				<p>Cron expression parser.</p>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<a href="#📦-node" id="📦-node" style="color: inherit; text-decoration: none;">
+					<h3>📦 Node</h3>
+				</a>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { parseString, parseCron } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@vangware/cron&quot;</span>;
+
+<span class="hljs-keyword">const</span> cron = parseString(<span class="hljs-string">&quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span>);
+<span class="hljs-comment">/*
+{
+    dayOfMonth: { nearest: 2 },
+    dayOfWeek: { last: 1 },
+    hours: &quot;*&quot;,
+    minutes: [{ from: 1, to: 2 }, 3, 4],
+    month: [&quot;SEP&quot;, &quot;OCT&quot;],
+    seconds: { every: 3, start: { from: 1, to: 2 } },
+    year: { every: 10, start: &quot;*&quot; }
+}
+*/</span>
+
+pareCron(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span></code></pre>
+				<a href="#🦕-deno" id="🦕-deno" style="color: inherit; text-decoration: none;">
+					<h3>🦕 Deno</h3>
+				</a>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { parseString } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;http://cdn.pika.dev/@vangware/cron&quot;</span>;
+
+<span class="hljs-keyword">const</span> cron = parseString(<span class="hljs-string">&quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span>);
+<span class="hljs-comment">/*
+{
+    dayOfMonth: { nearest: 2 },
+    dayOfWeek: { last: 1 },
+    hours: &quot;*&quot;,
+    minutes: [{ from: 1, to: 2 }, 3, 4],
+    month: [&quot;SEP&quot;, &quot;OCT&quot;],
+    seconds: { every: 3, start: { from: 1, to: 2 } },
+    year: { every: 10, start: &quot;*&quot; }
+}
+*/</span>
+
+pareCron(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span></code></pre>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cron" class="tsd-kind-icon">Cron</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#crondayofmonth" class="tsd-kind-icon">Cron<wbr>Day<wbr>OfMonth</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#crondayofmonthvalue" class="tsd-kind-icon">Cron<wbr>Day<wbr>OfMonth<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#crondayofweek" class="tsd-kind-icon">Cron<wbr>Day<wbr>OfWeek</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#crondayofweekvalue" class="tsd-kind-icon">Cron<wbr>Day<wbr>OfWeek<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#crondayofweekvaluenumber" class="tsd-kind-icon">Cron<wbr>Day<wbr>OfWeek<wbr>Value<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#crondayofweekvaluestring" class="tsd-kind-icon">Cron<wbr>Day<wbr>OfWeek<wbr>Value<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronevery" class="tsd-kind-icon">Cron<wbr>Every</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronhours" class="tsd-kind-icon">Cron<wbr>Hours</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronhoursvalue" class="tsd-kind-icon">Cron<wbr>Hours<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronlast" class="tsd-kind-icon">Cron<wbr>Last</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronlastvalue" class="tsd-kind-icon">Cron<wbr>Last<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#cronlist" class="tsd-kind-icon">Cron<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#cronlistitem" class="tsd-kind-icon">Cron<wbr>List<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronminutes" class="tsd-kind-icon">Cron<wbr>Minutes</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronminutesvalue" class="tsd-kind-icon">Cron<wbr>Minutes<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronmonth" class="tsd-kind-icon">Cron<wbr>Month</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronmonthvalue" class="tsd-kind-icon">Cron<wbr>Month<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronmonthvaluenumber" class="tsd-kind-icon">Cron<wbr>Month<wbr>Value<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronmonthvaluestring" class="tsd-kind-icon">Cron<wbr>Month<wbr>Value<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronnearestdayofmonth" class="tsd-kind-icon">Cron<wbr>Nearest<wbr>Day<wbr>OfMonth</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronoptional" class="tsd-kind-icon">Cron<wbr>Optional</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#cronpart" class="tsd-kind-icon">Cron<wbr>Part</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#cronpartextended" class="tsd-kind-icon">Cron<wbr>Part<wbr>Extended</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#cronrange" class="tsd-kind-icon">Cron<wbr>Range</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronseconds" class="tsd-kind-icon">Cron<wbr>Seconds</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronsecondsvalue" class="tsd-kind-icon">Cron<wbr>Seconds<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronspecificdayofweek" class="tsd-kind-icon">Cron<wbr>Specific<wbr>Day<wbr>OfWeek</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronstartorblank" class="tsd-kind-icon">Cron<wbr>Start<wbr>OrBlank</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#cronsteps" class="tsd-kind-icon">Cron<wbr>Steps</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#cronvalueparser" class="tsd-kind-icon">Cron<wbr>Value<wbr>Parser</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronweekvalue" class="tsd-kind-icon">Cron<wbr>Week<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronyear" class="tsd-kind-icon">Cron<wbr>Year</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronyearvalue" class="tsd-kind-icon">Cron<wbr>Year<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#stringvalueparser" class="tsd-kind-icon">String<wbr>Value<wbr>Parser</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#cron_day_of_month_position" class="tsd-kind-icon">CRON_<wbr>DAY_<wbr>OF_<wbr>MONTH_<wbr>POSITION</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#cron_day_of_week_position" class="tsd-kind-icon">CRON_<wbr>DAY_<wbr>OF_<wbr>WEEK_<wbr>POSITION</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#cron_every" class="tsd-kind-icon">CRON_<wbr>EVERY</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#cron_hours_position" class="tsd-kind-icon">CRON_<wbr>HOURS_<wbr>POSITION</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#cron_last" class="tsd-kind-icon">CRON_<wbr>LAST</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#cron_list_separator" class="tsd-kind-icon">CRON_<wbr>LIST_<wbr>SEPARATOR</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#cron_minutes_position" class="tsd-kind-icon">CRON_<wbr>MINUTES_<wbr>POSITION</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#cron_month_position" class="tsd-kind-icon">CRON_<wbr>MONTH_<wbr>POSITION</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#cron_range_separator" class="tsd-kind-icon">CRON_<wbr>RANGE_<wbr>SEPARATOR</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#cron_seconds_position" class="tsd-kind-icon">CRON_<wbr>SECONDS_<wbr>POSITION</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#cron_specific_separator" class="tsd-kind-icon">CRON_<wbr>SPECIFIC_<wbr>SEPARATOR</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#cron_start_or_blank" class="tsd-kind-icon">CRON_<wbr>START_<wbr>OR_<wbr>BLANK</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#cron_steps_separator" class="tsd-kind-icon">CRON_<wbr>STEPS_<wbr>SEPARATOR</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#cron_year_position" class="tsd-kind-icon">CRON_<wbr>YEAR_<wbr>POSITION</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#isstringdayofweekvalue" class="tsd-kind-icon">is<wbr>String<wbr>Day<wbr>OfWeek<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#isstringmonthvalue" class="tsd-kind-icon">is<wbr>String<wbr>Month<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#isstringrange" class="tsd-kind-icon">is<wbr>String<wbr>Range</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#isstringsteps" class="tsd-kind-icon">is<wbr>String<wbr>Steps</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#parsestringhours" class="tsd-kind-icon">parse<wbr>String<wbr>Hours</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#parsestringminutes" class="tsd-kind-icon">parse<wbr>String<wbr>Minutes</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#parsestringmonth" class="tsd-kind-icon">parse<wbr>String<wbr>Month</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#parsestringseconds" class="tsd-kind-icon">parse<wbr>String<wbr>Seconds</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#parsestringyear" class="tsd-kind-icon">parse<wbr>String<wbr>Year</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscrondayofmonthvalue" class="tsd-kind-icon">is<wbr>Cron<wbr>Day<wbr>OfMonth<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscrondayofweekvalue" class="tsd-kind-icon">is<wbr>Cron<wbr>Day<wbr>OfWeek<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscrondayofweekvaluenumber" class="tsd-kind-icon">is<wbr>Cron<wbr>Day<wbr>OfWeek<wbr>Value<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscrondayofweekvaluestring" class="tsd-kind-icon">is<wbr>Cron<wbr>Day<wbr>OfWeek<wbr>Value<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscronevery" class="tsd-kind-icon">is<wbr>Cron<wbr>Every</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscronhoursvalue" class="tsd-kind-icon">is<wbr>Cron<wbr>Hours<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscronlast" class="tsd-kind-icon">is<wbr>Cron<wbr>Last</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscronlastvalue" class="tsd-kind-icon">is<wbr>Cron<wbr>Last<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#iscronlist" class="tsd-kind-icon">is<wbr>Cron<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscronminutesvalue" class="tsd-kind-icon">is<wbr>Cron<wbr>Minutes<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscronmonthvalue" class="tsd-kind-icon">is<wbr>Cron<wbr>Month<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscronmonthvaluenumber" class="tsd-kind-icon">is<wbr>Cron<wbr>Month<wbr>Value<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscronmonthvaluestring" class="tsd-kind-icon">is<wbr>Cron<wbr>Month<wbr>Value<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscronnearestdayofmonth" class="tsd-kind-icon">is<wbr>Cron<wbr>Nearest<wbr>Day<wbr>OfMonth</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#iscronrange" class="tsd-kind-icon">is<wbr>Cron<wbr>Range</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscronsecondsvalue" class="tsd-kind-icon">is<wbr>Cron<wbr>Seconds<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscronspecificdayofweek" class="tsd-kind-icon">is<wbr>Cron<wbr>Specific<wbr>Day<wbr>OfWeek</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscronstartorblank" class="tsd-kind-icon">is<wbr>Cron<wbr>Start<wbr>OrBlank</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#iscronsteps" class="tsd-kind-icon">is<wbr>Cron<wbr>Steps</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscronweekvalue" class="tsd-kind-icon">is<wbr>Cron<wbr>Week<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#iscronyearvalue" class="tsd-kind-icon">is<wbr>Cron<wbr>Year<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isstringdayofmonthvalue" class="tsd-kind-icon">is<wbr>String<wbr>Day<wbr>OfMonth<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isstringdayofweekvaluenumber" class="tsd-kind-icon">is<wbr>String<wbr>Day<wbr>OfWeek<wbr>Value<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isstringhoursvalue" class="tsd-kind-icon">is<wbr>String<wbr>Hours<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isstringlastvalue" class="tsd-kind-icon">is<wbr>String<wbr>Last<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isstringlist" class="tsd-kind-icon">is<wbr>String<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isstringminutesvalue" class="tsd-kind-icon">is<wbr>String<wbr>Minutes<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isstringmonthvaluenumber" class="tsd-kind-icon">is<wbr>String<wbr>Month<wbr>Value<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isstringnearestdayofmonth" class="tsd-kind-icon">is<wbr>String<wbr>Nearest<wbr>Day<wbr>OfMonth</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isstringsecondsvalue" class="tsd-kind-icon">is<wbr>String<wbr>Seconds<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isstringspecificdayofweek" class="tsd-kind-icon">is<wbr>String<wbr>Specific<wbr>Day<wbr>OfWeek</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isstringweekvalue" class="tsd-kind-icon">is<wbr>String<wbr>Week<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#isstringyearvalue" class="tsd-kind-icon">is<wbr>String<wbr>Year<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsecron" class="tsd-kind-icon">parse<wbr>Cron</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsecrondayofmonth" class="tsd-kind-icon">parse<wbr>Cron<wbr>Day<wbr>OfMonth</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsecrondayofweek" class="tsd-kind-icon">parse<wbr>Cron<wbr>Day<wbr>OfWeek</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsecronevery" class="tsd-kind-icon">parse<wbr>Cron<wbr>Every</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsecronhours" class="tsd-kind-icon">parse<wbr>Cron<wbr>Hours</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsecronlast" class="tsd-kind-icon">parse<wbr>Cron<wbr>Last</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsecronlastvalue" class="tsd-kind-icon">parse<wbr>Cron<wbr>Last<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#parsecronlist" class="tsd-kind-icon">parse<wbr>Cron<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsecronminutes" class="tsd-kind-icon">parse<wbr>Cron<wbr>Minutes</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsecronmonth" class="tsd-kind-icon">parse<wbr>Cron<wbr>Month</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsecronnearestdayofmonth" class="tsd-kind-icon">parse<wbr>Cron<wbr>Nearest<wbr>Day<wbr>OfMonth</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#parsecronpart" class="tsd-kind-icon">parse<wbr>Cron<wbr>Part</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsecronrange" class="tsd-kind-icon">parse<wbr>Cron<wbr>Range</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsecronseconds" class="tsd-kind-icon">parse<wbr>Cron<wbr>Seconds</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsecronspecificdayofweek" class="tsd-kind-icon">parse<wbr>Cron<wbr>Specific<wbr>Day<wbr>OfWeek</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsecronstartorblank" class="tsd-kind-icon">parse<wbr>Cron<wbr>Start<wbr>OrBlank</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsecronsteps" class="tsd-kind-icon">parse<wbr>Cron<wbr>Steps</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsecronyear" class="tsd-kind-icon">parse<wbr>Cron<wbr>Year</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsestring" class="tsd-kind-icon">parse<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsestringdayofmonth" class="tsd-kind-icon">parse<wbr>String<wbr>Day<wbr>OfMonth</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsestringdayofmonthvalue" class="tsd-kind-icon">parse<wbr>String<wbr>Day<wbr>OfMonth<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsestringdayofweek" class="tsd-kind-icon">parse<wbr>String<wbr>Day<wbr>OfWeek</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsestringdayofweekvalue" class="tsd-kind-icon">parse<wbr>String<wbr>Day<wbr>OfWeek<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsestringhoursvalue" class="tsd-kind-icon">parse<wbr>String<wbr>Hours<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsestringlastvalue" class="tsd-kind-icon">parse<wbr>String<wbr>Last<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#parsestringlist" class="tsd-kind-icon">parse<wbr>String<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsestringminutesvalue" class="tsd-kind-icon">parse<wbr>String<wbr>Minutes<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsestringmonthvalue" class="tsd-kind-icon">parse<wbr>String<wbr>Month<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsestringnearestdayofmonth" class="tsd-kind-icon">parse<wbr>String<wbr>Nearest<wbr>Day<wbr>OfMonth</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#parsestringpart" class="tsd-kind-icon">parse<wbr>String<wbr>Part</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#parsestringrange" class="tsd-kind-icon">parse<wbr>String<wbr>Range</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsestringsecondsvalue" class="tsd-kind-icon">parse<wbr>String<wbr>Seconds<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsestringspecificdayofweek" class="tsd-kind-icon">parse<wbr>String<wbr>Specific<wbr>Day<wbr>OfWeek</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#parsestringsteps" class="tsd-kind-icon">parse<wbr>String<wbr>Steps</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsestringyearvalue" class="tsd-kind-icon">parse<wbr>String<wbr>Year<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#splitexpression" class="tsd-kind-icon">split<wbr>Expression</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#stringincludesonlyonce" class="tsd-kind-icon">string<wbr>Includes<wbr>Only<wbr>Once</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#validateor" class="tsd-kind-icon">validate<wbr>Or</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

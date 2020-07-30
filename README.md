@@ -1,4 +1,4 @@
-# @vangware/cron
+![@vangware/cron logo](https://i.imgur.com/dWxWFJe.png)
 
 ![Build Status](https://img.shields.io/travis/vangware/cron.svg?style=for-the-badge&labelColor=333&color=20b075&link=https://travis-ci.org/github/vangware/cron)
 ![License](https://img.shields.io/npm/l/@vangware/cron.svg?style=for-the-badge&labelColor=333&color=20b075&link=https://github.com/vangware/cron/blob/master/LICENSE)
@@ -51,8 +51,3 @@ const cron = parseString("1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10");
 
 pareCron(cron); // "1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10"
 ```
-
-## To do
-
-- Add logo.
-- Auto-generate docs and create cron.vangware.com with them.
