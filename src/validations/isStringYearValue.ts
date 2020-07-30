@@ -1,7 +1,7 @@
 import { isString } from "@vangware/utils";
 
 /**
- * Check if given value is between 1970 and 2099.
+ * Check if given is a string representing a `CronYearValue`.
  * @param value Value to check.
  */
 export const isStringYearValue = (value: unknown): value is string =>

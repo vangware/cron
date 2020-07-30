@@ -3,7 +3,7 @@ import { CRON_LAST } from "../constants";
 import { CronLast } from "../types/CronLast";
 
 /**
- * Check if given value is "last token".
+ * Check if given is `CronLast`.
  * @param value Value to check.
  */
 export const isCronLast = (value: unknown): value is CronLast =>

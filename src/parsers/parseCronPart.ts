@@ -9,12 +9,14 @@ import { parseCronRange } from "./parseCronRange";
 import { parseCronSteps } from "./parseCronSteps";
 
 /**
- * Parses cron part with given parser.
- * @param source Source string to be parsed.
+ * Parses `CronPart` into a string.
+ * @param parser `CronValueParser` for `CronPart`.
+ * @returns Curried function with `parser` in context.
  */
 export const parseCronPart = <Value>(parser: CronValueParser<Value>) =>
 	/**
-	 * @param source Source string to be parsed.
+	 * @param source `CronPart` to be parsed.
+	 * @returns A string or `undefined` if invalid.
 	 */
 	(
 		source:

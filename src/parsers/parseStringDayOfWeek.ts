@@ -7,8 +7,9 @@ import { parseStringPart } from "./parseStringPart";
 import { parseStringSpecificDayOfWeek } from "./parseStringSpecificDayOfWeek";
 
 /**
- * Parses given source string to CronDayOfWeek.
- * @param source Source string to be parsed.
+ * Parses a string into a `CronDayOfWeek`.
+ * @param source string to be parsed.
+ * @returns A `CronDayOfWeek` or `undefined` if invalid.
  */
 export const parseStringDayOfWeek = (
 	source: string

@@ -3,7 +3,7 @@ import { CRON_EVERY } from "../constants";
 import { CronEvery } from "../types/CronEvery";
 
 /**
- * Check if given value is the "every token".
+ * Check if given is `CronEvery`.
  * @param value Value to check.
  */
 export const isCronEvery = (value: unknown): value is CronEvery =>

@@ -6,8 +6,9 @@ import { parseStringNearestDayOfMonth } from "./parseStringNearestDayOfMonth";
 import { parseStringPart } from "./parseStringPart";
 
 /**
- * Parses given source string to CronDayOfMonth.
- * @param source Source string to be parsed.
+ * Parses a string into a `CronDayOfMonth`.
+ * @param source string to be parsed.
+ * @returns A `CronDayOfMonth` or `undefined` if invalid.
  */
 export const parseStringDayOfMonth = (
 	source: string

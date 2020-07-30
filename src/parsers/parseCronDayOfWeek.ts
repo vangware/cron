@@ -11,8 +11,9 @@ import { parseCronSpecificDayOfWeek } from "./parseCronSpecificDayOfWeek";
 import { parseCronStartOrBlank } from "./parseCronStartOrBlank";
 
 /**
- * Parses given source CronDayOfWeek to string.
- * @param source Source CronDayOfWeek.
+ * Parses `CronDayOfWeek` into a string.
+ * @param source `CronDayOfWeek` to be parsed.
+ * @returns A string or `undefined` if invalid.
  */
 export const parseCronDayOfWeek = (source: CronDayOfWeek) =>
 	parseCronLast(source as CronLast) ??

@@ -2,8 +2,9 @@ import { CronSpecificDayOfWeek } from "../types/CronSpecificDayOfWeek";
 import { isCronSpecificDayOfWeek } from "../validations/isCronSpecificDayOfWeek";
 
 /**
- * Parses given CronSpecificDayOfWeek to string.
- * @param source Source CronSpecificDayOfWeek.
+ * Parses `CronSpecificDayOfWeek` into a string.
+ * @param source `CronSpecificDayOfWeek` to be parsed.
+ * @returns A string or `undefined` if invalid.
  */
 export const parseCronSpecificDayOfWeek = (
 	source: CronSpecificDayOfWeek | string

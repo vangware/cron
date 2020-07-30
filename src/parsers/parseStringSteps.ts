@@ -7,13 +7,14 @@ import { parseCronEvery } from "./parseCronEvery";
 import { parseStringRange } from "./parseStringRange";
 
 /**
- * Takes a string parser and then a source `start/every` string and turns it
- * into a CronSteps object (or undefined if is invalid).
- * @param parser Value parser.
+ * Parses a string into a `CronSteps`.
+ * @param parser `StringValueParser` for `CronSteps`.
+ * @returns Curried function with `parser` in context.
  */
 export const parseStringSteps = <Value>(parser: StringValueParser<Value>) =>
 	/**
-	 * @param source Source string.
+	 * @param source string to be parsed.
+	 * @returns A `CronSteps` or `undefined` if invalid.
 	 */
 	(source: string): CronSteps<Value> | undefined => {
 		const valid = isStringSteps(source);

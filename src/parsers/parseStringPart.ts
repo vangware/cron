@@ -6,12 +6,14 @@ import { parseStringRange } from "./parseStringRange";
 import { parseStringSteps } from "./parseStringSteps";
 
 /**
- * Parses string part with given parser.
- * @param parser Parser to be used.
+ * Parses a string into a `CronPart`.
+ * @param parser `StringValueParser` for `CronPart`.
+ * @returns Curried function with `parser` in context.
  */
 export const parseStringPart = <Value>(parser: StringValueParser<Value>) =>
 	/**
-	 * @param source Source string to be parsed.
+	 * @param source string to be parsed.
+	 * @returns A `CronPart` or `undefined` if invalid.
 	 */
 	(source: string): CronPart<Value> | undefined =>
 		parseCronEvery(source) ??

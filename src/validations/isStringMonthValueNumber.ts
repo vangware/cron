@@ -1,7 +1,7 @@
 import { isString } from "@vangware/utils";
 
 /**
- * Check if given value is between 1 and 12.
+ * Check if given is a string representing a `CronMonthValueNumber`.
  * @param value Value to check.
  */
 export const isStringMonthValueNumber = (value: unknown): value is string =>

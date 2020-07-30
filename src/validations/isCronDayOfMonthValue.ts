@@ -2,7 +2,7 @@ import { isNumber, numberBetween } from "@vangware/utils";
 import { CronDayOfMonthValue } from "../types/CronDayOfMonthValue";
 
 /**
- * Check if given value is between 1-31.
+ * Check if given is `CronDayOfMonthValue`.
  * @param value Value to check.
  */
 export const isCronDayOfMonthValue = (

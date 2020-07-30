@@ -2,7 +2,7 @@ import { isNumber, numberBetween } from "@vangware/utils";
 import { CronYearValue } from "../types/CronYearValue";
 
 /**
- * Check if given value is between 1970 and 2099.
+ * Check if given is `CronYearValue`.
  * @param value Value to check.
  */
 export const isCronYearValue = (value: unknown): value is CronYearValue =>

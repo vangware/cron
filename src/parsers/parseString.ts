@@ -19,8 +19,9 @@ import { parseStringYear } from "./parseStringYear";
 import { splitExpression } from "./splitExpression";
 
 /**
- * Takes a source string with a cron expression and returns CronParts.
- * @param source Source string to be parsed.
+ * Parses a string into a `Cron`.
+ * @param source string to be parsed.
+ * @returns A `Cron` or `undefined` if invalid.
  */
 export const parseString = (source: string): Cron | undefined => {
 	const parts = splitExpression(source);

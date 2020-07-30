@@ -1,7 +1,7 @@
 import { isString } from "@vangware/utils";
 
 /**
- * Check if given value is between 0 and 59.
+ * Check if given is a string representing a `CronSecondsValue`.
  * @param value Value to check.
  */
 export const isStringSecondsValue = (value: unknown): value is string =>
