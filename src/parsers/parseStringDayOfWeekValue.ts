@@ -5,9 +5,10 @@ import { CronDayOfWeekValueString } from "../types/CronDayOfWeekValueString";
 import { StringValueParser } from "../types/StringValueParser";
 import { isStringDayOfWeekValue } from "../validations/isStringDayOfWeekValue";
 
-/*
- * Parses given source string to CronDayOfWeekValue.
- * @param source Source string to be parsed.
+/**
+ * Parses a string into a `CronDayOfWeekValue`.
+ * @param source string to be parsed.
+ * @returns A `CronDayOfWeekValue` or `undefined` if invalid.
  */
 // eslint-disable-next-line max-len
 export const parseStringDayOfWeekValue: StringValueParser<CronDayOfWeekValue> = source => {

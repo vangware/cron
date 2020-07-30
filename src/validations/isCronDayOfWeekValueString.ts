@@ -2,7 +2,7 @@ import { isString } from "@vangware/utils";
 import { CronDayOfWeekValueString } from "../types/CronDayOfWeekValueString";
 
 /**
- * Check if given value is between SUN-SAT.
+ * Check if given is `CronDayOfWeekValueString`.
  * @param value Value to check.
  */
 export const isCronDayOfWeekValueString = (

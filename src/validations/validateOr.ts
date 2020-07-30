@@ -8,5 +8,7 @@ export const validateOr = (
 ) =>
 	/**
 	 * @param value Value to check.
+	 * @returns Boolean `true` if there are some validations passing,
+	 * `false` if none
 	 */
 	(value: unknown) => validations.some(validation => validation(value));

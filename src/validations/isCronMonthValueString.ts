@@ -2,7 +2,7 @@ import { isString } from "@vangware/utils";
 import { CronMonthValueString } from "../types/CronMonthValueString";
 
 /**
- * Check if given value is between JAN-DEC.
+ * Check if given is `CronMonthValueString`.
  * @param value Value to check.
  */
 export const isCronMonthValueString = (

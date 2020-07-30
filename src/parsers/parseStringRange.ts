@@ -5,13 +5,14 @@ import { StringValueParser } from "../types/StringValueParser";
 import { isStringRange } from "../validations/isStringRange";
 
 /**
- * Takes a string parser and then a source `from-to` string and turns it into a
- * CronRange object (or undefined if is invalid).
- * @param parser Value parser.
+ * Parses a string into a `CronRange`.
+ * @param parser `StringValueParser` for `CronRange`.
+ * @returns Curried function with `parser` in context.
  */
 export const parseStringRange = <Value>(parser: StringValueParser<Value>) =>
 	/**
-	 * @param source Source string to be parsed.
+	 * @param source string to be parsed.
+	 * @returns A `CronRange` or `undefined` if invalid.
 	 */
 	(source: string): CronRange<Value> | undefined => {
 		const valid = isStringRange(source);

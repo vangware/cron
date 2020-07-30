@@ -3,9 +3,10 @@ import { CronSecondsValue } from "../types/CronSecondsValue";
 import { StringValueParser } from "../types/StringValueParser";
 import { isStringSecondsValue } from "../validations/isStringSecondsValue";
 
-/*
- * Parses given source string to CronSecondsValue.
- * @param source Source string to be parsed.
+/**
+ * Parses a string into a `CronSecondsValue`.
+ * @param source string to be parsed.
+ * @returns A `CronSecondsValue` or `undefined` if invalid.
  */
 // eslint-disable-next-line max-len
 export const parseStringSecondsValue: StringValueParser<CronSecondsValue> = source =>

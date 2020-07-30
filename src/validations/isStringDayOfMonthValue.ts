@@ -1,7 +1,7 @@
 import { isString } from "@vangware/utils";
 
 /**
- * Check if given value is between 1-31.
+ * Check if given is a string representing a `CronDayOfMonthValue`.
  * @param value Value to check.
  */
 export const isStringDayOfMonthValue = (value: unknown): value is string =>

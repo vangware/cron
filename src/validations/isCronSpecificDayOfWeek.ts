@@ -4,7 +4,7 @@ import { isCronDayOfWeekValueNumber } from "./isCronDayOfWeekValueNumber";
 import { isCronWeekValue } from "./isCronWeekValue";
 
 /**
- * Check if given value is a CronSpecificDayOfWeek.
+ * Check if given is `CronSpecificDayOfWeek`.
  * @param value Value to check.
  */
 export const isCronSpecificDayOfWeek = (

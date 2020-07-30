@@ -3,7 +3,7 @@ import { CronNearestDayOfMonth } from "../types/CronNearestDayOfMonth";
 import { isCronDayOfMonthValue } from "./isCronDayOfMonthValue";
 
 /**
- * Check if given value is CronNearestDayOfMonth.
+ * Check if given is `CronNearestDayOfMonth`.
  * @param value Value to check.
  */
 export const isCronNearestDayOfMonth = (

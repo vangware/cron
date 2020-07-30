@@ -1,7 +1,7 @@
 import { isString } from "@vangware/utils";
 
 /**
- * Check if given value is "{day}#{week}".
+ * Check if given is a string representing a `CronSpecificDayOfWeek`.
  * @param value Value to check.
  */
 export const isStringSpecificDayOfWeek = (value: unknown): value is string =>

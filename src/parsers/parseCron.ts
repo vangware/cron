@@ -9,8 +9,9 @@ import { parseCronSeconds } from "./parseCronSeconds";
 import { parseCronYear } from "./parseCronYear";
 
 /**
- * Takes a source string with a cron expression and returns CronParts.
- * @param source Source string to be parsed.
+ * Parses `Cron` into a string.
+ * @param source `Cron` to be parsed.
+ * @returns A string or `undefined` if invalid.
  */
 export const parseCron = ({
 	seconds = "*",

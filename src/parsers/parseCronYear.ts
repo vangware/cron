@@ -2,7 +2,8 @@ import { parseCronPart } from "./parseCronPart";
 import { parseCronYearValue } from "./parseCronYearValue";
 
 /**
- * Parses given source CronYear to string.
- * @param source Source CronYear.
+ * Parses `CronYear` into a string.
+ * @param source `CronYear` to be parsed.
+ * @returns A string or `undefined` if invalid.
  */
 export const parseCronYear = parseCronPart(parseCronYearValue);

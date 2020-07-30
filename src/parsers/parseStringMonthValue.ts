@@ -5,9 +5,10 @@ import { CronMonthValueString } from "../types/CronMonthValueString";
 import { StringValueParser } from "../types/StringValueParser";
 import { isStringMonthValue } from "../validations/isStringMonthValue";
 
-/*
- * Parses given source string to CronMonthValue.
- * @param source Source string to be parsed.
+/**
+ * Parses a string into a `CronMonthValue`.
+ * @param source string to be parsed.
+ * @returns A `CronMonthValue` or `undefined` if invalid.
  */
 // eslint-disable-next-line max-len
 export const parseStringMonthValue: StringValueParser<CronMonthValue> = source => {
