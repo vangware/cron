@@ -18,12 +18,12 @@ import { parseString, parseCron } from "@vangware/cron";
 const cron = parseString("1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10");
 /*
 {
-	dayOfMonth: { nearest: 2 },
-	dayOfWeek: { last: 1 },
-	hours: "*",
-	minutes: [{ from: 1, to: 2 }, 3, 4],
-	month: ["SEP", "OCT"],
 	seconds: { every: 3, start: { from: 1, to: 2 } },
+	minutes: [{ from: 1, to: 2 }, 3, 4],
+	hours: "*",
+	dayOfWeek: { last: 1 },
+	month: ["SEP", "OCT"],
+	dayOfMonth: { nearest: 2 },
 	year: { every: 10, start: "*" }
 }
 */
@@ -39,12 +39,12 @@ import { parseString } from "http://cdn.pika.dev/@vangware/cron";
 const cron = parseString("1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10");
 /*
 {
-	dayOfMonth: { nearest: 2 },
-	dayOfWeek: { last: 1 },
-	hours: "*",
-	minutes: [{ from: 1, to: 2 }, 3, 4],
-	month: ["SEP", "OCT"],
 	seconds: { every: 3, start: { from: 1, to: 2 } },
+	minutes: [{ from: 1, to: 2 }, 3, 4],
+	hours: "*",
+	dayOfWeek: { last: 1 },
+	month: ["SEP", "OCT"],
+	dayOfMonth: { nearest: 2 },
 	year: { every: 10, start: "*" }
 }
 */

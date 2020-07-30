@@ -4,7 +4,7 @@ import { isCronDayOfWeekValueNumber } from "./isCronDayOfWeekValueNumber";
 import { isCronDayOfWeekValueString } from "./isCronDayOfWeekValueString";
 
 /**
- * Check if given value is between 0-7 or SUN-SAT.
+ * Check if given is `CronDayOfWeekValue`.
  * @param value Value to check.
  */
 export const isCronDayOfWeekValue = (

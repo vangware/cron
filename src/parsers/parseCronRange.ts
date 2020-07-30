@@ -3,12 +3,14 @@ import { CronValueParser } from "../types/CronValueParser";
 import { isCronRange } from "../validations/isCronRange";
 
 /**
- * Takes a CronRange and returns a string.
- * @param source Source CronRange to be parsed.
+ * Parses `CronRange` into a string.
+ * @param parser `CronValueParser` for `CronRange`.
+ * @returns Curried function with `parser` in context.
  */
 export const parseCronRange = <Value>(parser: CronValueParser<Value>) =>
 	/**
-	 * @param source Source CronRange to be parsed.
+	 * @param source `CronRange` to be parsed.
+	 * @returns A string or `undefined` if invalid.
 	 */
 	(source: CronRange<Value>) => {
 		const valid = isCronRange(source);

@@ -8,13 +8,14 @@ import { parseStringRange } from "./parseStringRange";
 import { parseStringSteps } from "./parseStringSteps";
 
 /**
- * Takes a string parser and then a source string  and turns it into a CronList
- * array (or undefined if is invalid).
- * @param parser Value parser.
+ * Parses a string into a `CronList`.
+ * @param parser `StringValueParser` for `CronList`.
+ * @returns Curried function with `parser` in context.
  */
 export const parseStringList = <Value>(parser: StringValueParser<Value>) =>
 	/**
-	 * @param source Source string to be parsed.
+	 * @param source string to be parsed.
+	 * @returns A `CronList` or `undefined` if invalid.
 	 */
 	(source: string) => {
 		const list = arrayMap<string, CronListItem<Value> | undefined>(

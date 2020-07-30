@@ -4,7 +4,7 @@ import { isCronMonthValueNumber } from "./isCronMonthValueNumber";
 import { isCronMonthValueString } from "./isCronMonthValueString";
 
 /**
- * Check if given value is between 1-12 or JAN-DEC.
+ * Check if given is `CronMonthValue`.
  * @param value Value to check.
  */
 export const isCronMonthValue = (value: unknown): value is CronMonthValue =>

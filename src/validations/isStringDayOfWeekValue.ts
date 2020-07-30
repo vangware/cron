@@ -3,7 +3,7 @@ import { isStringDayOfWeekValueNumber } from "./isStringDayOfWeekValueNumber";
 import { validateOr } from "./validateOr";
 
 /**
- * Check if given value is between 0-7 or SUN-SAT.
+ * Check if given is a string representing a `CronDayOfWeekValue`.
  * @param value Value to check.
  */
 export const isStringDayOfWeekValue = validateOr([

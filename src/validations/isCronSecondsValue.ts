@@ -2,7 +2,7 @@ import { isNumber, numberBetween } from "@vangware/utils";
 import { CronSecondsValue } from "../types/CronSecondsValue";
 
 /**
- * Check if given value is between 0 and 59.
+ * Check if given is `CronSecondsValue`.
  * @param value Value to check.
  */
 export const isCronSecondsValue = (value: unknown): value is CronSecondsValue =>

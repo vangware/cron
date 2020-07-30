@@ -2,7 +2,8 @@ import { parseStringPart } from "./parseStringPart";
 import { parseStringSecondsValue } from "./parseStringSecondsValue";
 
 /**
- * Parses given source string to CronSeconds.
- * @param source Source string to be parsed.
+ * Parses a string into a `CronSeconds`.
+ * @param source string to be parsed.
+ * @returns A `CronSeconds` or `undefined` if invalid.
  */
 export const parseStringSeconds = parseStringPart(parseStringSecondsValue);

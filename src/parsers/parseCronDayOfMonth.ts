@@ -9,8 +9,9 @@ import { parseCronPart } from "./parseCronPart";
 import { parseCronStartOrBlank } from "./parseCronStartOrBlank";
 
 /**
- * Parses given source CronDayOfMonth to string.
- * @param source Source CronDayOfMonth.
+ * Parses `CronDayOfMonth` into a string.
+ * @param source `CronDayOfMonth` to be parsed.
+ * @returns A string or `undefined` if invalid.
  */
 export const parseCronDayOfMonth = (source: CronDayOfMonth) =>
 	parseCronLast(source as CronLast) ??

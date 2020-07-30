@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/).
 This project uses [Gitmoji](https://gitmoji.carloscuesta.me/)
 
+## 2.0.1
+
+- :pencil: better docs.
+
 ## 2.0.0
 
 - :building_construction: had to change cron parsers to return undefined when invalid to be more consistent.

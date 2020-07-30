@@ -4,8 +4,9 @@ import { isCronDayOfWeekValueNumber } from "../validations/isCronDayOfWeekValueN
 import { isStringLastValue } from "../validations/isStringLastValue";
 
 /**
- * Parses given source to CronLastValue.
- * @param source Source string to be parsed.
+ * Parses a string into a `CronLastValue`.
+ * @param source string to be parsed.
+ * @returns A `CronLastValue` or `undefined` if invalid.
  */
 export const parseStringLastValue = (
 	source: string

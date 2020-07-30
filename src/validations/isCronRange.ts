@@ -2,7 +2,7 @@ import { isUndefined } from "@vangware/utils";
 import { CronRange } from "../types/CronRange";
 
 /**
- * Check if given value is CronRange.
+ * Check if given is `CronRange`.
  * @param value Value to check.
  */
 export const isCronRange = <Value>(value: unknown): value is CronRange<Value> =>

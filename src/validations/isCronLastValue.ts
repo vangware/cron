@@ -3,7 +3,7 @@ import { CronLastValue } from "../types/CronLastValue";
 import { isCronDayOfWeekValueNumber } from "./isCronDayOfWeekValueNumber";
 
 /**
- * Check if given value is CronLastValue.
+ * Check if given is `CronLastValue`.
  * @param value Value to check.
  */
 export const isCronLastValue = (value: unknown): value is CronLastValue =>

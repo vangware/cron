@@ -3,9 +3,10 @@ import { CronHoursValue } from "../types/CronHoursValue";
 import { StringValueParser } from "../types/StringValueParser";
 import { isStringHoursValue } from "../validations/isStringHoursValue";
 
-/*
- * Parses given source string to CronHoursValue.
- * @param source Source string to be parsed.
+/**
+ * Parses a string into a `CronHoursValue`.
+ * @param source string to be parsed.
+ * @returns A `CronHoursValue` or `undefined` if invalid.
  */
 // eslint-disable-next-line max-len
 export const parseStringHoursValue: StringValueParser<CronHoursValue> = source =>

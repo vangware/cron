@@ -82,12 +82,12 @@
 <span class="hljs-keyword">const</span> cron = parseString(<span class="hljs-string">&quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span>);
 <span class="hljs-comment">/*
 {
-    dayOfMonth: { nearest: 2 },
-    dayOfWeek: { last: 1 },
-    hours: &quot;*&quot;,
-    minutes: [{ from: 1, to: 2 }, 3, 4],
-    month: [&quot;SEP&quot;, &quot;OCT&quot;],
     seconds: { every: 3, start: { from: 1, to: 2 } },
+    minutes: [{ from: 1, to: 2 }, 3, 4],
+    hours: &quot;*&quot;,
+    dayOfWeek: { last: 1 },
+    month: [&quot;SEP&quot;, &quot;OCT&quot;],
+    dayOfMonth: { nearest: 2 },
     year: { every: 10, start: &quot;*&quot; }
 }
 */</span>
@@ -101,12 +101,12 @@ pareCron(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1
 <span class="hljs-keyword">const</span> cron = parseString(<span class="hljs-string">&quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span>);
 <span class="hljs-comment">/*
 {
-    dayOfMonth: { nearest: 2 },
-    dayOfWeek: { last: 1 },
-    hours: &quot;*&quot;,
-    minutes: [{ from: 1, to: 2 }, 3, 4],
-    month: [&quot;SEP&quot;, &quot;OCT&quot;],
     seconds: { every: 3, start: { from: 1, to: 2 } },
+    minutes: [{ from: 1, to: 2 }, 3, 4],
+    hours: &quot;*&quot;,
+    dayOfWeek: { last: 1 },
+    month: [&quot;SEP&quot;, &quot;OCT&quot;],
+    dayOfMonth: { nearest: 2 },
     year: { every: 10, start: &quot;*&quot; }
 }
 */</span>
