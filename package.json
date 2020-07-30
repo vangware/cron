@@ -1,0 +1,84 @@
+{
+  "name": "@vangware/cron",
+  "description": "Cron expression parser",
+  "version": "1.0.0",
+  "author": {
+    "name": "Vangware",
+    "url": "https://vangware.com"
+  },
+  "bugs": {
+    "url": "https://github.com/vangware/cron/issues"
+  },
+  "dependencies": {
+    "@vangware/utils": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/eslint": "^7.2.0",
+    "@types/node": "^14.0.27",
+    "@types/prettier": "^2.0.2",
+    "@typescript-eslint/eslint-plugin": "^3.7.1",
+    "@typescript-eslint/parser": "^3.7.1",
+    "@vangware/base": "^1.0.12",
+    "@vangware/test": "^1.0.1",
+    "c8": "^7.2.1",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-import-resolver-node": "^0.3.4",
+    "eslint-plugin-ban": "^1.5.1",
+    "eslint-plugin-functional": "^3.0.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-no-null": "^1.0.2",
+    "eslint-plugin-prefer-arrow": "^1.2.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7",
+    "uvu": "^0.3.0"
+  },
+  "files": [
+    "cjs",
+    "esm"
+  ],
+  "homepage": "https://github.com/vangware/cron",
+  "husky": {
+    "hooks": {
+      "pre-commit": "run-s clean pre-compile lint test"
+    }
+  },
+  "keywords": [
+    "cron",
+    "deno",
+    "parse",
+    "parser",
+    "typescript"
+  ],
+  "license": "MIT",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/vangware/cron.git"
+  },
+  "scripts": {
+    "clean": "rimraf ./{cjs,esm}",
+    "compile": "run-s compile:*",
+    "compile:cjs": "tsc --project tsconfig.cjs.json",
+    "compile:esm": "tsc --project tsconfig.esm.json",
+    "coverage": "c8 report --reporter=text-lcov | coveralls",
+    "lint": "eslint src/**/*.ts",
+    "pre-compile": "run-s pre-compile:*",
+    "pre-compile:cjs": "tsc --noemit --project tsconfig.cjs.json",
+    "pre-compile:esm": "tsc --noemit --project tsconfig.esm.json",
+    "prepublishOnly": "run-s compile prettify",
+    "prettify": "run-s prettify:*",
+    "prettify:cjs": "prettier --write './cjs/**/*.{js,ts}'",
+    "prettify:esm": "prettier --write './esm/**/*.{js,ts}'",
+    "prettify:esm-fix": "prettify-esm ./esm",
+    "test": "c8 --reporter=html --reporter=text-summary uvu --require ts-node/register ./tests"
+  },
+  "source": "./src/index.ts",
+  "types": "./esm/index.d.ts"
+}

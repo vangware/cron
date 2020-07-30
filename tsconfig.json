@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "listEmittedFiles": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "newLine": "LF",
+    "noEmitOnError": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "./cjs",
+    "preserveConstEnums": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "target": "ESNext"
+  },
+  "include": [
+    "src/*.ts",
+    "src/**/*.ts",
+    "tests/**/*.ts"
+  ]
+}
