@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/).
 This project uses [Gitmoji](https://gitmoji.carloscuesta.me/)
 
+## 2.1.0
+
+- :sparkles: add `CronUnix` type.
+- :sparkles: add `CronQuartzExtension` type.
+- :sparkles: add `parseStringUnix` parser.
+- :sparkles: add `parseCronUnix` parser.
+- :arrow_up: dependency upgrade.
+
 ## 2.0.1
 
 - :pencil: better docs.

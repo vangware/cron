@@ -1,20 +1,7 @@
-import { CronDayOfMonth } from "./CronDayOfMonth";
-import { CronDayOfWeek } from "./CronDayOfWeek";
-import { CronHours } from "./CronHours";
-import { CronMinutes } from "./CronMinutes";
-import { CronMonth } from "./CronMonth";
-import { CronSeconds } from "./CronSeconds";
-import { CronYear } from "./CronYear";
+import { CronQuartzExtension } from "./CronQuartzExtension";
+import { CronUnix } from "./CronUnix";
 
 /**
  * Cron expression parts with optional values.
  */
-export type CronOptional = {
-	readonly seconds?: CronSeconds;
-	readonly minutes: CronMinutes;
-	readonly hours: CronHours;
-	readonly dayOfMonth: CronDayOfMonth;
-	readonly month: CronMonth;
-	readonly dayOfWeek: CronDayOfWeek;
-	readonly year?: CronYear;
-};
+export type CronOptional = CronUnix & Partial<CronQuartzExtension>;
