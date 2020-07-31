@@ -151,3 +151,6 @@ $RECYCLE.BIN/
 # Build
 cjs
 esm
+
+# pnpm
+pnpm-lock.yaml
