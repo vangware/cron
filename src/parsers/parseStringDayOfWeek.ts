@@ -18,4 +18,4 @@ export const parseStringDayOfWeek = (
 	parseCronStartOrBlank(source) ??
 	parseStringLastValue(source) ??
 	parseStringSpecificDayOfWeek(source) ??
-	parseStringPart(parseStringDayOfWeekValue)(source);
+	parseStringPart([0, 7])(parseStringDayOfWeekValue)(source);

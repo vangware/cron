@@ -4,4 +4,4 @@ import { CronUnix } from "./CronUnix";
 /**
  * Cron object (Quartz).
  */
-export type Cron = CronUnix & CronQuartzExtension;
+export type CronQuartz = CronUnix & CronQuartzExtension;

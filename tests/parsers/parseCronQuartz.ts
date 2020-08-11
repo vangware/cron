@@ -1,11 +1,11 @@
 import { test } from "@vangware/test";
-import { parseCron } from "../../src/parsers/parseCron";
+import { parseCronQuartz } from "../../src/parsers/parseCronQuartz";
 
 export default test([
 	{
-		given: "A CronParts object with all set to every",
+		given: "A CronQuartz object with all set to every",
 		must: "return * * * * * * *",
-		received: parseCron({
+		received: parseCronQuartz({
 			dayOfMonth: "*",
 			dayOfWeek: "*",
 			hours: "*",
@@ -17,21 +17,9 @@ export default test([
 		wanted: "* * * * * * *"
 	},
 	{
-		given: "A CronParts object omitting year and seconds",
-		must: "return * * * * * * *",
-		received: parseCron({
-			dayOfMonth: "*",
-			dayOfWeek: "*",
-			hours: "*",
-			minutes: "*",
-			month: "*"
-		}),
-		wanted: "* * * * * * *"
-	},
-	{
-		given: "A CronParts object with lists",
+		given: "A CronQuartz object with lists",
 		must: "return 1,2 1,2 1,2 1,2 1,2 1,2 1989,2020",
-		received: parseCron({
+		received: parseCronQuartz({
 			dayOfMonth: [1, 2],
 			dayOfWeek: [1, 2],
 			hours: [1, 2],
@@ -43,9 +31,9 @@ export default test([
 		wanted: "1,2 1,2 1,2 1,2 1,2 1,2 1989,2020"
 	},
 	{
-		given: "A CronParts object with ranges",
+		given: "A CronQuartz object with ranges",
 		must: "return 1-2 1-2 1-2 1-2 1-2 1-2 1989-2020",
-		received: parseCron({
+		received: parseCronQuartz({
 			dayOfMonth: { from: 1, to: 2 },
 			dayOfWeek: { from: 1, to: 2 },
 			hours: { from: 1, to: 2 },
@@ -57,9 +45,9 @@ export default test([
 		wanted: "1-2 1-2 1-2 1-2 1-2 1-2 1989-2020"
 	},
 	{
-		given: "A CronParts object with steps",
+		given: "A CronQuartz object with steps",
 		must: "return 1/2 1/2 1/2 1/2 1/2 1/2 1989/10",
-		received: parseCron({
+		received: parseCronQuartz({
 			dayOfMonth: { every: 2, start: 1 },
 			dayOfWeek: { every: 2, start: 1 },
 			hours: { every: 2, start: 1 },
@@ -71,9 +59,9 @@ export default test([
 		wanted: "1/2 1/2 1/2 1/2 1/2 1/2 1989/10"
 	},
 	{
-		given: "A CronParts object with mixed values",
+		given: "A CronQuartz object with mixed values",
 		must: "return 1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10",
-		received: parseCron({
+		received: parseCronQuartz({
 			dayOfMonth: { nearest: 2 },
 			dayOfWeek: { last: 1 },
 			hours: "*",

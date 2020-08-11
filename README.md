@@ -13,9 +13,9 @@ Cron Quartz and Cron UNIX expression parser.
 ### 📦 Node
 
 ```typescript
-import { parseString, parseCron } from "@vangware/cron";
+import { parseStringQuartz, parseCronQuartz } from "@vangware/cron";
 
-const cron = parseString("1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10");
+const cron = parseStringQuartz("1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10");
 /*
 {
 	seconds: { every: 3, start: { from: 1, to: 2 } },
@@ -28,15 +28,15 @@ const cron = parseString("1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10");
 }
 */
 
-pareCron(cron); // "1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10"
+parseCronQuartz(cron); // "1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10"
 ```
 
 ### 🦕 Deno
 
 ```typescript
-import { parseString } from "https://cdn.skypack.dev/@vangware/cron";
+import { parseStringQuartz, parseCronQuartz } from "https://cdn.skypack.dev/@vangware/cron";
 
-const cron = parseString("1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10");
+const cron = parseStringQuartz("1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10");
 /*
 {
 	seconds: { every: 3, start: { from: 1, to: 2 } },
@@ -49,10 +49,5 @@ const cron = parseString("1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10");
 }
 */
 
-pareCron(cron); // "1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10"
+parseCronQuartz(cron); // "1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10"
 ```
-
-## To do
-
-- A refactor is coming (v3) which will separate quartz and unix expression utils.
-- More tests will come with that upgrade as well.

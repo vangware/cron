@@ -8,9 +8,9 @@ export type CronQuartzExtension = {
 	/**
 	 * Cron `CronSeconds` object.
 	 */
-	readonly seconds?: CronSeconds;
+	readonly seconds: CronSeconds;
 	/**
 	 * Cron `CronYear` object.
 	 */
-	readonly year?: CronYear;
+	readonly year: CronYear;
 };

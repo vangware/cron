@@ -20,7 +20,7 @@ export const parseCronDayOfWeek = (source: CronDayOfWeek) =>
 	parseCronStartOrBlank(source as CronStartOrBlank) ??
 	parseCronLastValue(source as CronLastValue) ??
 	parseCronSpecificDayOfWeek(source as CronSpecificDayOfWeek) ??
-	parseCronPart(parseCronDayOfWeekValue)(
+	parseCronPart([0, 7])(parseCronDayOfWeekValue)(
 		source as Exclude<
 			CronDayOfWeek,
 			CronLast | CronStartOrBlank | CronLastValue | CronSpecificDayOfWeek

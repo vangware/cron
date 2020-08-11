@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/).
 This project uses [Gitmoji](https://gitmoji.carloscuesta.me/)
 
+## 3.0.0
+
+- :arrow_up: dependency upgrade.
+- :truck: rename several utils to have either `Quartz` or `Unix` as suffix.
+- :building_construction: change step parser to have limits (returning `undefined` when limit is exceeded).
+- :white_check_mark: add all missing tests.
+
 ## 2.2.0
 
 - :sparkles: add `parseStringExpression` util.

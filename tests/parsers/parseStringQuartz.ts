@@ -1,11 +1,11 @@
 import { test } from "@vangware/test";
-import { parseString } from "../../src/parsers/parseString";
+import { parseStringQuartz } from "../../src/parsers/parseStringQuartz";
 
 export default test([
 	{
 		given: "A cron expression * * * * * * *",
-		must: "return a CronParts object with all set to every",
-		received: parseString("* * * * * * *"),
+		must: "return a CronQuartz object with all set to every",
+		received: parseStringQuartz("* * * * * * *"),
 		wanted: {
 			dayOfMonth: "*",
 			dayOfWeek: "*",
@@ -18,8 +18,8 @@ export default test([
 	},
 	{
 		given: "A cron expression * * * * *",
-		must: "return a CronParts object omitting year and seconds",
-		received: parseString("* * * * *"),
+		must: "return a CronQuartz object omitting year and seconds",
+		received: parseStringQuartz("* * * * *"),
 		wanted: {
 			dayOfMonth: "*",
 			dayOfWeek: "*",
@@ -32,8 +32,8 @@ export default test([
 	},
 	{
 		given: "A cron expression 1,2 1,2 1,2 1,2 1,2 1,2 1989,2020",
-		must: "return a CronParts object with lists",
-		received: parseString("1,2 1,2 1,2 1,2 1,2 1,2 1989,2020"),
+		must: "return a CronQuartz object with lists",
+		received: parseStringQuartz("1,2 1,2 1,2 1,2 1,2 1,2 1989,2020"),
 		wanted: {
 			dayOfMonth: [1, 2],
 			dayOfWeek: [1, 2],
@@ -46,8 +46,8 @@ export default test([
 	},
 	{
 		given: "A cron expression 1-2 1-2 1-2 1-2 1-2 1-2 1989-2020",
-		must: "return a CronParts object with ranges",
-		received: parseString("1-2 1-2 1-2 1-2 1-2 1-2 1989-2020"),
+		must: "return a CronQuartz object with ranges",
+		received: parseStringQuartz("1-2 1-2 1-2 1-2 1-2 1-2 1989-2020"),
 		wanted: {
 			dayOfMonth: { from: 1, to: 2 },
 			dayOfWeek: { from: 1, to: 2 },
@@ -60,8 +60,8 @@ export default test([
 	},
 	{
 		given: "A cron expression 1/2 1/2 1/2 1/2 1/2 1/2 1989/10",
-		must: "return a CronParts object with steps",
-		received: parseString("1/2 1/2 1/2 1/2 1/2 1/2 1989/10"),
+		must: "return a CronQuartz object with steps",
+		received: parseStringQuartz("1/2 1/2 1/2 1/2 1/2 1/2 1989/10"),
 		wanted: {
 			dayOfMonth: { every: 2, start: 1 },
 			dayOfWeek: { every: 2, start: 1 },
@@ -74,8 +74,8 @@ export default test([
 	},
 	{
 		given: "A cron expression 1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10",
-		must: "return a CronParts object with mixed values",
-		received: parseString("1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10"),
+		must: "return a CronQuartz object with mixed values",
+		received: parseStringQuartz("1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10"),
 		wanted: {
 			dayOfMonth: { nearest: 2 },
 			dayOfWeek: { last: 1 },
@@ -89,7 +89,7 @@ export default test([
 	{
 		given: "An invalid expression",
 		must: "return undefined",
-		received: parseString("INVALID"),
+		received: parseStringQuartz("INVALID"),
 		wanted: undefined
 	}
 ]);

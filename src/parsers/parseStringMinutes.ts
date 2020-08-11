@@ -6,4 +6,6 @@ import { parseStringPart } from "./parseStringPart";
  * @param source string to be parsed.
  * @returns A `CronMinutes` or `undefined` if invalid.
  */
-export const parseStringMinutes = parseStringPart(parseStringMinutesValue);
+export const parseStringMinutes = parseStringPart([0, 59])(
+	parseStringMinutesValue
+);

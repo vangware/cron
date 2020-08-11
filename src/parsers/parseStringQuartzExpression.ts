@@ -1,13 +1,13 @@
 import { numberBetween } from "@vangware/utils";
+import { splitExpression } from "../utils/splitExpression";
 import { isStringYearValue } from "../validations/isStringYearValue";
-import { splitExpression } from "./splitExpression";
 
 /**
- * Parses given expression or undefined if invalid.
+ * Parses given string expression.
  * @param source string to be parsed.
  * @returns An array of 7 elements or `undefined` if invalid.
  */
-export const parseStringExpression = (source: string) => {
+export const parseStringQuartzExpression = (source: string) => {
 	const parsed = splitExpression(source);
 	const { length } = parsed;
 	const valid = numberBetween(5)(7)(length);
