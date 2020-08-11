@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/).
 This project uses [Gitmoji](https://gitmoji.carloscuesta.me/)
 
+## 2.2.0
+
+- :sparkles: add `parseStringExpression` util.
+- :sparkles: add `parseStringUnixExpression` util.
+- :building_construction: change `splitExpression` util.
+
 ## 2.1.0
 
 - :sparkles: add `CronUnix` type.
