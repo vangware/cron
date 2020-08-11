@@ -2,6 +2,7 @@ import { arrayMap, isUndefined, ReadOnlyObject } from "@vangware/utils";
 import { CRON_LIST_SEPARATOR } from "../constants";
 import { CronList } from "../types/CronList";
 import { CronListItem } from "../types/CronListItem";
+import { LimitTuple } from "../types/LimitTuple";
 import { StringValueParser } from "../types/StringValueParser";
 import { isStringList } from "../validations/isStringList";
 import { parseStringRange } from "./parseStringRange";
@@ -9,25 +10,30 @@ import { parseStringSteps } from "./parseStringSteps";
 
 /**
  * Parses a string into a `CronList`.
- * @param parser `StringValueParser` for `CronList`.
- * @returns Curried function with `parser` in context.
+ * @param limit `LimitTuple` to be used when parsing `CronSteps`.
+ * @returns Curried function with `limit` in context.
  */
-export const parseStringList = <Value>(parser: StringValueParser<Value>) =>
+export const parseStringList = (limit: LimitTuple) =>
 	/**
-	 * @param source string to be parsed.
-	 * @returns A `CronList` or `undefined` if invalid.
+	 * @param parser `StringValueParser` for `CronList`.
+	 * @returns Curried function with `limit` and `parser` in context.
 	 */
-	(source: string) => {
-		const list = arrayMap<string, CronListItem<Value> | undefined>(
-			value =>
-				(parseStringSteps(parser)(value) ??
-					parseStringRange<Value>(parser)(value) ??
-					parser(value)) as ReadOnlyObject<
-					CronListItem<Value> | undefined
-				>
-		)(isStringList(source) ? source.split(CRON_LIST_SEPARATOR) : []);
+	<Value>(parser: StringValueParser<Value>) =>
+		/**
+		 * @param source string to be parsed.
+		 * @returns A `CronList` or `undefined` if invalid.
+		 */
+		(source: string) => {
+			const list = arrayMap<string, CronListItem<Value> | undefined>(
+				value =>
+					(parseStringSteps(limit)(parser)(value) ??
+						parseStringRange<Value>(parser)(value) ??
+						parser(value)) as ReadOnlyObject<
+						CronListItem<Value> | undefined
+					>
+			)(isStringList(source) ? source.split(CRON_LIST_SEPARATOR) : []);
 
-		return list.length === 0 || list.some(isUndefined)
-			? undefined
-			: (list as CronList<Value>);
-	};
+			return list.length === 0 || list.some(isUndefined)
+				? undefined
+				: (list as CronList<Value>);
+		};

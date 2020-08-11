@@ -77,9 +77,9 @@
 				<a href="#📦-node" id="📦-node" style="color: inherit; text-decoration: none;">
 					<h3>📦 Node</h3>
 				</a>
-				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { parseString, parseCron } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@vangware/cron&quot;</span>;
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { parseStringQuartz, parseCronQuartz } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@vangware/cron&quot;</span>;
 
-<span class="hljs-keyword">const</span> cron = parseString(<span class="hljs-string">&quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span>);
+<span class="hljs-keyword">const</span> cron = parseStringQuartz(<span class="hljs-string">&quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span>);
 <span class="hljs-comment">/*
 {
     seconds: { every: 3, start: { from: 1, to: 2 } },
@@ -92,13 +92,13 @@
 }
 */</span>
 
-pareCron(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span></code></pre>
+parseCronQuartz(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span></code></pre>
 				<a href="#🦕-deno" id="🦕-deno" style="color: inherit; text-decoration: none;">
 					<h3>🦕 Deno</h3>
 				</a>
-				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { parseString } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;https://cdn.skypack.dev/@vangware/cron&quot;</span>;
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { parseStringQuartz, parseCronQuartz } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;https://cdn.skypack.dev/@vangware/cron&quot;</span>;
 
-<span class="hljs-keyword">const</span> cron = parseString(<span class="hljs-string">&quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span>);
+<span class="hljs-keyword">const</span> cron = parseStringQuartz(<span class="hljs-string">&quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span>);
 <span class="hljs-comment">/*
 {
     seconds: { every: 3, start: { from: 1, to: 2 } },
@@ -111,14 +111,7 @@ pareCron(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1
 }
 */</span>
 
-pareCron(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span></code></pre>
-				<a href="#to-do" id="to-do" style="color: inherit; text-decoration: none;">
-					<h2>To do</h2>
-				</a>
-				<ul>
-					<li>A refactor is coming (v3) which will separate quartz and unix expression utils.</li>
-					<li>More tests will come with that upgrade as well.</li>
-				</ul>
+parseCronQuartz(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span></code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -131,9 +124,6 @@ pareCron(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-type-alias tsd-is-external">
-						<a href="globals.html#cron" class="tsd-kind-icon">Cron</a>
-					</li>
 					<li class=" tsd-kind-type-alias tsd-is-external">
 						<a href="globals.html#crondayofmonth" class="tsd-kind-icon">Cron<wbr>Day<wbr>OfMonth</a>
 					</li>
@@ -194,14 +184,14 @@ pareCron(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1
 					<li class=" tsd-kind-type-alias tsd-is-external">
 						<a href="globals.html#cronnearestdayofmonth" class="tsd-kind-icon">Cron<wbr>Nearest<wbr>Day<wbr>OfMonth</a>
 					</li>
-					<li class=" tsd-kind-type-alias tsd-is-external">
-						<a href="globals.html#cronoptional" class="tsd-kind-icon">Cron<wbr>Optional</a>
-					</li>
 					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
 						<a href="globals.html#cronpart" class="tsd-kind-icon">Cron<wbr>Part</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
 						<a href="globals.html#cronpartextended" class="tsd-kind-icon">Cron<wbr>Part<wbr>Extended</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#cronquartz" class="tsd-kind-icon">Cron<wbr>Quartz</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-is-external">
 						<a href="globals.html#cronquartzextension" class="tsd-kind-icon">Cron<wbr>Quartz<wbr>Extension</a>
@@ -239,20 +229,14 @@ pareCron(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1
 					<li class=" tsd-kind-type-alias tsd-is-external">
 						<a href="globals.html#cronyearvalue" class="tsd-kind-icon">Cron<wbr>Year<wbr>Value</a>
 					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#limittuple" class="tsd-kind-icon">Limit<wbr>Tuple</a>
+					</li>
 					<li class=" tsd-kind-type-alias tsd-has-type-parameter tsd-is-external">
 						<a href="globals.html#stringvalueparser" class="tsd-kind-icon">String<wbr>Value<wbr>Parser</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#cron_day_of_month_position" class="tsd-kind-icon">CRON_<wbr>DAY_<wbr>OF_<wbr>MONTH_<wbr>POSITION</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#cron_day_of_week_position" class="tsd-kind-icon">CRON_<wbr>DAY_<wbr>OF_<wbr>WEEK_<wbr>POSITION</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
 						<a href="globals.html#cron_every" class="tsd-kind-icon">CRON_<wbr>EVERY</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#cron_hours_position" class="tsd-kind-icon">CRON_<wbr>HOURS_<wbr>POSITION</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-is-external">
 						<a href="globals.html#cron_last" class="tsd-kind-icon">CRON_<wbr>LAST</a>
@@ -261,16 +245,7 @@ pareCron(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1
 						<a href="globals.html#cron_list_separator" class="tsd-kind-icon">CRON_<wbr>LIST_<wbr>SEPARATOR</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#cron_minutes_position" class="tsd-kind-icon">CRON_<wbr>MINUTES_<wbr>POSITION</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#cron_month_position" class="tsd-kind-icon">CRON_<wbr>MONTH_<wbr>POSITION</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
 						<a href="globals.html#cron_range_separator" class="tsd-kind-icon">CRON_<wbr>RANGE_<wbr>SEPARATOR</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#cron_seconds_position" class="tsd-kind-icon">CRON_<wbr>SECONDS_<wbr>POSITION</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-is-external">
 						<a href="globals.html#cron_specific_separator" class="tsd-kind-icon">CRON_<wbr>SPECIFIC_<wbr>SEPARATOR</a>
@@ -282,7 +257,25 @@ pareCron(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1
 						<a href="globals.html#cron_steps_separator" class="tsd-kind-icon">CRON_<wbr>STEPS_<wbr>SEPARATOR</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#cron_year_position" class="tsd-kind-icon">CRON_<wbr>YEAR_<wbr>POSITION</a>
+						<a href="globals.html#quartz_day_of_month_position" class="tsd-kind-icon">QUARTZ_<wbr>DAY_<wbr>OF_<wbr>MONTH_<wbr>POSITION</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#quartz_day_of_week_position" class="tsd-kind-icon">QUARTZ_<wbr>DAY_<wbr>OF_<wbr>WEEK_<wbr>POSITION</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#quartz_hours_position" class="tsd-kind-icon">QUARTZ_<wbr>HOURS_<wbr>POSITION</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#quartz_minutes_position" class="tsd-kind-icon">QUARTZ_<wbr>MINUTES_<wbr>POSITION</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#quartz_month_position" class="tsd-kind-icon">QUARTZ_<wbr>MONTH_<wbr>POSITION</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#quartz_seconds_position" class="tsd-kind-icon">QUARTZ_<wbr>SECONDS_<wbr>POSITION</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#quartz_year_position" class="tsd-kind-icon">QUARTZ_<wbr>YEAR_<wbr>POSITION</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-is-external">
 						<a href="globals.html#unix_day_of_month_position" class="tsd-kind-icon">UNIX_<wbr>DAY_<wbr>OF_<wbr>MONTH_<wbr>POSITION</a>
@@ -441,9 +434,6 @@ pareCron(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1
 						<a href="globals.html#isstringyearvalue" class="tsd-kind-icon">is<wbr>String<wbr>Year<wbr>Value</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#parsecron" class="tsd-kind-icon">parse<wbr>Cron</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#parsecrondayofmonth" class="tsd-kind-icon">parse<wbr>Cron<wbr>Day<wbr>OfMonth</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
@@ -467,7 +457,7 @@ pareCron(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1
 					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#parsecronlastvalue" class="tsd-kind-icon">parse<wbr>Cron<wbr>Last<wbr>Value</a>
 					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#parsecronlist" class="tsd-kind-icon">parse<wbr>Cron<wbr>List</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
@@ -479,8 +469,11 @@ pareCron(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1
 					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#parsecronnearestdayofmonth" class="tsd-kind-icon">parse<wbr>Cron<wbr>Nearest<wbr>Day<wbr>OfMonth</a>
 					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#parsecronpart" class="tsd-kind-icon">parse<wbr>Cron<wbr>Part</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsecronquartz" class="tsd-kind-icon">parse<wbr>Cron<wbr>Quartz</a>
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
 						<a href="globals.html#parsecronrange" class="tsd-kind-icon">parse<wbr>Cron<wbr>Range</a>
@@ -494,7 +487,7 @@ pareCron(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1
 					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#parsecronstartorblank" class="tsd-kind-icon">parse<wbr>Cron<wbr>Start<wbr>OrBlank</a>
 					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#parsecronsteps" class="tsd-kind-icon">parse<wbr>Cron<wbr>Steps</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
@@ -502,9 +495,6 @@ pareCron(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#parsecronyearvalue" class="tsd-kind-icon">parse<wbr>Cron<wbr>Year<wbr>Value</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#parsestring" class="tsd-kind-icon">parse<wbr>String</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#parsestringdayofmonth" class="tsd-kind-icon">parse<wbr>String<wbr>Day<wbr>OfMonth</a>
@@ -519,15 +509,12 @@ pareCron(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1
 						<a href="globals.html#parsestringdayofweekvalue" class="tsd-kind-icon">parse<wbr>String<wbr>Day<wbr>OfWeek<wbr>Value</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#parsestringexpression" class="tsd-kind-icon">parse<wbr>String<wbr>Expression</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#parsestringhoursvalue" class="tsd-kind-icon">parse<wbr>String<wbr>Hours<wbr>Value</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#parsestringlastvalue" class="tsd-kind-icon">parse<wbr>String<wbr>Last<wbr>Value</a>
 					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#parsestringlist" class="tsd-kind-icon">parse<wbr>String<wbr>List</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
@@ -539,8 +526,14 @@ pareCron(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1
 					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#parsestringnearestdayofmonth" class="tsd-kind-icon">parse<wbr>String<wbr>Nearest<wbr>Day<wbr>OfMonth</a>
 					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#parsestringpart" class="tsd-kind-icon">parse<wbr>String<wbr>Part</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsestringquartz" class="tsd-kind-icon">parse<wbr>String<wbr>Quartz</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsestringquartzexpression" class="tsd-kind-icon">parse<wbr>String<wbr>Quartz<wbr>Expression</a>
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
 						<a href="globals.html#parsestringrange" class="tsd-kind-icon">parse<wbr>String<wbr>Range</a>
@@ -551,7 +544,7 @@ pareCron(cron); <span class="hljs-comment">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1
 					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#parsestringspecificdayofweek" class="tsd-kind-icon">parse<wbr>String<wbr>Specific<wbr>Day<wbr>OfWeek</a>
 					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#parsestringsteps" class="tsd-kind-icon">parse<wbr>String<wbr>Steps</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">

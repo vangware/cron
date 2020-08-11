@@ -1,6 +1,6 @@
+import { validateOr } from "../utils/validateOr";
 import { isCronDayOfWeekValueString } from "./isCronDayOfWeekValueString";
 import { isStringDayOfWeekValueNumber } from "./isStringDayOfWeekValueNumber";
-import { validateOr } from "./validateOr";
 
 /**
  * Check if given is a string representing a `CronDayOfWeekValue`.

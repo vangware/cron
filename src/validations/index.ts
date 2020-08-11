@@ -36,4 +36,3 @@ export { isStringSteps } from "./isStringSteps";
 export { isStringWeekValue } from "./isStringWeekValue";
 export { isStringYearValue } from "./isStringYearValue";
 export { stringIncludesOnlyOnce } from "./stringIncludesOnlyOnce";
-export { validateOr } from "./validateOr";

@@ -38,6 +38,12 @@ export default test([
 		wanted: "*/10"
 	},
 	{
+		given: "every 99 days starting on the 1st",
+		must: "return undefined",
+		received: parseCronDayOfMonth({ every: 99, start: CRON_EVERY }),
+		wanted: undefined
+	},
+	{
 		given: "on the 1st, 2nd, 3rd and 4th day",
 		must: "return CronList",
 		received: parseCronDayOfMonth([1, 2, 3, 4]),

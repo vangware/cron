@@ -15,9 +15,9 @@ import { parseStringMonth } from "./parseStringMonth";
 import { parseStringUnixExpression } from "./parseStringUnixExpression";
 
 /**
- * Parses a string into a `Cron` (UNIX).
+ * Parses a string into a `CronUnix`.
  * @param source string to be parsed.
- * @returns A `Cron` (UNIX) or `undefined` if invalid.
+ * @returns A `CronUnix` or `undefined` if invalid.
  */
 export const parseStringUnix = (source: string): CronUnix | undefined => {
 	const parts = parseStringUnixExpression(source);

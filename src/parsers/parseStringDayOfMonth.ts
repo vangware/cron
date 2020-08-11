@@ -16,4 +16,4 @@ export const parseStringDayOfMonth = (
 	parseCronLast(source) ??
 	parseCronStartOrBlank(source) ??
 	parseStringNearestDayOfMonth(source) ??
-	parseStringPart(parseStringDayOfMonthValue)(source);
+	parseStringPart([0, 31])(parseStringDayOfMonthValue)(source);
