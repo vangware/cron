@@ -11,12 +11,12 @@ import {
 import { Cron } from "../types/Cron";
 import { parseStringDayOfMonth } from "./parseStringDayOfMonth";
 import { parseStringDayOfWeek } from "./parseStringDayOfWeek";
+import { parseStringExpression } from "./parseStringExpression";
 import { parseStringHours } from "./parseStringHours";
 import { parseStringMinutes } from "./parseStringMinutes";
 import { parseStringMonth } from "./parseStringMonth";
 import { parseStringSeconds } from "./parseStringSeconds";
 import { parseStringYear } from "./parseStringYear";
-import { splitExpression } from "./splitExpression";
 
 /**
  * Parses a string into a `Cron`.
@@ -24,7 +24,7 @@ import { splitExpression } from "./splitExpression";
  * @returns A `Cron` or `undefined` if invalid.
  */
 export const parseString = (source: string): Cron | undefined => {
-	const parts = splitExpression(source);
+	const parts = parseStringExpression(source);
 	const seconds = parts && parseStringSeconds(parts[CRON_SECONDS_POSITION]);
 	const minutes = parts && parseStringMinutes(parts[CRON_MINUTES_POSITION]);
 	const hours = parts && parseStringHours(parts[CRON_HOURS_POSITION]);

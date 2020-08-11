@@ -34,7 +34,7 @@ pareCron(cron); // "1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10"
 ### 🦕 Deno
 
 ```typescript
-import { parseString } from "http://cdn.pika.dev/@vangware/cron";
+import { parseString } from "https://cdn.skypack.dev/@vangware/cron";
 
 const cron = parseString("1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10");
 /*
@@ -51,3 +51,8 @@ const cron = parseString("1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10");
 
 pareCron(cron); // "1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10"
 ```
+
+## To do
+
+- A refactor is coming (v3) which will separate quartz and unix expression utils.
+- More tests will come with that upgrade as well.
