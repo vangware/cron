@@ -3,7 +3,7 @@ import { CRON_EVERY } from "../../src/constants";
 import { parseCronList } from "../../src/parsers/parseCronList";
 import { parseCronSecondsValue } from "../../src/parsers/parseCronSecondsValue";
 
-const parseCronSecondsList = parseCronList(parseCronSecondsValue);
+const parseCronSecondsList = parseCronList([0, 59])(parseCronSecondsValue);
 
 export default test([
 	{

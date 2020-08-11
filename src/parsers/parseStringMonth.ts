@@ -6,4 +6,4 @@ import { parseStringPart } from "./parseStringPart";
  * @param source string to be parsed.
  * @returns A `CronMonth` or `undefined` if invalid.
  */
-export const parseStringMonth = parseStringPart(parseStringMonthValue);
+export const parseStringMonth = parseStringPart([0, 12])(parseStringMonthValue);

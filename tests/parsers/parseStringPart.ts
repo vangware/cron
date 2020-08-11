@@ -3,7 +3,9 @@ import { CRON_EVERY } from "../../src/constants";
 import { parseStringPart } from "../../src/parsers/parseStringPart";
 import { parseStringSecondsValue } from "../../src/parsers/parseStringSecondsValue";
 
-const parseStringPartSeconds = parseStringPart(parseStringSecondsValue);
+const parseStringPartSeconds = parseStringPart([0, 59])(
+	parseStringSecondsValue
+);
 
 export default test([
 	{

@@ -1,4 +1,4 @@
-import { splitExpression } from "./splitExpression";
+import { splitExpression } from "../utils/splitExpression";
 
 /**
  * Parses given expression or undefined if invalid.

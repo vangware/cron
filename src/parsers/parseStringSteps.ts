@@ -1,6 +1,12 @@
-import { isNumber, isUndefined, stringParseDecimal } from "@vangware/utils";
+import {
+	isNumber,
+	isUndefined,
+	numberBetween,
+	stringParseDecimal
+} from "@vangware/utils";
 import { CRON_STEPS_SEPARATOR } from "../constants";
 import { CronSteps } from "../types/CronSteps";
+import { LimitTuple } from "../types/LimitTuple";
 import { StringValueParser } from "../types/StringValueParser";
 import { isStringSteps } from "../validations/isStringSteps";
 import { parseCronEvery } from "./parseCronEvery";
@@ -8,30 +14,39 @@ import { parseStringRange } from "./parseStringRange";
 
 /**
  * Parses a string into a `CronSteps`.
- * @param parser `StringValueParser` for `CronSteps`.
- * @returns Curried function with `parser` in context.
+ * @param limit `LimitTuple` for `CronSteps`.
+ * @returns Curried function with `limit` in context.
  */
-export const parseStringSteps = <Value>(parser: StringValueParser<Value>) =>
+export const parseStringSteps = ([minimum, maximum]: LimitTuple) =>
 	/**
-	 * @param source string to be parsed.
-	 * @returns A `CronSteps` or `undefined` if invalid.
+	 * @param parser `StringValueParser` for `CronSteps`.
+	 * @returns Curried function with `limit` and `parser` in context.
 	 */
-	(source: string): CronSteps<Value> | undefined => {
-		const valid = isStringSteps(source);
-		const [startString, everyString] = valid
-			? source.split(CRON_STEPS_SEPARATOR)
-			: [];
-		const every = stringParseDecimal(everyString);
-		const start = valid
-			? parseCronEvery(startString) ??
-			  parseStringRange<Value>(parser)(startString) ??
-			  parser(startString)
-			: undefined;
+	<Value>(parser: StringValueParser<Value>) =>
+		/**
+		 * @param source string to be parsed.
+		 * @returns A `CronSteps` or `undefined` if invalid.
+		 */
+		(source: string): CronSteps<Value> | undefined => {
+			const valid = isStringSteps(source);
+			const [startString, everyString] = valid
+				? source.split(CRON_STEPS_SEPARATOR)
+				: [];
+			const everyNumber = stringParseDecimal(everyString);
+			const every =
+				valid && numberBetween(minimum)(maximum)(everyNumber)
+					? everyNumber
+					: undefined;
+			const start = valid
+				? parseCronEvery(startString) ??
+				  parseStringRange<Value>(parser)(startString) ??
+				  parser(startString)
+				: undefined;
 
-		return valid &&
-			!isUndefined(every) &&
-			!isUndefined(start) &&
-			(!isNumber(start) || (isNumber(start) && !isNaN(start)))
-			? { every, start }
-			: undefined;
-	};
+			return valid &&
+				!isUndefined(every) &&
+				!isUndefined(start) &&
+				(!isNumber(start) || (isNumber(start) && !isNaN(start)))
+				? { every, start }
+				: undefined;
+		};

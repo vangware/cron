@@ -3,7 +3,7 @@ import { CRON_EVERY } from "../../src/constants";
 import { parseCronPart } from "../../src/parsers/parseCronPart";
 import { parseCronSecondsValue } from "../../src/parsers/parseCronSecondsValue";
 
-const parseCronPartSeconds = parseCronPart(parseCronSecondsValue);
+const parseCronPartSeconds = parseCronPart([0, 59])(parseCronSecondsValue);
 
 export default test([
 	{
@@ -29,6 +29,12 @@ export default test([
 		must: "return CronList",
 		received: parseCronPartSeconds([{ every: 10, start: 13 }, 10]),
 		wanted: "13/10,10"
+	},
+	{
+		given: "a valid list including an invalid steps value",
+		must: "return undefined",
+		received: parseCronPartSeconds([{ every: 99, start: 13 }, 10]),
+		wanted: undefined
 	},
 	{
 		given: "a valid list including a steps value with a range",

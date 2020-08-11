@@ -6,4 +6,4 @@ import { parseStringYearValue } from "./parseStringYearValue";
  * @param source string to be parsed.
  * @returns A `CronYear` or `undefined` if invalid.
  */
-export const parseStringYear = parseStringPart(parseStringYearValue);
+export const parseStringYear = parseStringPart([0, 129])(parseStringYearValue);

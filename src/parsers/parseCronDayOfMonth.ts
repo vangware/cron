@@ -17,7 +17,7 @@ export const parseCronDayOfMonth = (source: CronDayOfMonth) =>
 	parseCronLast(source as CronLast) ??
 	parseCronStartOrBlank(source as CronStartOrBlank) ??
 	parseCronNearestDayOfMonth(source as CronNearestDayOfMonth) ??
-	parseCronPart(parseCronDayOfMonthValue)(
+	parseCronPart([0, 31])(parseCronDayOfMonthValue)(
 		source as Exclude<
 			CronDayOfMonth,
 			CronLast | CronStartOrBlank | CronNearestDayOfMonth
