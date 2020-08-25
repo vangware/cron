@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/).
 This project uses [Gitmoji](https://gitmoji.carloscuesta.me/)
 
+## 4.0.0
+
+- :arrow_up: major dependency upgrade (new TS version!).
+- :building_construction: improve tuples making use of the new TS feature.
+- :art: logo update.
+
 ## 3.0.1
 
 - :bug: add missing export for utils.
