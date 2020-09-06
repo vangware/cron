@@ -1,7 +1,7 @@
 ![@vangware/cron logo](https://i.imgur.com/ZxqT2Wh.png)
 
 ![Build Status](https://img.shields.io/travis/vangware/cron.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://travis-ci.org/github/vangware/cron)
-![License](https://img.shields.io/npm/l/@vangware/cron.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://github.com/vangware/cron/blob/master/LICENSE)
+![License](https://img.shields.io/npm/l/@vangware/cron.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://github.com/vangware/cron/blob/main/LICENSE)
 ![NPM Version](https://img.shields.io/npm/v/@vangware/cron.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://npm.im/@vangware/cron)
 ![Open Issues](https://img.shields.io/github/issues/vangware/cron.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://github.com/vangware/cron/issues)
 ![Size](https://img.shields.io/bundlephobia/minzip/@vangware/cron.svg?style=for-the-badge&labelColor=666&color=2b7&label=size&link=https://bundlephobia.com/result?p=@vangware/cron)
