@@ -1,4 +1,4 @@
-import { isString } from "@vangware/utils";
+import { isString, stringTest } from "@vangware/utils";
 import { CronDayOfWeekValueString } from "../types/CronDayOfWeekValueString";
 
 /**
@@ -8,4 +8,4 @@ import { CronDayOfWeekValueString } from "../types/CronDayOfWeekValueString";
 export const isCronDayOfWeekValueString = (
 	value: unknown
 ): value is CronDayOfWeekValueString =>
-	isString(value) && /^(?:SUN|MON|TUE|WED|THU|FRI|SAT)$/iu.test(value);
+	isString(value) && stringTest(/^(?:SUN|MON|TUE|WED|THU|FRI|SAT)$/iu)(value);

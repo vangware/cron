@@ -1,4 +1,4 @@
-import { isString } from "@vangware/utils";
+import { isString, stringTest } from "@vangware/utils";
 import { CronMonthValueString } from "../types/CronMonthValueString";
 
 /**
@@ -9,4 +9,6 @@ export const isCronMonthValueString = (
 	value: unknown
 ): value is CronMonthValueString =>
 	isString(value) &&
-	/^(?:JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)$/iu.test(value);
+	stringTest(/^(?:JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)$/iu)(
+		value
+	);
