@@ -1,4 +1,4 @@
-import { isUndefined } from "@vangware/utils";
+import { arrayJoin, isUndefined } from "@vangware/utils";
 import { CronQuartz } from "../types/CronQuartz";
 import { parseCronDayOfMonth } from "./parseCronDayOfMonth";
 import { parseCronDayOfWeek } from "./parseCronDayOfWeek";
@@ -32,5 +32,5 @@ export const parseCronQuartz = ({
 		parseCronYear(year)
 	];
 
-	return parts.some(isUndefined) ? undefined : parts.join(" ");
+	return parts.some(isUndefined) ? undefined : arrayJoin(" ")(parts);
 };
