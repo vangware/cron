@@ -1,4 +1,4 @@
-import { arrayMap, isUndefined } from "@vangware/utils";
+import { arrayJoin, arrayMap, isUndefined } from "@vangware/utils";
 import { CRON_LIST_SEPARATOR } from "../constants";
 import { CronList } from "../types/CronList";
 import { CronRange } from "../types/CronRange";
@@ -34,5 +34,5 @@ export const parseCronList = (limit: LimitTuple) =>
 
 			return list.length === 0 || list.some(isUndefined)
 				? undefined
-				: list.join(CRON_LIST_SEPARATOR);
+				: arrayJoin(CRON_LIST_SEPARATOR)(list);
 		};
