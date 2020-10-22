@@ -1,6 +1,7 @@
 ![@vangware/cron logo](https://i.imgur.com/ZxqT2Wh.png)
 
 ![Build Status](https://img.shields.io/travis/vangware/cron.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://travis-ci.org/github/vangware/cron)
+![Coverage](https://img.shields.io/coveralls/github/vangware/cron.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://coveralls.io/github/vangware/cron)
 ![License](https://img.shields.io/npm/l/@vangware/cron.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://github.com/vangware/cron/blob/main/LICENSE)
 ![NPM Version](https://img.shields.io/npm/v/@vangware/cron.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://npm.im/@vangware/cron)
 ![Open Issues](https://img.shields.io/github/issues/vangware/cron.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://github.com/vangware/cron/issues)
@@ -51,3 +52,15 @@ const cron = parseStringQuartz("1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10");
 
 parseCronQuartz(cron); // "1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10"
 ```
+
+## Documentation
+
+Documentation can be found [HERE](https://cron.vangware.com). It is auto-generated with [typedoc](https://typedoc.org/) based on the JSDocs and the types in the source. Shouldn't be necessary to read this, code editors like [VSCode](https://code.visualstudio.com/) integrate the documentation in the UI.
+
+## Changelog
+
+Changelog can be found [HERE](https://github.com/vangware/cron/blob/main/CHANGELOG.md).
+
+## Test coverage
+
+Test coverage can be found [HERE](https://coveralls.io/github/vangware/cron).
