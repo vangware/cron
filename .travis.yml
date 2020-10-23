@@ -1,6 +1,0 @@
-sudo: false
-language: node_js
-node_js: 15.0
-before_install: npm i -g pnpm
-install: pnpm i
-after_success: pnpm run coverage # Send coverage to coveralls.io
