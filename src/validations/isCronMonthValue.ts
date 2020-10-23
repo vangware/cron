@@ -1,5 +1,5 @@
 import { isNumber, isString } from "@vangware/utils";
-import { CronMonthValue } from "../types/CronMonthValue";
+import type { CronMonthValue } from "../types/CronMonthValue";
 import { isCronMonthValueNumber } from "./isCronMonthValueNumber";
 import { isCronMonthValueString } from "./isCronMonthValueString";
 

@@ -1,5 +1,5 @@
-import { isNumber } from "@vangware/utils";
-import { CronNearestDayOfMonth } from "../types/CronNearestDayOfMonth";
+import { isNumber, isObject } from "@vangware/utils";
+import type { CronNearestDayOfMonth } from "../types/CronNearestDayOfMonth";
 import { isCronDayOfMonthValue } from "./isCronDayOfMonthValue";
 
 /**
@@ -9,5 +9,6 @@ import { isCronDayOfMonthValue } from "./isCronDayOfMonthValue";
 export const isCronNearestDayOfMonth = (
 	value: unknown
 ): value is CronNearestDayOfMonth =>
-	isNumber((value as CronNearestDayOfMonth)?.nearest) &&
-	isCronDayOfMonthValue((value as CronNearestDayOfMonth)?.nearest);
+	isObject(value) &&
+	isNumber((value as CronNearestDayOfMonth).nearest) &&
+	isCronDayOfMonthValue((value as CronNearestDayOfMonth).nearest);

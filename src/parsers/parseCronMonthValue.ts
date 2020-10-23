@@ -1,5 +1,5 @@
-import { CronMonthValue } from "../types/CronMonthValue";
-import { CronValueParser } from "../types/CronValueParser";
+import type { CronMonthValue } from "../types/CronMonthValue";
+import type { CronValueParser } from "../types/CronValueParser";
 import { isCronMonthValue } from "../validations/isCronMonthValue";
 
 /**

@@ -1,5 +1,5 @@
 import { isString, stringTest } from "@vangware/utils";
-import { CronDayOfWeekValueString } from "../types/CronDayOfWeekValueString";
+import type { CronDayOfWeekValueString } from "../types/CronDayOfWeekValueString";
 
 /**
  * Check if given is `CronDayOfWeekValueString`.

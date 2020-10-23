@@ -1,4 +1,4 @@
-import { CronEvery } from "../types/CronEvery";
+import type { CronEvery } from "../types/CronEvery";
 import { isCronEvery } from "../validations/isCronEvery";
 
 /**

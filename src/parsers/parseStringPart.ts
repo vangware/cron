@@ -1,6 +1,6 @@
-import { CronPart } from "../types/CronPart";
-import { LimitTuple } from "../types/LimitTuple";
-import { StringValueParser } from "../types/StringValueParser";
+import type { CronPart } from "../types/CronPart";
+import type { LimitTuple } from "../types/LimitTuple";
+import type { StringValueParser } from "../types/StringValueParser";
 import { parseCronEvery } from "./parseCronEvery";
 import { parseStringList } from "./parseStringList";
 import { parseStringRange } from "./parseStringRange";

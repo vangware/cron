@@ -1,5 +1,5 @@
-import { CronHoursValue } from "./CronHoursValue";
-import { CronPart } from "./CronPart";
+import type { CronHoursValue } from "./CronHoursValue";
+import type { CronPart } from "./CronPart";
 
 /**
  * Cron hours.

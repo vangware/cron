@@ -1,6 +1,6 @@
 import { isString } from "@vangware/utils";
 import { CRON_LAST } from "../constants";
-import { CronLast } from "../types/CronLast";
+import type { CronLast } from "../types/CronLast";
 
 /**
  * Check if given is `CronLast`.

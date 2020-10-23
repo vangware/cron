@@ -1,6 +1,6 @@
-import { CronLast } from "./CronLast";
-import { CronPart } from "./CronPart";
-import { CronStartOrBlank } from "./CronStartOrBlank";
+import type { CronLast } from "./CronLast";
+import type { CronPart } from "./CronPart";
+import type { CronStartOrBlank } from "./CronStartOrBlank";
 
 /**
  * Cron part extended (used by `CronDayOfWeek` and `DayOfMonth`).

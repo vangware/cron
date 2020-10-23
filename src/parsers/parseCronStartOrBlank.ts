@@ -1,4 +1,4 @@
-import { CronStartOrBlank } from "../types/CronStartOrBlank";
+import type { CronStartOrBlank } from "../types/CronStartOrBlank";
 import { isCronStartOrBlank } from "../validations/isCronStartOrBlank";
 
 /**

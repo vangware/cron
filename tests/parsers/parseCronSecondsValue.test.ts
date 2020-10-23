@@ -1,6 +1,6 @@
 import { suite } from "@vangware/test";
 import { parseCronSecondsValue } from "../../src/parsers/parseCronSecondsValue";
-import { CronSecondsValue } from "../../src/types/CronSecondsValue";
+import type { CronSecondsValue } from "../../src/types/CronSecondsValue";
 
 export default suite([
 	{

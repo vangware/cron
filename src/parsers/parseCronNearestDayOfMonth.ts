@@ -1,4 +1,4 @@
-import { CronNearestDayOfMonth } from "../types/CronNearestDayOfMonth";
+import type { CronNearestDayOfMonth } from "../types/CronNearestDayOfMonth";
 import { isCronNearestDayOfMonth } from "../validations/isCronNearestDayOfMonth";
 
 /**

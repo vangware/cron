@@ -1,7 +1,7 @@
-import { CronDayOfWeekValue } from "./CronDayOfWeekValue";
-import { CronLastValue } from "./CronLastValue";
-import { CronPartExtended } from "./CronPartExtended";
-import { CronSpecificDayOfWeek } from "./CronSpecificDayOfWeek";
+import type { CronDayOfWeekValue } from "./CronDayOfWeekValue";
+import type { CronLastValue } from "./CronLastValue";
+import type { CronPartExtended } from "./CronPartExtended";
+import type { CronSpecificDayOfWeek } from "./CronSpecificDayOfWeek";
 
 /**
  * Cron day of week.

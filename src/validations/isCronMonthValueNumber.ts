@@ -1,5 +1,5 @@
 import { isNumber, numberBetween } from "@vangware/utils";
-import { CronMonthValueNumber } from "../types/CronMonthValueNumber";
+import type { CronMonthValueNumber } from "../types/CronMonthValueNumber";
 
 /**
  * Check if given is `CronMonthValueNumber`.

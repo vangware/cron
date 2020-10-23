@@ -1,7 +1,7 @@
 import { suite } from "@vangware/test";
 import { CRON_LAST } from "../../src/constants";
 import { parseCronLastValue } from "../../src/parsers/parseCronLastValue";
-import { CronDayOfWeekValueNumber } from "../../src/types/CronDayOfWeekValueNumber";
+import type { CronDayOfWeekValueNumber } from "../../src/types/CronDayOfWeekValueNumber";
 
 export default suite([
 	{

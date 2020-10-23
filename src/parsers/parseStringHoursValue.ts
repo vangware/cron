@@ -1,6 +1,6 @@
 import { stringParseDecimal } from "@vangware/utils";
-import { CronHoursValue } from "../types/CronHoursValue";
-import { StringValueParser } from "../types/StringValueParser";
+import type { CronHoursValue } from "../types/CronHoursValue";
+import type { StringValueParser } from "../types/StringValueParser";
 import { isStringHoursValue } from "../validations/isStringHoursValue";
 
 /**

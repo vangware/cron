@@ -1,6 +1,6 @@
 import { stringParseDecimal } from "@vangware/utils";
-import { CronYearValue } from "../types/CronYearValue";
-import { StringValueParser } from "../types/StringValueParser";
+import type { CronYearValue } from "../types/CronYearValue";
+import type { StringValueParser } from "../types/StringValueParser";
 import { isStringYearValue } from "../validations/isStringYearValue";
 
 /**
@@ -8,7 +8,6 @@ import { isStringYearValue } from "../validations/isStringYearValue";
  * @param source string to be parsed.
  * @returns A `CronYearValue` or `undefined` if invalid.
  */
-// eslint-disable-next-line max-len
 export const parseStringYearValue: StringValueParser<CronYearValue> = source =>
 	isStringYearValue(source)
 		? (stringParseDecimal(source) as CronYearValue)

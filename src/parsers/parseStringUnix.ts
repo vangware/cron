@@ -6,7 +6,7 @@ import {
 	UNIX_MINUTES_POSITION,
 	UNIX_MONTH_POSITION
 } from "../constants";
-import { CronUnix } from "../types/CronUnix";
+import type { CronUnix } from "../types/CronUnix";
 import { parseStringDayOfMonth } from "./parseStringDayOfMonth";
 import { parseStringDayOfWeek } from "./parseStringDayOfWeek";
 import { parseStringHours } from "./parseStringHours";

@@ -1,5 +1,5 @@
-import { CronSeconds } from "./CronSeconds";
-import { CronYear } from "./CronYear";
+import type { CronSeconds } from "./CronSeconds";
+import type { CronYear } from "./CronYear";
 
 /**
  * Cron expression parts coming with Quartz.

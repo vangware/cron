@@ -1,4 +1,4 @@
-import { CronDayOfWeek } from "../types/CronDayOfWeek";
+import type { CronDayOfWeek } from "../types/CronDayOfWeek";
 import { parseCronLast } from "./parseCronLast";
 import { parseCronStartOrBlank } from "./parseCronStartOrBlank";
 import { parseStringDayOfWeekValue } from "./parseStringDayOfWeekValue";
