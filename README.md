@@ -1,6 +1,6 @@
 ![@vangware/cron logo](https://i.imgur.com/ZxqT2Wh.png)
 
-![Build Status](https://img.shields.io/travis/vangware/cron.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://travis-ci.org/github/vangware/cron)
+![Build Status](https://img.shields.io/github/workflow/status/vangware/cron/Test.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://github.com/vangware/cron/actions)
 ![Coverage](https://img.shields.io/coveralls/github/vangware/cron.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://coveralls.io/github/vangware/cron)
 ![License](https://img.shields.io/npm/l/@vangware/cron.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://github.com/vangware/cron/blob/main/LICENSE)
 ![NPM Version](https://img.shields.io/npm/v/@vangware/cron.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://npm.im/@vangware/cron)
