@@ -1,7 +1,7 @@
 {
   "name": "@vangware/cron",
   "description": "Cron expression parser",
-  "version": "4.0.7",
+  "version": "4.0.8",
   "author": {
     "name": "Vangware",
     "url": "https://vangware.com"
@@ -10,7 +10,7 @@
     "url": "https://github.com/vangware/cron/issues"
   },
   "dependencies": {
-    "@vangware/utils": "^5.0.4"
+    "@vangware/utils": "^5.0.6"
   },
   "devDependencies": {
     "@types/eslint": "^7.2.4",
@@ -18,8 +18,8 @@
     "@types/prettier": "^2.1.5",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
-    "@vangware/base": "^2.2.8",
-    "@vangware/test": "^4.0.4",
+    "@vangware/base": "^3.0.2",
+    "@vangware/test": "^4.0.6",
     "c8": "^7.3.4",
     "eslint": "^7.11.0",
     "eslint-config-prettier": "^6.14.0",
