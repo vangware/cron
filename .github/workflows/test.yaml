@@ -6,14 +6,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - uses: actions/checkout@v2
+    - name: Use Checkout 2
+      uses: actions/checkout@v2
 
-    - name: Use Node 15
+    - name: Use Node.js 15
       uses: actions/setup-node@v1
       with:
         node-version: 15.x
 
-    - name: Add pnpm
+    - name: Use pnpm 5
       uses: pnpm/action-setup@v1.2.1
       with:
         version: 5.10.1
@@ -22,7 +23,7 @@ jobs:
     - name: Run tests
       run: pnpm test
 
-    - name: Coveralls
+    - name: Use Coveralls
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
