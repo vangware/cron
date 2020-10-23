@@ -21,7 +21,6 @@
     "@vangware/base": "^2.2.8",
     "@vangware/test": "^4.0.4",
     "c8": "^7.3.4",
-    "coveralls": "^3.1.0",
     "eslint": "^7.11.0",
     "eslint-config-prettier": "^6.14.0",
     "eslint-import-resolver-node": "^0.3.4",
@@ -74,7 +73,6 @@
     "compile": "run-s compile:*",
     "compile:cjs": "tsc --project tsconfig.cjs.json",
     "compile:esm": "tsc --project tsconfig.esm.json",
-    "coverage": "c8 report --reporter=text-lcov | coveralls",
     "docs": "typedoc --gitRevision main --mode file --out ./docs ./src/index.ts",
     "lint": "eslint src/**/*.ts",
     "pre-compile": "run-s pre-compile:*",
@@ -82,7 +80,7 @@
     "pre-compile:esm": "tsc --noemit --project tsconfig.esm.json",
     "prepublishOnly": "run-s compile prettify",
     "prettify": "prettier --write './{cjs,esm}/**/*.{js,ts}'",
-    "test": "c8 --reporter=html --reporter=text-summary test"
+    "test": "c8 --reporter=html --reporter=text-summary --reporter=lcov test"
   },
   "source": "./src/index.ts",
   "types": "./esm/index.d.ts"
