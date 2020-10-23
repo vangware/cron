@@ -1,7 +1,7 @@
 {
   "name": "@vangware/cron",
   "description": "Cron expression parser",
-  "version": "4.0.6",
+  "version": "4.0.7",
   "author": {
     "name": "Vangware",
     "url": "https://vangware.com"
@@ -81,10 +81,7 @@
     "pre-compile:cjs": "tsc --noemit --project tsconfig.cjs.json",
     "pre-compile:esm": "tsc --noemit --project tsconfig.esm.json",
     "prepublishOnly": "run-s compile prettify",
-    "prettify": "run-s prettify:*",
-    "prettify:cjs": "prettier --write './cjs/**/*.{js,ts}'",
-    "prettify:esm": "prettier --write './esm/**/*.{js,ts}'",
-    "prettify:esm-fix": "prettify-esm ./esm",
+    "prettify": "prettier --write './{cjs,esm}/**/*.{js,ts}'",
     "test": "c8 --reporter=html --reporter=text-summary test"
   },
   "source": "./src/index.ts",

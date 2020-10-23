@@ -1,5 +1,5 @@
-import { CronDayOfWeekValueNumber } from "./CronDayOfWeekValueNumber";
-import { CronWeekValue } from "./CronWeekValue";
+import type { CronDayOfWeekValueNumber } from "./CronDayOfWeekValueNumber";
+import type { CronWeekValue } from "./CronWeekValue";
 
 /**
  * Cron specific day of week ({day}#{week}).

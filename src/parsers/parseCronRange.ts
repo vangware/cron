@@ -1,5 +1,5 @@
-import { CronRange } from "../types/CronRange";
-import { CronValueParser } from "../types/CronValueParser";
+import type { CronRange } from "../types/CronRange";
+import type { CronValueParser } from "../types/CronValueParser";
 import { isCronRange } from "../validations/isCronRange";
 
 /**

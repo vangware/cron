@@ -1,7 +1,7 @@
-import { CronEvery } from "./CronEvery";
-import { CronList } from "./CronList";
-import { CronRange } from "./CronRange";
-import { CronSteps } from "./CronSteps";
+import type { CronEvery } from "./CronEvery";
+import type { CronList } from "./CronList";
+import type { CronRange } from "./CronRange";
+import type { CronSteps } from "./CronSteps";
 
 /**
  * Cron part.

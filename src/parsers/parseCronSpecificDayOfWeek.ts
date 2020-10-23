@@ -1,4 +1,4 @@
-import { CronSpecificDayOfWeek } from "../types/CronSpecificDayOfWeek";
+import type { CronSpecificDayOfWeek } from "../types/CronSpecificDayOfWeek";
 import { isCronSpecificDayOfWeek } from "../validations/isCronSpecificDayOfWeek";
 
 /**

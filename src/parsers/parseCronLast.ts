@@ -1,4 +1,4 @@
-import { CronLast } from "../types/CronLast";
+import type { CronLast } from "../types/CronLast";
 import { isCronLast } from "../validations/isCronLast";
 
 /**

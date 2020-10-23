@@ -1,5 +1,5 @@
-import { isNumber } from "@vangware/utils";
-import { CronSpecificDayOfWeek } from "../types/CronSpecificDayOfWeek";
+import { isNumber, isObject } from "@vangware/utils";
+import type { CronSpecificDayOfWeek } from "../types/CronSpecificDayOfWeek";
 import { isCronDayOfWeekValueNumber } from "./isCronDayOfWeekValueNumber";
 import { isCronWeekValue } from "./isCronWeekValue";
 
@@ -10,7 +10,8 @@ import { isCronWeekValue } from "./isCronWeekValue";
 export const isCronSpecificDayOfWeek = (
 	value: unknown
 ): value is CronSpecificDayOfWeek =>
-	isNumber((value as CronSpecificDayOfWeek)?.day) &&
-	isCronDayOfWeekValueNumber((value as CronSpecificDayOfWeek)?.day) &&
-	isNumber((value as CronSpecificDayOfWeek)?.week) &&
-	isCronWeekValue((value as CronSpecificDayOfWeek)?.week);
+	isObject(value) &&
+	isNumber((value as CronSpecificDayOfWeek).day) &&
+	isCronDayOfWeekValueNumber((value as CronSpecificDayOfWeek).day) &&
+	isNumber((value as CronSpecificDayOfWeek).week) &&
+	isCronWeekValue((value as CronSpecificDayOfWeek).week);

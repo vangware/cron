@@ -1,6 +1,6 @@
 import { suite } from "@vangware/test";
 import { parseCronDayOfWeekValue } from "../../src/parsers/parseCronDayOfWeekValue";
-import { CronDayOfWeekValue } from "../../src/types/CronDayOfWeekValue";
+import type { CronDayOfWeekValue } from "../../src/types/CronDayOfWeekValue";
 
 export default suite([
 	{

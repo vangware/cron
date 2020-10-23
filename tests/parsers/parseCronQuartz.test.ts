@@ -1,4 +1,5 @@
 import { suite } from "@vangware/test";
+import type { CronDayOfMonth } from "../../src";
 import { parseCronQuartz } from "../../src/parsers/parseCronQuartz";
 
 export default suite([
@@ -71,5 +72,19 @@ export default suite([
 			year: { every: 10, start: "*" }
 		}),
 		wanted: "1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10"
+	},
+	{
+		given: "An object with undefined values",
+		must: "return 1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10",
+		received: parseCronQuartz({
+			dayOfMonth: (undefined as unknown) as CronDayOfMonth,
+			dayOfWeek: "*",
+			hours: "*",
+			minutes: "*",
+			month: "*",
+			seconds: "*",
+			year: "*"
+		}),
+		wanted: undefined
 	}
 ]);

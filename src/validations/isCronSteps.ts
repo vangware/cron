@@ -1,10 +1,11 @@
-import { isNumber, isUndefined } from "@vangware/utils";
-import { CronSteps } from "../types/CronSteps";
+import { isNumber, isObject, isUndefined } from "@vangware/utils";
+import type { CronSteps } from "../types/CronSteps";
 
 /**
  * Check if given is `CronSteps`.
  * @param value Value to check.
  */
 export const isCronSteps = <Value>(value: unknown): value is CronSteps<Value> =>
-	isNumber((value as CronSteps<Value>)?.every) &&
-	!isUndefined((value as CronSteps<Value>)?.start);
+	isObject(value) &&
+	isNumber((value as CronSteps<Value>).every) &&
+	!isUndefined((value as CronSteps<Value>).start);

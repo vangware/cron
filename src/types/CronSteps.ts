@@ -1,5 +1,5 @@
-import { CronEvery } from "./CronEvery";
-import { CronRange } from "./CronRange";
+import type { CronEvery } from "./CronEvery";
+import type { CronRange } from "./CronRange";
 
 /**
  * Cron steps (start/every).

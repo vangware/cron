@@ -1,5 +1,5 @@
 import { isArray } from "@vangware/utils";
-import { CronList } from "../types/CronList";
+import type { CronList } from "../types/CronList";
 
 /**
  * Check if given is `CronList`.

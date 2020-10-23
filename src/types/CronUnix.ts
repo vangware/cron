@@ -1,8 +1,8 @@
-import { CronDayOfMonth } from "./CronDayOfMonth";
-import { CronDayOfWeek } from "./CronDayOfWeek";
-import { CronHours } from "./CronHours";
-import { CronMinutes } from "./CronMinutes";
-import { CronMonth } from "./CronMonth";
+import type { CronDayOfMonth } from "./CronDayOfMonth";
+import type { CronDayOfWeek } from "./CronDayOfWeek";
+import type { CronHours } from "./CronHours";
+import type { CronMinutes } from "./CronMinutes";
+import type { CronMonth } from "./CronMonth";
 
 /**
  * Cron expression (UNIX).

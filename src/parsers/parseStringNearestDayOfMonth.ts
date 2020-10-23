@@ -1,5 +1,5 @@
 import { stringParseDecimal } from "@vangware/utils";
-import { CronNearestDayOfMonth } from "../types/CronNearestDayOfMonth";
+import type { CronNearestDayOfMonth } from "../types/CronNearestDayOfMonth";
 import { isStringNearestDayOfMonth } from "../validations/isStringNearestDayOfMonth";
 
 /**
