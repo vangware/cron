@@ -1,6 +1,6 @@
 import { isString } from "@vangware/utils";
 import { CRON_START_OR_BLANK } from "../constants";
-import { CronStartOrBlank } from "../types/CronStartOrBlank";
+import type { CronStartOrBlank } from "../types/CronStartOrBlank";
 
 /**
  * Check if given is `CronStartOrBlank`.

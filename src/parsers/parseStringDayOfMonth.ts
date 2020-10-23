@@ -1,4 +1,4 @@
-import { CronDayOfMonth } from "../types/CronDayOfMonth";
+import type { CronDayOfMonth } from "../types/CronDayOfMonth";
 import { parseCronLast } from "./parseCronLast";
 import { parseCronStartOrBlank } from "./parseCronStartOrBlank";
 import { parseStringDayOfMonthValue } from "./parseStringDayOfMonthValue";

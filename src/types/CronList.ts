@@ -1,5 +1,5 @@
-import { ReadOnlyObjectArray } from "@vangware/utils";
-import { CronListItem } from "./CronListItem";
+import type { ReadOnlyObjectArray } from "@vangware/utils";
+import type { CronListItem } from "./CronListItem";
 
 /**
  * Cron list (value1,value2,valueN).

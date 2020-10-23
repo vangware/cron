@@ -1,6 +1,6 @@
-import { CronDayOfMonthValue } from "./CronDayOfMonthValue";
-import { CronNearestDayOfMonth } from "./CronNearestDayOfMonth";
-import { CronPartExtended } from "./CronPartExtended";
+import type { CronDayOfMonthValue } from "./CronDayOfMonthValue";
+import type { CronNearestDayOfMonth } from "./CronNearestDayOfMonth";
+import type { CronPartExtended } from "./CronPartExtended";
 
 /**
  * Cron day of month.

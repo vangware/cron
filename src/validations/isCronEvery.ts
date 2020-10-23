@@ -1,6 +1,6 @@
 import { isString } from "@vangware/utils";
 import { CRON_EVERY } from "../constants";
-import { CronEvery } from "../types/CronEvery";
+import type { CronEvery } from "../types/CronEvery";
 
 /**
  * Check if given is `CronEvery`.

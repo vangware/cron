@@ -1,5 +1,5 @@
-import { CronDayOfWeekValue } from "../types/CronDayOfWeekValue";
-import { CronValueParser } from "../types/CronValueParser";
+import type { CronDayOfWeekValue } from "../types/CronDayOfWeekValue";
+import type { CronValueParser } from "../types/CronValueParser";
 import { isCronDayOfWeekValue } from "../validations/isCronDayOfWeekValue";
 
 /**

@@ -8,7 +8,7 @@ import {
 	QUARTZ_SECONDS_POSITION,
 	QUARTZ_YEAR_POSITION
 } from "../constants";
-import { CronQuartz } from "../types/CronQuartz";
+import type { CronQuartz } from "../types/CronQuartz";
 import { parseStringDayOfMonth } from "./parseStringDayOfMonth";
 import { parseStringDayOfWeek } from "./parseStringDayOfWeek";
 import { parseStringHours } from "./parseStringHours";

@@ -1,4 +1,4 @@
-import { CronDayOfWeekValueNumber } from "./CronDayOfWeekValueNumber";
+import type { CronDayOfWeekValueNumber } from "./CronDayOfWeekValueNumber";
 
 /**
  * Cron every ({last}L).

@@ -1,7 +1,7 @@
 import { isUndefined } from "@vangware/utils";
 import { CRON_RANGE_SEPARATOR } from "../constants";
-import { CronRange } from "../types/CronRange";
-import { StringValueParser } from "../types/StringValueParser";
+import type { CronRange } from "../types/CronRange";
+import type { StringValueParser } from "../types/StringValueParser";
 import { isStringRange } from "../validations/isStringRange";
 
 /**

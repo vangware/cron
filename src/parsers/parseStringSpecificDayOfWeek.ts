@@ -1,8 +1,8 @@
 import { stringParseDecimal } from "@vangware/utils";
 import { CRON_SPECIFIC_SEPARATOR } from "../constants";
-import { CronDayOfWeekValueNumber } from "../types/CronDayOfWeekValueNumber";
-import { CronSpecificDayOfWeek } from "../types/CronSpecificDayOfWeek";
-import { CronWeekValue } from "../types/CronWeekValue";
+import type { CronDayOfWeekValueNumber } from "../types/CronDayOfWeekValueNumber";
+import type { CronSpecificDayOfWeek } from "../types/CronSpecificDayOfWeek";
+import type { CronWeekValue } from "../types/CronWeekValue";
 import { isStringSpecificDayOfWeek } from "../validations/isStringSpecificDayOfWeek";
 
 /**

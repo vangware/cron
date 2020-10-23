@@ -1,8 +1,8 @@
 import { stringParseDecimal } from "@vangware/utils";
-import { CronDayOfWeekValue } from "../types/CronDayOfWeekValue";
-import { CronDayOfWeekValueNumber } from "../types/CronDayOfWeekValueNumber";
-import { CronDayOfWeekValueString } from "../types/CronDayOfWeekValueString";
-import { StringValueParser } from "../types/StringValueParser";
+import type { CronDayOfWeekValue } from "../types/CronDayOfWeekValue";
+import type { CronDayOfWeekValueNumber } from "../types/CronDayOfWeekValueNumber";
+import type { CronDayOfWeekValueString } from "../types/CronDayOfWeekValueString";
+import type { StringValueParser } from "../types/StringValueParser";
 import { isStringDayOfWeekValue } from "../validations/isStringDayOfWeekValue";
 
 /**

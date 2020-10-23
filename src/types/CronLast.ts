@@ -1,4 +1,4 @@
-import { CRON_LAST } from "../constants";
+import type { CRON_LAST } from "../constants";
 
 /**
  * Cron every (L).

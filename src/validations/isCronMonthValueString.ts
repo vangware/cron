@@ -1,5 +1,5 @@
 import { isString, stringTest } from "@vangware/utils";
-import { CronMonthValueString } from "../types/CronMonthValueString";
+import type { CronMonthValueString } from "../types/CronMonthValueString";
 
 /**
  * Check if given is `CronMonthValueString`.

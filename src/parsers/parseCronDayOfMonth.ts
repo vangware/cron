@@ -1,7 +1,7 @@
-import { CronDayOfMonth } from "../types/CronDayOfMonth";
-import { CronLast } from "../types/CronLast";
-import { CronNearestDayOfMonth } from "../types/CronNearestDayOfMonth";
-import { CronStartOrBlank } from "../types/CronStartOrBlank";
+import type { CronDayOfMonth } from "../types/CronDayOfMonth";
+import type { CronLast } from "../types/CronLast";
+import type { CronNearestDayOfMonth } from "../types/CronNearestDayOfMonth";
+import type { CronStartOrBlank } from "../types/CronStartOrBlank";
 import { parseCronDayOfMonthValue } from "./parseCronDayOfMonthValue";
 import { parseCronLast } from "./parseCronLast";
 import { parseCronNearestDayOfMonth } from "./parseCronNearestDayOfMonth";

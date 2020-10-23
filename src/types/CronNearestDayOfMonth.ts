@@ -1,4 +1,4 @@
-import { CronDayOfMonthValue } from "./CronDayOfMonthValue";
+import type { CronDayOfMonthValue } from "./CronDayOfMonthValue";
 
 /**
  * Nearest day of month ({nearest}W).

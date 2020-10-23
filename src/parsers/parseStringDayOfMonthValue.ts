@@ -1,6 +1,6 @@
 import { stringParseDecimal } from "@vangware/utils";
-import { CronDayOfMonthValue } from "../types/CronDayOfMonthValue";
-import { StringValueParser } from "../types/StringValueParser";
+import type { CronDayOfMonthValue } from "../types/CronDayOfMonthValue";
+import type { StringValueParser } from "../types/StringValueParser";
 import { isStringDayOfMonthValue } from "../validations/isStringDayOfMonthValue";
 
 /**

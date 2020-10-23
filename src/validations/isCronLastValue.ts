@@ -1,5 +1,5 @@
-import { isNumber } from "@vangware/utils";
-import { CronLastValue } from "../types/CronLastValue";
+import { isNumber, isObject } from "@vangware/utils";
+import type { CronLastValue } from "../types/CronLastValue";
 import { isCronDayOfWeekValueNumber } from "./isCronDayOfWeekValueNumber";
 
 /**
@@ -7,5 +7,6 @@ import { isCronDayOfWeekValueNumber } from "./isCronDayOfWeekValueNumber";
  * @param value Value to check.
  */
 export const isCronLastValue = (value: unknown): value is CronLastValue =>
-	isNumber((value as CronLastValue)?.last) &&
-	isCronDayOfWeekValueNumber((value as CronLastValue)?.last);
+	isObject(value) &&
+	isNumber((value as CronLastValue).last) &&
+	isCronDayOfWeekValueNumber((value as CronLastValue).last);

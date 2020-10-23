@@ -1,5 +1,5 @@
 import { arrayJoin, isUndefined } from "@vangware/utils";
-import { CronQuartz } from "../types/CronQuartz";
+import type { CronQuartz } from "../types/CronQuartz";
 import { parseCronDayOfMonth } from "./parseCronDayOfMonth";
 import { parseCronDayOfWeek } from "./parseCronDayOfWeek";
 import { parseCronHours } from "./parseCronHours";

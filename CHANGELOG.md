@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/).
 This project uses [Gitmoji](https://gitmoji.carloscuesta.me/)
 
+## 4.0.7
+
+- :arrow_up: dependency upgrade.
+- :building_construction: improve some type checks.
+- :label: update typed imports/exports to be `import type { ...`.
+- :white_check_mark: add missing tests (100% coverage ;D).
+
 ## 4.0.6
 
 - :arrow_up: dependency upgrade.

@@ -1,5 +1,5 @@
 import { stringParseDecimal } from "@vangware/utils";
-import { CronLastValue } from "../types/CronLastValue";
+import type { CronLastValue } from "../types/CronLastValue";
 import { isCronDayOfWeekValueNumber } from "../validations/isCronDayOfWeekValueNumber";
 import { isStringLastValue } from "../validations/isStringLastValue";
 

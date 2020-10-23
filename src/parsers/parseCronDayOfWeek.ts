@@ -1,8 +1,8 @@
-import { CronDayOfWeek } from "../types/CronDayOfWeek";
-import { CronLast } from "../types/CronLast";
-import { CronLastValue } from "../types/CronLastValue";
-import { CronSpecificDayOfWeek } from "../types/CronSpecificDayOfWeek";
-import { CronStartOrBlank } from "../types/CronStartOrBlank";
+import type { CronDayOfWeek } from "../types/CronDayOfWeek";
+import type { CronLast } from "../types/CronLast";
+import type { CronLastValue } from "../types/CronLastValue";
+import type { CronSpecificDayOfWeek } from "../types/CronSpecificDayOfWeek";
+import type { CronStartOrBlank } from "../types/CronStartOrBlank";
 import { parseCronDayOfWeekValue } from "./parseCronDayOfWeekValue";
 import { parseCronLast } from "./parseCronLast";
 import { parseCronLastValue } from "./parseCronLastValue";
