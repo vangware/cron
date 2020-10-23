@@ -1,0 +1,27 @@
+name: Test and coverage
+on: [push]
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - name: Use Node 15
+      uses: actions/setup-node@v1
+      with:
+        node-version: 15.x
+
+    - name: Add pnpm
+      uses: pnpm/action-setup@v1.2.1
+      with:
+        version: 5.10.1
+        run_install: true
+
+    - name: pnpm install and test
+      run: |
+        pnpm install
+        pnpm test
+        pnpm coverage
+
