@@ -19,9 +19,11 @@ jobs:
         version: 5.10.1
         run_install: true
 
-    - name: pnpm install and test
-      run: |
-        pnpm install
-        pnpm test
-        pnpm coverage
+    - name: Run tests
+      run: pnpm test
+
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
 
