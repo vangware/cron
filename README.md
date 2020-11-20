@@ -7,7 +7,7 @@
 ![Open Issues](https://img.shields.io/github/issues/vangware/cron.svg?style=for-the-badge&labelColor=666&color=2b7&link=https://github.com/vangware/cron/issues)
 ![Size](https://img.shields.io/bundlephobia/minzip/@vangware/cron.svg?style=for-the-badge&labelColor=666&color=2b7&label=size&link=https://bundlephobia.com/result?p=@vangware/cron)
 
-Cron Quartz and Cron UNIX expression parser.
+⏲️ Cron Quartz and Cron UNIX expression parser.
 
 ## Usage
 
