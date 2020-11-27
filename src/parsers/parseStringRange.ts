@@ -16,7 +16,7 @@ export const parseStringRange = <Value>(parser: StringValueParser<Value>) =>
 	 */
 	(source: string): CronRange<Value> | undefined => {
 		const valid = isStringRange(source);
-		const [fromString, toString] = valid
+		const [fromString = "", toString = ""] = valid
 			? source.split(CRON_RANGE_SEPARATOR)
 			: [];
 		const from = parser(fromString);
