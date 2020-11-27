@@ -1,7 +1,7 @@
 {
   "name": "@vangware/cron",
   "description": "⏲️ Cron Quartz and Cron UNIX expression parser",
-  "version": "4.0.11",
+  "version": "4.0.12",
   "author": {
     "name": "Vangware",
     "url": "https://vangware.com"
@@ -10,7 +10,7 @@
     "url": "https://github.com/vangware/cron/issues"
   },
   "dependencies": {
-    "@vangware/utils": "^6.0.2"
+    "@vangware/utils": "^6.1.0"
   },
   "devDependencies": {
     "@types/eslint": "^7.2.5",
@@ -19,7 +19,7 @@
     "@typescript-eslint/eslint-plugin": "^4.8.2",
     "@typescript-eslint/parser": "^4.8.2",
     "@vangware/base": "^4.1.6",
-    "@vangware/test": "^5.0.2",
+    "@vangware/test": "^5.0.3",
     "c8": "^7.3.5",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.15.0",
