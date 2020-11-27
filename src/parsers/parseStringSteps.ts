@@ -29,7 +29,7 @@ export const parseStringSteps = ([minimum, maximum]: LimitTuple) =>
 		 */
 		(source: string): CronSteps<Value> | undefined => {
 			const valid = isStringSteps(source);
-			const [startString, everyString] = valid
+			const [startString = "", everyString = ""] = valid
 				? source.split(CRON_STEPS_SEPARATOR)
 				: [];
 			const everyNumber = stringParseDecimal(everyString);

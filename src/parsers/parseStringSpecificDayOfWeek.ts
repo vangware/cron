@@ -14,7 +14,7 @@ export const parseStringSpecificDayOfWeek = (
 	source: string
 ): CronSpecificDayOfWeek | undefined => {
 	const valid = isStringSpecificDayOfWeek(source);
-	const [dayString, weekString] = valid
+	const [dayString = "", weekString = ""] = valid
 		? source.split(CRON_SPECIFIC_SEPARATOR)
 		: [];
 
