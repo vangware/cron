@@ -1,7 +1,7 @@
 {
   "name": "@vangware/cron",
   "description": "⏲️ Cron Quartz and Cron UNIX expression parser",
-  "version": "4.0.13",
+  "version": "4.0.14",
   "author": {
     "name": "Vangware",
     "url": "https://vangware.com"
@@ -10,31 +10,31 @@
     "url": "https://github.com/vangware/cron/issues"
   },
   "dependencies": {
-    "@vangware/utils": "^6.1.0"
+    "@vangware/utils": "^6.1.1"
   },
   "devDependencies": {
-    "@types/eslint": "^7.2.5",
+    "@types/eslint": "^7.2.6",
     "@types/node": "^14.14.10",
     "@types/prettier": "^2.1.5",
-    "@typescript-eslint/eslint-plugin": "^4.8.2",
-    "@typescript-eslint/parser": "^4.8.2",
-    "@vangware/base": "^4.1.6",
-    "@vangware/test": "^5.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.9.1",
+    "@typescript-eslint/parser": "^4.9.1",
+    "@vangware/base": "^4.1.8",
+    "@vangware/test": "^5.0.4",
     "c8": "^7.3.5",
-    "eslint": "^7.14.0",
-    "eslint-config-prettier": "^6.15.0",
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
     "eslint-import-resolver-node": "^0.3.4",
     "eslint-plugin-ban": "^1.5.1",
     "eslint-plugin-functional": "^3.1.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-no-null": "^1.0.2",
     "eslint-plugin-prefer-arrow": "^1.2.2",
-    "eslint-plugin-prettier": "^3.1.4",
-    "husky": "^4.3.0",
+    "eslint-plugin-prettier": "^3.2.0",
+    "husky": "^4.3.5",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.2.0",
+    "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
-    "ts-node": "^9.0.0",
+    "ts-node": "^9.1.1",
     "typedoc": "^0.19.2",
     "typescript": "^4.1.2"
   },
@@ -73,8 +73,9 @@
     "compile": "run-s compile:*",
     "compile:cjs": "tsc --project tsconfig.cjs.json",
     "compile:esm": "tsc --project tsconfig.esm.json",
-    "docs": "typedoc --gitRevision main --mode file --out ./docs ./src/index.ts",
+    "docs": "typedoc --theme minimal --gitRevision main --mode file --out ./docs ./src/index.ts",
     "lint": "eslint src/**/*.ts",
+    "postpublish": "run-s clean",
     "pre-compile": "run-s pre-compile:*",
     "pre-compile:cjs": "tsc --noemit --project tsconfig.cjs.json",
     "pre-compile:esm": "tsc --noemit --project tsconfig.esm.json",
