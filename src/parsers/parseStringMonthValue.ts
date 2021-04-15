@@ -19,7 +19,7 @@ export const parseStringMonthValue: StringValueParser<CronMonthValue> = source =
 
 	return valid
 		? isNaN(cronMonthValueNumber)
-			? (source.toUpperCase() as CronMonthValueString)
+			? (source.toLocaleUpperCase() as CronMonthValueString)
 			: cronMonthValueNumber
 		: undefined;
 };

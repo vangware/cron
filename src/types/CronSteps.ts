@@ -6,5 +6,5 @@ import type { CronRange } from "./CronRange";
  */
 export type CronSteps<Value> = {
 	readonly every: number;
-	readonly start: Value | CronEvery | CronRange<Value>;
+	readonly start: CronEvery | CronRange<Value> | Value;
 };

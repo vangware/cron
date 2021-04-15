@@ -1,4 +1,4 @@
-import { stringParseDecimal } from "@vangware/utils";
+import { isUndefined, stringParseDecimal } from "@vangware/utils";
 import type { CronLastValue } from "../types/CronLastValue";
 import { isCronDayOfWeekValueNumber } from "../validations/isCronDayOfWeekValueNumber";
 import { isStringLastValue } from "../validations/isStringLastValue";
@@ -14,7 +14,7 @@ export const parseStringLastValue = (
 	const valid = isStringLastValue(source);
 	const last = valid ? stringParseDecimal(source) : undefined;
 
-	return valid && last && isCronDayOfWeekValueNumber(last)
+	return valid && !isUndefined(last) && isCronDayOfWeekValueNumber(last)
 		? { last }
 		: undefined;
 };
