@@ -28,8 +28,8 @@ export const parseCronPart = (limit: LimitTuple) =>
 			source:
 				| CronEvery
 				| CronList<Value>
-				| CronSteps<Value>
 				| CronRange<Value>
+				| CronSteps<Value>
 				| Value
 		) =>
 			parseCronEvery(source as CronEvery) ??

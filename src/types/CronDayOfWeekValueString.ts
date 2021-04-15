@@ -2,10 +2,10 @@
  * Cron day of week string value (SUN-SAT).
  */
 export type CronDayOfWeekValueString =
-	| "SUN"
-	| "MON"
-	| "TUE"
-	| "WED"
-	| "THU"
 	| "FRI"
-	| "SAT";
+	| "MON"
+	| "SAT"
+	| "SUN"
+	| "THU"
+	| "TUE"
+	| "WED";

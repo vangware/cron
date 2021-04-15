@@ -6,5 +6,5 @@ import type { CronPartExtended } from "./CronPartExtended";
  * Cron day of month.
  */
 export type CronDayOfMonth =
-	| CronPartExtended<CronDayOfMonthValue>
-	| CronNearestDayOfMonth;
+	| CronNearestDayOfMonth
+	| CronPartExtended<CronDayOfMonthValue>;

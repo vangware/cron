@@ -7,6 +7,6 @@ import type { CronSpecificDayOfWeek } from "./CronSpecificDayOfWeek";
  * Cron day of week.
  */
 export type CronDayOfWeek =
-	| CronPartExtended<CronDayOfWeekValue>
 	| CronLastValue
+	| CronPartExtended<CronDayOfWeekValue>
 	| CronSpecificDayOfWeek;

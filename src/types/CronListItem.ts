@@ -4,4 +4,4 @@ import type { CronSteps } from "./CronSteps";
 /**
  * Cron list item.
  */
-export type CronListItem<Value> = Value | CronRange<Value> | CronSteps<Value>;
+export type CronListItem<Value> = CronRange<Value> | CronSteps<Value> | Value;

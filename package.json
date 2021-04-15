@@ -1,7 +1,7 @@
 {
   "name": "@vangware/cron",
   "description": "⏲️ Cron Quartz and Cron UNIX expression parser",
-  "version": "4.0.15",
+  "version": "4.1.0",
   "author": {
     "name": "Vangware",
     "url": "https://vangware.com"
@@ -10,33 +10,33 @@
     "url": "https://github.com/vangware/cron/issues"
   },
   "dependencies": {
-    "@vangware/utils": "^6.1.2"
+    "@vangware/utils": "^6.2.0"
   },
   "devDependencies": {
-    "@types/eslint": "^7.2.6",
-    "@types/node": "^14.14.13",
-    "@types/prettier": "^2.1.5",
-    "@typescript-eslint/eslint-plugin": "^4.9.1",
-    "@typescript-eslint/parser": "^4.9.1",
-    "@vangware/base": "^4.1.10",
-    "@vangware/test": "^5.0.5",
-    "c8": "^7.3.5",
-    "eslint": "^7.15.0",
-    "eslint-config-prettier": "^7.0.0",
+    "@types/eslint": "^7.2.10",
+    "@types/node": "^14.14.40",
+    "@types/prettier": "^2.2.3",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "@vangware/base": "^4.5.1",
+    "@vangware/test": "^5.1.0",
+    "c8": "^7.7.1",
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "8.2.0",
     "eslint-import-resolver-node": "^0.3.4",
-    "eslint-plugin-ban": "^1.5.1",
-    "eslint-plugin-functional": "^3.1.0",
+    "eslint-plugin-ban": "^1.5.2",
+    "eslint-plugin-functional": "^3.2.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-no-null": "^1.0.2",
-    "eslint-plugin-prefer-arrow": "^1.2.2",
-    "eslint-plugin-prettier": "^3.2.0",
-    "husky": "^4.3.5",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^4.3.8",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
     "ts-node": "^9.1.1",
-    "typedoc": "^0.19.2",
-    "typescript": "^4.1.3"
+    "typedoc": "0.20.35",
+    "typescript": "^4.2.4"
   },
   "exports": {
     ".": {
@@ -73,8 +73,9 @@
     "compile": "run-s compile:*",
     "compile:cjs": "tsc --project tsconfig.cjs.json",
     "compile:esm": "tsc --project tsconfig.esm.json",
-    "docs": "typedoc --theme minimal --gitRevision main --mode file --out ./docs ./src/index.ts",
-    "lint": "eslint src/**/*.ts",
+    "docs": "typedoc --disableOutputCheck --gitRevision main --theme minimal ./src/index.ts",
+    "lint": "eslint {src,tests}/**/*.ts",
+    "lint:fix": "eslint {src,tests}/**/*.ts --fix",
     "postpublish": "run-s clean",
     "pre-compile": "run-s pre-compile:*",
     "pre-compile:cjs": "tsc --noemit --project tsconfig.cjs.json",
