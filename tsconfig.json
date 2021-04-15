@@ -1,28 +1,22 @@
 {
-  "compilerOptions": {
-    "declaration": true,
-    "forceConsistentCasingInFileNames": true,
-    "lib": [
-      "ES6",
-      "ESNext.Array"
-    ],
-    "listEmittedFiles": true,
-    "module": "CommonJS",
-    "moduleResolution": "node",
-    "newLine": "LF",
-    "noEmitOnError": true,
-    "noUnusedLocals": true,
-    "noUncheckedIndexedAccess": true,
-    "noUnusedParameters": true,
-    "outDir": "./cjs",
-    "preserveConstEnums": true,
-    "resolveJsonModule": true,
-    "strict": true,
-    "target": "ES6"
-  },
-  "include": [
-    "src/*.ts",
-    "src/**/*.ts",
-    "tests/**/*.ts"
-  ]
+	"compilerOptions": {
+		"alwaysStrict": true,
+		"declaration": true,
+		"extendedDiagnostics": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"importsNotUsedAsValues": "error",
+		"module": "CommonJS",
+		"moduleResolution": "Node",
+		"newLine": "LF",
+		"noEmitOnError": true,
+		"noUncheckedIndexedAccess": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"outDir": "./cjs",
+		"preserveConstEnums": true,
+		"strict": true,
+		"target": "ES2019"
+	},
+	"include": ["src/*.ts", "src/**/*.ts", "tests/**/*.ts"]
 }

@@ -1,89 +1,89 @@
 {
-  "name": "@vangware/cron",
-  "description": "⏲️ Cron Quartz and Cron UNIX expression parser",
-  "version": "4.1.0",
-  "author": {
-    "name": "Vangware",
-    "url": "https://vangware.com"
-  },
-  "bugs": {
-    "url": "https://github.com/vangware/cron/issues"
-  },
-  "dependencies": {
-    "@vangware/utils": "^6.2.0"
-  },
-  "devDependencies": {
-    "@types/eslint": "^7.2.10",
-    "@types/node": "^14.14.40",
-    "@types/prettier": "^2.2.3",
-    "@typescript-eslint/eslint-plugin": "^4.22.0",
-    "@typescript-eslint/parser": "^4.22.0",
-    "@vangware/base": "^4.5.1",
-    "@vangware/test": "^5.1.0",
-    "c8": "^7.7.1",
-    "eslint": "^7.24.0",
-    "eslint-config-prettier": "8.2.0",
-    "eslint-import-resolver-node": "^0.3.4",
-    "eslint-plugin-ban": "^1.5.2",
-    "eslint-plugin-functional": "^3.2.1",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-no-null": "^1.0.2",
-    "eslint-plugin-prefer-arrow": "^1.2.3",
-    "eslint-plugin-prettier": "^3.4.0",
-    "husky": "^4.3.8",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.2.1",
-    "rimraf": "^3.0.2",
-    "ts-node": "^9.1.1",
-    "typedoc": "0.20.35",
-    "typescript": "^4.2.4"
-  },
-  "exports": {
-    ".": {
-      "import": "./esm/index.js",
-      "require": "./cjs/index.js"
-    }
-  },
-  "files": [
-    "cjs",
-    "esm"
-  ],
-  "homepage": "https://cron.vangware.com",
-  "husky": {
-    "hooks": {
-      "pre-commit": "run-s clean pre-compile lint test docs"
-    }
-  },
-  "keywords": [
-    "cron",
-    "deno",
-    "parse",
-    "parser",
-    "typescript"
-  ],
-  "license": "MIT",
-  "main": "./cjs/index.js",
-  "module": "./esm/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/vangware/cron.git"
-  },
-  "scripts": {
-    "clean": "rimraf ./{cjs,esm}",
-    "compile": "run-s compile:*",
-    "compile:cjs": "tsc --project tsconfig.cjs.json",
-    "compile:esm": "tsc --project tsconfig.esm.json",
-    "docs": "typedoc --disableOutputCheck --gitRevision main --theme minimal ./src/index.ts",
-    "lint": "eslint {src,tests}/**/*.ts",
-    "lint:fix": "eslint {src,tests}/**/*.ts --fix",
-    "postpublish": "run-s clean",
-    "pre-compile": "run-s pre-compile:*",
-    "pre-compile:cjs": "tsc --noemit --project tsconfig.cjs.json",
-    "pre-compile:esm": "tsc --noemit --project tsconfig.esm.json",
-    "prepublishOnly": "run-s compile prettify",
-    "prettify": "prettier --write './{cjs,esm}/**/*.{js,ts}'",
-    "test": "c8 --reporter=html --reporter=text-summary --reporter=lcov test"
-  },
-  "source": "./src/index.ts",
-  "types": "./esm/index.d.ts"
+	"name": "@vangware/cron",
+	"description": "⏲️ Cron Quartz and Cron UNIX expression parser",
+	"version": "4.1.1",
+	"author": {
+		"name": "Vangware",
+		"url": "https://vangware.com"
+	},
+	"bugs": {
+		"url": "https://github.com/vangware/cron/issues"
+	},
+	"dependencies": {
+		"@vangware/utils": "^6.2.1"
+	},
+	"devDependencies": {
+		"@types/eslint": "^7.2.10",
+		"@types/node": "^14.14.41",
+		"@types/prettier": "^2.2.3",
+		"@typescript-eslint/eslint-plugin": "^4.22.0",
+		"@typescript-eslint/parser": "^4.22.0",
+		"@vangware/base": "^4.5.2",
+		"@vangware/test": "^5.1.1",
+		"c8": "^7.7.1",
+		"eslint": "^7.24.0",
+		"eslint-config-prettier": "8.2.0",
+		"eslint-import-resolver-node": "^0.3.4",
+		"eslint-plugin-ban": "^1.5.2",
+		"eslint-plugin-functional": "^3.2.1",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-no-null": "^1.0.2",
+		"eslint-plugin-prefer-arrow": "^1.2.3",
+		"eslint-plugin-prettier": "^3.4.0",
+		"husky": "^4.3.8",
+		"npm-run-all": "^4.1.5",
+		"prettier": "^2.2.1",
+		"rimraf": "^3.0.2",
+		"ts-node": "^9.1.1",
+		"typedoc": "0.20.35",
+		"typescript": "^4.2.4"
+	},
+	"exports": {
+		".": {
+			"import": "./esm/index.js",
+			"require": "./cjs/index.js"
+		}
+	},
+	"files": [
+		"cjs",
+		"esm"
+	],
+	"homepage": "https://cron.vangware.com",
+	"husky": {
+		"hooks": {
+			"pre-commit": "run-s clean pre-compile lint test docs"
+		}
+	},
+	"keywords": [
+		"cron",
+		"deno",
+		"parse",
+		"parser",
+		"typescript"
+	],
+	"license": "MIT",
+	"main": "./cjs/index.js",
+	"module": "./esm/index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/vangware/cron.git"
+	},
+	"scripts": {
+		"clean": "rimraf ./{cjs,esm}",
+		"compile": "run-s compile:*",
+		"compile:cjs": "tsc --project tsconfig.cjs.json",
+		"compile:esm": "tsc --project tsconfig.esm.json",
+		"docs": "typedoc --disableOutputCheck --gitRevision main --theme minimal ./src/index.ts",
+		"lint": "eslint {src,tests}/**/*.ts",
+		"lint:fix": "eslint {src,tests}/**/*.ts --fix",
+		"postpublish": "run-s clean",
+		"pre-compile": "run-s pre-compile:*",
+		"pre-compile:cjs": "tsc --noemit --project tsconfig.cjs.json",
+		"pre-compile:esm": "tsc --noemit --project tsconfig.esm.json",
+		"prepublishOnly": "run-s compile prettify",
+		"prettify": "prettier --write --loglevel warn './{cjs,esm}/**/*.{js,ts}'",
+		"test": "c8 --reporter=html --reporter=text-summary --reporter=lcov test"
+	},
+	"source": "./src/index.ts",
+	"types": "./esm/index.d.ts"
 }
