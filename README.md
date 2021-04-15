@@ -35,7 +35,10 @@ parseCronQuartz(cron); // "1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10"
 ### 🦕 Deno
 
 ```typescript
-import { parseStringQuartz, parseCronQuartz } from "https://cdn.skypack.dev/@vangware/cron?dts";
+import {
+	parseStringQuartz,
+	parseCronQuartz
+} from "https://cdn.skypack.dev/@vangware/cron?dts";
 
 const cron = parseStringQuartz("1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10");
 /*
