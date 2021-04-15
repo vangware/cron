@@ -19,7 +19,7 @@ export const parseStringDayOfWeekValue: StringValueParser<CronDayOfWeekValue> = 
 
 	return valid
 		? isNaN(cronDayOfWeekValueNumber)
-			? (source.toUpperCase() as CronDayOfWeekValueString)
+			? (source.toLocaleUpperCase() as CronDayOfWeekValueString)
 			: cronDayOfWeekValueNumber
 		: undefined;
 };

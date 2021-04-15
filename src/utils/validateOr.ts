@@ -4,7 +4,7 @@
  * @returns Curried function with `validations` in context.
  */
 export const validateOr = (
-	validations: readonly ((value: unknown) => boolean)[]
+	validations: ReadonlyArray<(value: unknown) => boolean>
 ) =>
 	/**
 	 * @param value Value to check.

@@ -20,6 +20,6 @@ export const parseCronDayOfMonth = (source: CronDayOfMonth) =>
 	parseCronPart([0, 31])(parseCronDayOfMonthValue)(
 		source as Exclude<
 			CronDayOfMonth,
-			CronLast | CronStartOrBlank | CronNearestDayOfMonth
+			CronLast | CronNearestDayOfMonth | CronStartOrBlank
 		>
 	);
