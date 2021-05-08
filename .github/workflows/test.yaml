@@ -8,15 +8,15 @@ jobs:
             - name: Use Checkout 2
               uses: actions/checkout@v2
 
-            - name: Use Node.js 15
+            - name: Use Node.js 16
               uses: actions/setup-node@v1
               with:
-                  node-version: 15.x
+                  node-version: 16.x
 
-            - name: Use pnpm 5
-              uses: pnpm/action-setup@v1.2.1
+            - name: Use pnpm 6
+              uses: pnpm/action-setup@v2
               with:
-                  version: 5.10.1
+                  version: 6.x
                   run_install: true
 
             - name: Run tests
