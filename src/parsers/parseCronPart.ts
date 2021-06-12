@@ -14,26 +14,27 @@ import { parseCronSteps } from "./parseCronSteps";
  * @param limit `LimitTuple` to be used when parsing `CronSteps`.
  * @returns Curried function with `limit` on context.
  */
-export const parseCronPart = (limit: LimitTuple) =>
+export const parseCronPart =
+	(limit: LimitTuple) =>
 	/**
 	 * @param parser `CronValueParser` for `CronPart`.
 	 * @returns Curried function with `limit` and `parser` in context.
 	 */
 	<Value>(parser: CronValueParser<Value>) =>
-		/**
-		 * @param source `CronPart` to be parsed.
-		 * @returns A string or `undefined` if invalid.
-		 */
-		(
-			source:
-				| CronEvery
-				| CronList<Value>
-				| CronRange<Value>
-				| CronSteps<Value>
-				| Value
-		) =>
-			parseCronEvery(source as CronEvery) ??
-			parseCronList(limit)(parser)(source as CronList<Value>) ??
-			parseCronSteps(limit)(parser)(source as CronSteps<Value>) ??
-			parseCronRange(parser)(source as CronRange<Value>) ??
-			parser(source as Value);
+	/**
+	 * @param source `CronPart` to be parsed.
+	 * @returns A string or `undefined` if invalid.
+	 */
+	(
+		source:
+			| CronEvery
+			| CronList<Value>
+			| CronRange<Value>
+			| CronSteps<Value>
+			| Value
+	) =>
+		parseCronEvery(source as CronEvery) ??
+		parseCronList(limit)(parser)(source as CronList<Value>) ??
+		parseCronSteps(limit)(parser)(source as CronSteps<Value>) ??
+		parseCronRange(parser)(source as CronRange<Value>) ??
+		parser(source as Value);

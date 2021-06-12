@@ -7,6 +7,5 @@ import { isCronSecondsValue } from "../validations/isCronSecondsValue";
  * @param source `CronSecondsValue` to be parsed.
  * @returns A string or `undefined` if invalid.
  */
-// eslint-disable-next-line max-len
-export const parseCronSecondsValue: CronValueParser<CronSecondsValue> = source =>
-	isCronSecondsValue(source) ? `${source}` : undefined;
+export const parseCronSecondsValue: CronValueParser<CronSecondsValue> =
+	source => (isCronSecondsValue(source) ? `${source}` : undefined);

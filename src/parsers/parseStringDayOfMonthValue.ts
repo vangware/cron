@@ -9,7 +9,8 @@ import { isStringDayOfMonthValue } from "../validations/isStringDayOfMonthValue"
  * @returns A `CronDayOfMonthValue` or `undefined` if invalid.
  */
 // eslint-disable-next-line max-len
-export const parseStringDayOfMonthValue: StringValueParser<CronDayOfMonthValue> = source =>
-	isStringDayOfMonthValue(source)
-		? (stringParseDecimal(source) as CronDayOfMonthValue)
-		: undefined;
+export const parseStringDayOfMonthValue: StringValueParser<CronDayOfMonthValue> =
+	source =>
+		isStringDayOfMonthValue(source)
+			? (stringParseDecimal(source) as CronDayOfMonthValue)
+			: undefined;

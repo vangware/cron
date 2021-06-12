@@ -8,8 +8,8 @@ import { isStringHoursValue } from "../validations/isStringHoursValue";
  * @param source string to be parsed.
  * @returns A `CronHoursValue` or `undefined` if invalid.
  */
-// eslint-disable-next-line max-len
-export const parseStringHoursValue: StringValueParser<CronHoursValue> = source =>
-	isStringHoursValue(source)
-		? (stringParseDecimal(source) as CronHoursValue)
-		: undefined;
+export const parseStringHoursValue: StringValueParser<CronHoursValue> =
+	source =>
+		isStringHoursValue(source)
+			? (stringParseDecimal(source) as CronHoursValue)
+			: undefined;

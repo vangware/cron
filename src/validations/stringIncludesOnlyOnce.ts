@@ -5,7 +5,8 @@ import { isString } from "@vangware/utils";
  * @param search Value to search.
  * @returns Curried function with `search` in context.
  */
-export const stringIncludesOnlyOnce = (search: string) =>
+export const stringIncludesOnlyOnce =
+	(search: string) =>
 	/**
 	 * @param value Value to search on.
 	 */
