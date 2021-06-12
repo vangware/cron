@@ -10,16 +10,16 @@ import { isStringMonthValue } from "../validations/isStringMonthValue";
  * @param source string to be parsed.
  * @returns A `CronMonthValue` or `undefined` if invalid.
  */
-// eslint-disable-next-line max-len
-export const parseStringMonthValue: StringValueParser<CronMonthValue> = source => {
-	const valid = isStringMonthValue(source);
-	const cronMonthValueNumber = (valid
-		? stringParseDecimal(source)
-		: NaN) as CronMonthValueNumber;
+export const parseStringMonthValue: StringValueParser<CronMonthValue> =
+	source => {
+		const valid = isStringMonthValue(source);
+		const cronMonthValueNumber = (
+			valid ? stringParseDecimal(source) : NaN
+		) as CronMonthValueNumber;
 
-	return valid
-		? isNaN(cronMonthValueNumber)
-			? (source.toLocaleUpperCase() as CronMonthValueString)
-			: cronMonthValueNumber
-		: undefined;
-};
+		return valid
+			? isNaN(cronMonthValueNumber)
+				? (source.toLocaleUpperCase() as CronMonthValueString)
+				: cronMonthValueNumber
+			: undefined;
+	};

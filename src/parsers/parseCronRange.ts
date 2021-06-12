@@ -8,7 +8,8 @@ import { isCronRange } from "../validations/isCronRange";
  * @param parser `CronValueParser` for `CronRange`.
  * @returns Curried function with `parser` in context.
  */
-export const parseCronRange = <Value>(parser: CronValueParser<Value>) =>
+export const parseCronRange =
+	<Value>(parser: CronValueParser<Value>) =>
 	/**
 	 * @param source `CronRange` to be parsed.
 	 * @returns A string or `undefined` if invalid.

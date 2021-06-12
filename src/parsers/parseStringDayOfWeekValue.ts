@@ -10,16 +10,16 @@ import { isStringDayOfWeekValue } from "../validations/isStringDayOfWeekValue";
  * @param source string to be parsed.
  * @returns A `CronDayOfWeekValue` or `undefined` if invalid.
  */
-// eslint-disable-next-line max-len
-export const parseStringDayOfWeekValue: StringValueParser<CronDayOfWeekValue> = source => {
-	const valid = isStringDayOfWeekValue(source);
-	const cronDayOfWeekValueNumber = (valid
-		? stringParseDecimal(source)
-		: NaN) as CronDayOfWeekValueNumber;
+export const parseStringDayOfWeekValue: StringValueParser<CronDayOfWeekValue> =
+	source => {
+		const valid = isStringDayOfWeekValue(source);
+		const cronDayOfWeekValueNumber = (
+			valid ? stringParseDecimal(source) : NaN
+		) as CronDayOfWeekValueNumber;
 
-	return valid
-		? isNaN(cronDayOfWeekValueNumber)
-			? (source.toLocaleUpperCase() as CronDayOfWeekValueString)
-			: cronDayOfWeekValueNumber
-		: undefined;
-};
+		return valid
+			? isNaN(cronDayOfWeekValueNumber)
+				? (source.toLocaleUpperCase() as CronDayOfWeekValueString)
+				: cronDayOfWeekValueNumber
+			: undefined;
+	};

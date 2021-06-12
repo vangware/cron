@@ -7,6 +7,5 @@ import { isCronDayOfMonthValue } from "../validations/isCronDayOfMonthValue";
  * @param source `CronDayOfMonthValue` to be parsed.
  * @returns A string or `undefined` if invalid.
  */
-// eslint-disable-next-line max-len
-export const parseCronDayOfMonthValue: CronValueParser<CronDayOfMonthValue> = source =>
-	isCronDayOfMonthValue(source) ? `${source}` : undefined;
+export const parseCronDayOfMonthValue: CronValueParser<CronDayOfMonthValue> =
+	source => (isCronDayOfMonthValue(source) ? `${source}` : undefined);

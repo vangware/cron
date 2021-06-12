@@ -77,7 +77,7 @@ export default suite([
 		given: "An object with undefined values",
 		must: "return 1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10",
 		received: parseCronQuartz({
-			dayOfMonth: (undefined as unknown) as CronDayOfMonth,
+			dayOfMonth: undefined as unknown as CronDayOfMonth,
 			dayOfWeek: "*",
 			hours: "*",
 			minutes: "*",

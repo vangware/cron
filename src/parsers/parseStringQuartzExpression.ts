@@ -16,13 +16,13 @@ export const parseStringQuartzExpression = (source: string) => {
 	const missingSeconds = missingSecondsOrYear && isStringYearValue(parsed[5]);
 
 	return valid
-		? (((missingSecondsAndYear
+		? ((missingSecondsAndYear
 				? ["*", ...parsed, "*"]
 				: missingSecondsOrYear
 				? missingSeconds
 					? ["*", ...parsed]
 					: [...parsed, "*"]
-				: parsed) as unknown) as readonly [
+				: parsed) as unknown as readonly [
 				seconds: string,
 				minutes: string,
 				hours: string,

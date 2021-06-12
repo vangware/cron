@@ -8,8 +8,8 @@ import { isStringSecondsValue } from "../validations/isStringSecondsValue";
  * @param source string to be parsed.
  * @returns A `CronSecondsValue` or `undefined` if invalid.
  */
-// eslint-disable-next-line max-len
-export const parseStringSecondsValue: StringValueParser<CronSecondsValue> = source =>
-	isStringSecondsValue(source)
-		? (stringParseDecimal(source) as CronSecondsValue)
-		: undefined;
+export const parseStringSecondsValue: StringValueParser<CronSecondsValue> =
+	source =>
+		isStringSecondsValue(source)
+			? (stringParseDecimal(source) as CronSecondsValue)
+			: undefined;
