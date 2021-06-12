@@ -14,25 +14,26 @@ import { parseCronSteps } from "./parseCronSteps";
  * @param limit `LimitTuple` to be used when parsing `CronSteps`.
  * @returns Curried function with `limit` on context.
  */
-export const parseCronList = (limit: LimitTuple) =>
+export const parseCronList =
+	(limit: LimitTuple) =>
 	/**
 	 * @param parser `CronValuerParser` to parse `CronLists`.
 	 * @returns Curried function with `limit` and `parser` on context.
 	 */
 	<Value>(parser: CronValueParser<Value>) =>
-		/**
-		 * @param source `CronList` to be parsed.
-		 * @returns A string or `undefined` if invalid.
-		 */
-		(source: CronList<Value>) => {
-			const list = arrayMap(
-				value =>
-					parseCronSteps(limit)(parser)(value as CronSteps<Value>) ??
-					parseCronRange(parser)(value as CronRange<Value>) ??
-					parser(value as Value)
-			)(isCronList<Value>(source) ? source : []);
+	/**
+	 * @param source `CronList` to be parsed.
+	 * @returns A string or `undefined` if invalid.
+	 */
+	(source: CronList<Value>) => {
+		const list = arrayMap(
+			value =>
+				parseCronSteps(limit)(parser)(value as CronSteps<Value>) ??
+				parseCronRange(parser)(value as CronRange<Value>) ??
+				parser(value as Value)
+		)(isCronList<Value>(source) ? source : []);
 
-			return list.length === 0 || list.some(isUndefined)
-				? undefined
-				: arrayJoin(CRON_LIST_SEPARATOR)(list);
-		};
+		return list.length === 0 || list.some(isUndefined)
+			? undefined
+			: arrayJoin(CRON_LIST_SEPARATOR)(list);
+	};

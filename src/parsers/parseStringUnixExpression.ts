@@ -9,7 +9,7 @@ export const parseStringUnixExpression = (source: string) => {
 	const parsed = splitExpression(source);
 
 	return parsed.length === 5
-		? ((parsed as unknown) as readonly [
+		? (parsed as unknown as readonly [
 				minutes: string,
 				hours: string,
 				dayOfMonth: string,
