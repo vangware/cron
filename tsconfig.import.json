@@ -1,8 +1,8 @@
 {
-	"extends": "./tsconfig.cjs.json",
+	"extends": "./tsconfig.require.json",
 	"compilerOptions": {
 		"module": "ESNext",
-		"outDir": "./esm"
+		"outDir": "./dist/import"
 	},
 	"exclude": ["tests/**/*"]
 }
