@@ -1,7 +1,7 @@
 {
 	"name": "@vangware/cron",
 	"description": "⏲️ Cron Quartz and Cron UNIX expression parser",
-	"version": "4.1.7",
+	"version": "4.1.8",
 	"author": {
 		"email": "hello@vangware.com",
 		"name": "Vangware",
@@ -9,7 +9,7 @@
 	},
 	"bugs": "https://github.com/vangware/cron/issues",
 	"dependencies": {
-		"@vangware/utils": "^7.0.3"
+		"@vangware/utils": "^7.0.4"
 	},
 	"devDependencies": {
 		"@arkweid/lefthook": "^0.7.6",
@@ -18,8 +18,8 @@
 		"@types/prettier": "^2.3.2",
 		"@typescript-eslint/eslint-plugin": "^4.29.2",
 		"@typescript-eslint/parser": "^4.29.2",
-		"@vangware/base": "^5.1.0",
-		"@vangware/test": "^7.1.3",
+		"@vangware/base": "^5.2.1",
+		"@vangware/test": "^7.1.4",
 		"c8": "^7.8.0",
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "8.3.0",
@@ -61,7 +61,7 @@
 		"compile": "run-s compile:*",
 		"compile:require": "tsc --project tsconfig.require.json",
 		"compile:import": "tsc --project tsconfig.import.json",
-		"document": "typedoc --disableOutputCheck --gitRevision main --theme minimal ./src/index.ts",
+		"document": "typedoc",
 		"lint": "eslint {src,tests}/**/*.ts",
 		"lint:fix": "eslint {src,tests}/**/*.ts --fix",
 		"postpublish": "run-s clean",
@@ -70,7 +70,7 @@
 		"pre-compile:import": "tsc --noemit --project tsconfig.import.json",
 		"prepublishOnly": "run-s compile prettify",
 		"prettify": "prettier --write --loglevel warn './dist/**/*.{js,ts}'",
-		"test": "c8 --reporter=html --reporter=text-summary --reporter=lcov test"
+		"test": "c8 test"
 	},
 	"source": "./src/index.ts",
 	"types": "./dist/import/index.d.ts"
