@@ -9,6 +9,6 @@ pre-push:
         lint:
             run: eslint {src,tests}/**/*.ts
         test:
-            run: c8 --reporter=html --reporter=text-summary --reporter=lcov test
+            run: c8 test
         document:
-            run: typedoc --disableOutputCheck --gitRevision main --theme minimal ./src/index.ts
+            run: typedoc

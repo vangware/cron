@@ -1,0 +1,9 @@
+{
+	"disableOutputCheck": true,
+	"entryPoints": ["./src/index.ts"],
+	"gitRevision": "main",
+	"hideGenerator": true,
+	"highlightTheme": "github-dark",
+	"logLevel": "Warn",
+	"theme": "./node_modules/@vangware/base/configurations/typedoc-theme"
+}
