@@ -149,8 +149,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # Build
-cjs
-esm
+dist/
 
 # pnpm
 pnpm-lock.yaml
