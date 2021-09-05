@@ -542,45 +542,45 @@
 			<a href="#📦-node" id="📦-node" style="color: inherit; text-decoration: none;">
 				<h3>📦 Node</h3>
 			</a>
-			<pre><code class="language-typescript"><span style="color: #F97583">import</span><span style="color: #E1E4E8"> { parseStringQuartz, parseCronQuartz } </span><span style="color: #F97583">from</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">&quot;@vangware/cron&quot;</span><span style="color: #E1E4E8">;</span>
+			<pre><code class="language-typescript"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> { parseStringQuartz, parseCronQuartz } </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&quot;@vangware/cron&quot;</span><span style="color: #C9D1D9">;</span>
 
-<span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">cron</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">parseStringQuartz</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">&quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span><span style="color: #E1E4E8">);</span>
-<span style="color: #6A737D">/*</span>
-<span style="color: #6A737D">{</span>
-<span style="color: #6A737D">    seconds: { every: 3, start: { from: 1, to: 2 } },</span>
-<span style="color: #6A737D">    minutes: [{ from: 1, to: 2 }, 3, 4],</span>
-<span style="color: #6A737D">    hours: &quot;*&quot;,</span>
-<span style="color: #6A737D">    dayOfMonth: { nearest: 2 },</span>
-<span style="color: #6A737D">    month: [&quot;SEP&quot;, &quot;OCT&quot;],</span>
-<span style="color: #6A737D">    dayOfWeek: { last: 1 },</span>
-<span style="color: #6A737D">    year: { every: 10, start: &quot;*&quot; }</span>
-<span style="color: #6A737D">}</span>
-<span style="color: #6A737D">*/</span>
+<span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">cron</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">parseStringQuartz</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span><span style="color: #C9D1D9">);</span>
+<span style="color: #8B949E">/*</span>
+<span style="color: #8B949E">{</span>
+<span style="color: #8B949E">    seconds: { every: 3, start: { from: 1, to: 2 } },</span>
+<span style="color: #8B949E">    minutes: [{ from: 1, to: 2 }, 3, 4],</span>
+<span style="color: #8B949E">    hours: &quot;*&quot;,</span>
+<span style="color: #8B949E">    dayOfMonth: { nearest: 2 },</span>
+<span style="color: #8B949E">    month: [&quot;SEP&quot;, &quot;OCT&quot;],</span>
+<span style="color: #8B949E">    dayOfWeek: { last: 1 },</span>
+<span style="color: #8B949E">    year: { every: 10, start: &quot;*&quot; }</span>
+<span style="color: #8B949E">}</span>
+<span style="color: #8B949E">*/</span>
 
-<span style="color: #B392F0">parseCronQuartz</span><span style="color: #E1E4E8">(cron); </span><span style="color: #6A737D">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span>
+<span style="color: #D2A8FF">parseCronQuartz</span><span style="color: #C9D1D9">(cron); </span><span style="color: #8B949E">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span>
 </code></pre>
 			<a href="#🦕-deno" id="🦕-deno" style="color: inherit; text-decoration: none;">
 				<h3>🦕 Deno</h3>
 			</a>
-			<pre><code class="language-typescript"><span style="color: #F97583">import</span><span style="color: #E1E4E8"> {</span>
-<span style="color: #E1E4E8">    parseStringQuartz,</span>
-<span style="color: #E1E4E8">    parseCronQuartz,</span>
-<span style="color: #E1E4E8">} </span><span style="color: #F97583">from</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">&quot;https://cdn.skypack.dev/@vangware/cron?dts&quot;</span><span style="color: #E1E4E8">;</span>
+			<pre><code class="language-typescript"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> {</span>
+<span style="color: #C9D1D9">    parseStringQuartz,</span>
+<span style="color: #C9D1D9">    parseCronQuartz,</span>
+<span style="color: #C9D1D9">} </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&quot;https://cdn.skypack.dev/@vangware/cron?dts&quot;</span><span style="color: #C9D1D9">;</span>
 
-<span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">cron</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">parseStringQuartz</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">&quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span><span style="color: #E1E4E8">);</span>
-<span style="color: #6A737D">/*</span>
-<span style="color: #6A737D">{</span>
-<span style="color: #6A737D">    seconds: { every: 3, start: { from: 1, to: 2 } },</span>
-<span style="color: #6A737D">    minutes: [{ from: 1, to: 2 }, 3, 4],</span>
-<span style="color: #6A737D">    hours: &quot;*&quot;,</span>
-<span style="color: #6A737D">    dayOfMonth: { nearest: 2 },</span>
-<span style="color: #6A737D">    month: [&quot;SEP&quot;, &quot;OCT&quot;],</span>
-<span style="color: #6A737D">    dayOfWeek: { last: 1 },</span>
-<span style="color: #6A737D">    year: { every: 10, start: &quot;*&quot; }</span>
-<span style="color: #6A737D">}</span>
-<span style="color: #6A737D">*/</span>
+<span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">cron</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">parseStringQuartz</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span><span style="color: #C9D1D9">);</span>
+<span style="color: #8B949E">/*</span>
+<span style="color: #8B949E">{</span>
+<span style="color: #8B949E">    seconds: { every: 3, start: { from: 1, to: 2 } },</span>
+<span style="color: #8B949E">    minutes: [{ from: 1, to: 2 }, 3, 4],</span>
+<span style="color: #8B949E">    hours: &quot;*&quot;,</span>
+<span style="color: #8B949E">    dayOfMonth: { nearest: 2 },</span>
+<span style="color: #8B949E">    month: [&quot;SEP&quot;, &quot;OCT&quot;],</span>
+<span style="color: #8B949E">    dayOfWeek: { last: 1 },</span>
+<span style="color: #8B949E">    year: { every: 10, start: &quot;*&quot; }</span>
+<span style="color: #8B949E">}</span>
+<span style="color: #8B949E">*/</span>
 
-<span style="color: #B392F0">parseCronQuartz</span><span style="color: #E1E4E8">(cron); </span><span style="color: #6A737D">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span>
+<span style="color: #D2A8FF">parseCronQuartz</span><span style="color: #C9D1D9">(cron); </span><span style="color: #8B949E">// &quot;1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10&quot;</span>
 </code></pre>
 			<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
 				<h2>Documentation</h2>
