@@ -12,7 +12,7 @@ import { parseStringSpecificDayOfWeek } from "./parseStringSpecificDayOfWeek";
  * @returns A `CronDayOfWeek` or `undefined` if invalid.
  */
 export const parseStringDayOfWeek = (
-	source: string
+	source: string,
 ): CronDayOfWeek | undefined =>
 	parseCronLast(source) ??
 	parseCronStartOrBlank(source) ??

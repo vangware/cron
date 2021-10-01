@@ -6,36 +6,36 @@ export default suite([
 		given: "a valid number value in the range 0-7",
 		must: "return true",
 		received: isStringDayOfWeekValue("5"),
-		wanted: true
+		wanted: true,
 	},
 	{
 		given: "a valid value in the range SUN-SAT",
 		must: "return true",
 		received: isStringDayOfWeekValue("FRI"),
-		wanted: true
+		wanted: true,
 	},
 	{
 		given: "a valid value in the range SUN-SAT in lowercase",
 		must: "return true",
 		received: isStringDayOfWeekValue("fri"),
-		wanted: true
+		wanted: true,
 	},
 	{
 		given: "an invalid value",
 		must: "return false",
 		received: isStringDayOfWeekValue("FRIDAY"),
-		wanted: false
+		wanted: false,
 	},
 	{
 		given: "an invalid number outside the range 0-7",
 		must: "return false",
 		received: isStringDayOfWeekValue("10"),
-		wanted: false
+		wanted: false,
 	},
 	{
 		given: "an invalid value",
 		must: "return false",
 		received: isStringDayOfWeekValue("INVALID"),
-		wanted: false
-	}
+		wanted: false,
+	},
 ]);

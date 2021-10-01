@@ -6,18 +6,18 @@ export default suite([
 		given: "a valid number value in the range 1-5",
 		must: "return true",
 		received: isCronWeekValue(2),
-		wanted: true
+		wanted: true,
 	},
 	{
 		given: "an invalid number outside the range 1-5",
 		must: "return false",
 		received: isCronWeekValue(8),
-		wanted: false
+		wanted: false,
 	},
 	{
 		given: "an invalid value",
 		must: "return false",
 		received: isCronWeekValue("INVALID"),
-		wanted: false
-	}
+		wanted: false,
+	},
 ]);

@@ -11,7 +11,7 @@ import { parseStringPart } from "./parseStringPart";
  * @returns A `CronDayOfMonth` or `undefined` if invalid.
  */
 export const parseStringDayOfMonth = (
-	source: string
+	source: string,
 ): CronDayOfMonth | undefined =>
 	parseCronLast(source) ??
 	parseCronStartOrBlank(source) ??

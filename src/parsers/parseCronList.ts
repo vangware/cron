@@ -30,7 +30,7 @@ export const parseCronList =
 			value =>
 				parseCronSteps(limit)(parser)(value as CronSteps<Value>) ??
 				parseCronRange(parser)(value as CronRange<Value>) ??
-				parser(value as Value)
+				parser(value as Value),
 		)(isCronList<Value>(source) ? source : []);
 
 		return list.length === 0 || list.some(isUndefined)

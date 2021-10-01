@@ -6,18 +6,18 @@ export default suite([
 		given: "a value with one dash",
 		must: "return true",
 		received: isCronSteps({ every: 10, start: "value" }),
-		wanted: true
+		wanted: true,
 	},
 	{
 		given: "a value with no start and invalid every",
 		must: "return false",
 		received: isCronSteps({ every: "invalid" }),
-		wanted: false
+		wanted: false,
 	},
 	{
 		given: "a value without dashes",
 		must: "return false",
 		received: isCronSteps("value"),
-		wanted: false
-	}
+		wanted: false,
+	},
 ]);

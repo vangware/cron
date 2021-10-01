@@ -9,7 +9,7 @@ import { isStringLastValue } from "../validations/isStringLastValue";
  * @returns A `CronLastValue` or `undefined` if invalid.
  */
 export const parseStringLastValue = (
-	source: string
+	source: string,
 ): CronLastValue | undefined => {
 	const valid = isStringLastValue(source);
 	const last = valid ? stringParseDecimal(source) : undefined;

@@ -7,7 +7,7 @@ import { isCronDayOfMonthValue } from "./isCronDayOfMonthValue";
  * @param value Value to check.
  */
 export const isCronNearestDayOfMonth = (
-	value: unknown
+	value: unknown,
 ): value is CronNearestDayOfMonth =>
 	isObject(value) &&
 	isNumber((value as CronNearestDayOfMonth).nearest) &&

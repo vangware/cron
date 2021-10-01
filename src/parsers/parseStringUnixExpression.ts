@@ -14,7 +14,7 @@ export const parseStringUnixExpression = (source: string) => {
 				hours: string,
 				dayOfMonth: string,
 				month: string,
-				dayOfWeek: string
+				dayOfWeek: string,
 		  ])
 		: undefined;
 };
