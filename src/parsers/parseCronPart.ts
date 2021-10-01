@@ -31,7 +31,7 @@ export const parseCronPart =
 			| CronList<Value>
 			| CronRange<Value>
 			| CronSteps<Value>
-			| Value
+			| Value,
 	) =>
 		parseCronEvery(source as CronEvery) ??
 		parseCronList(limit)(parser)(source as CronList<Value>) ??

@@ -11,13 +11,13 @@ export default suite([
 		received: parseStringRangeSeconds("13-10"),
 		wanted: {
 			from: 13,
-			to: 10
-		}
+			to: 10,
+		},
 	},
 	{
 		given: "an invalid range",
 		must: "return undefined",
 		received: parseStringRangeSeconds("INVALID"),
-		wanted: undefined
-	}
+		wanted: undefined,
+	},
 ]);

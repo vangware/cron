@@ -29,7 +29,7 @@ export const parseStringQuartzExpression = (source: string) => {
 				dayOfMonth: string,
 				month: string,
 				dayOfWeek: string,
-				year: string
+				year: string,
 		  ])
 		: undefined;
 };

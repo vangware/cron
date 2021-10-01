@@ -7,5 +7,5 @@ import { parseStringPart } from "./parseStringPart";
  * @returns A `CronMinutes` or `undefined` if invalid.
  */
 export const parseStringMinutes = parseStringPart([0, 59])(
-	parseStringMinutesValue
+	parseStringMinutesValue,
 );

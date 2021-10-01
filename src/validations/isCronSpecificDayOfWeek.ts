@@ -8,7 +8,7 @@ import { isCronWeekValue } from "./isCronWeekValue";
  * @param value Value to check.
  */
 export const isCronSpecificDayOfWeek = (
-	value: unknown
+	value: unknown,
 ): value is CronSpecificDayOfWeek =>
 	isObject(value) &&
 	isNumber((value as CronSpecificDayOfWeek).day) &&

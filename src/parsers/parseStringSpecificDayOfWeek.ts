@@ -11,7 +11,7 @@ import { isStringSpecificDayOfWeek } from "../validations/isStringSpecificDayOfW
  * @returns A `CronSpecificDayOfWeek` or `undefined` if invalid.
  */
 export const parseStringSpecificDayOfWeek = (
-	source: string
+	source: string,
 ): CronSpecificDayOfWeek | undefined => {
 	const valid = isStringSpecificDayOfWeek(source);
 	const [dayString = "", weekString = ""] = valid
@@ -21,7 +21,7 @@ export const parseStringSpecificDayOfWeek = (
 	return valid
 		? {
 				day: stringParseDecimal(dayString) as CronDayOfWeekValueNumber,
-				week: stringParseDecimal(weekString) as CronWeekValue
+				week: stringParseDecimal(weekString) as CronWeekValue,
 		  }
 		: undefined;
 };

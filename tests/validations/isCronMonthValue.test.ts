@@ -6,36 +6,36 @@ export default suite([
 		given: "a valid number value in the range 1-12",
 		must: "return true",
 		received: isCronMonthValue(10),
-		wanted: true
+		wanted: true,
 	},
 	{
 		given: "a valid value in the range JAN-DEC",
 		must: "return true",
 		received: isCronMonthValue("OCT"),
-		wanted: true
+		wanted: true,
 	},
 	{
 		given: "a valid value in the range JAN-DEC in lowercase",
 		must: "return true",
 		received: isCronMonthValue("oct"),
-		wanted: true
+		wanted: true,
 	},
 	{
 		given: "an invalid value",
 		must: "return false",
 		received: isCronMonthValue("OCTOBER"),
-		wanted: false
+		wanted: false,
 	},
 	{
 		given: "an invalid number outside the range 1-12",
 		must: "return false",
 		received: isCronMonthValue(50),
-		wanted: false
+		wanted: false,
 	},
 	{
 		given: "an invalid value",
 		must: "return false",
 		received: isCronMonthValue("INVALID"),
-		wanted: false
-	}
+		wanted: false,
+	},
 ]);

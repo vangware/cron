@@ -8,5 +8,5 @@ import { isStringMonthValueNumber } from "./isStringMonthValueNumber";
  */
 export const isStringMonthValue = validateOr([
 	isCronMonthValueString,
-	isStringMonthValueNumber
+	isStringMonthValueNumber,
 ]);

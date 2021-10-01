@@ -1,0 +1,59 @@
+:root {
+	--vangware-blue-light: #5ac;
+	--vangware-blue: #27b;
+	--vangware-gray: #666;
+	--vangware-green: #2b7;
+	--vangware-orange-light: #ca5;
+	--vangware-orange: #b72;
+	--vangware-purple-light: #a5c;
+	--vangware-purple: #72b;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		--color-link: var(--vangware-green);
+		--color-ts-class: var(--vangware-blue-light);
+		--color-ts-enum: var(--vangware-orange-light);
+		--color-ts-interface: var(--vangware-green);
+		--color-ts-private: var(--vangware-gray);
+		--color-ts: var(--vangware-purple-light);
+	}
+}
+
+body.dark {
+	--color-link: var(--vangware-green);
+	--color-ts-class: var(--vangware-blue-light);
+	--color-ts-enum: var(--vangware-orange-light);
+	--color-ts-interface: var(--vangware-green);
+	--color-ts-private: var(--vangware-gray);
+	--color-ts: var(--vangware-purple-light);
+}
+
+@media (prefers-color-scheme: light) {
+	body {
+		--color-link: var(--vangware-green);
+		--color-ts-class: var(--vangware-blue);
+		--color-ts-enum: var(--vangware-orange);
+		--color-ts-interface: var(--vangware-green);
+		--color-ts-private: var(--vangware-gray);
+		--color-ts: var(--vangware-purple);
+	}
+}
+
+body.light {
+	--color-link: var(--vangware-green);
+	--color-ts-class: var(--vangware-blue);
+	--color-ts-enum: var(--vangware-orange);
+	--color-ts-interface: var(--vangware-green);
+	--color-ts-private: var(--vangware-gray);
+	--color-ts: var(--vangware-purple);
+}
+
+.tsd-filter-group,
+.tsd-page-title {
+	display: none !important;
+}
+
+.container-main {
+	padding-top: 80px;
+}

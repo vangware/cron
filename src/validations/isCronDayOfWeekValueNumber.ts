@@ -6,6 +6,6 @@ import type { CronDayOfWeekValueNumber } from "../types/CronDayOfWeekValueNumber
  * @param value Value to check.
  */
 export const isCronDayOfWeekValueNumber = (
-	value: unknown
+	value: unknown,
 ): value is CronDayOfWeekValueNumber =>
 	isNumber(value) && numberBetween(0)(7)(value);

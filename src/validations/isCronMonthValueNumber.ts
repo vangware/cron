@@ -6,6 +6,6 @@ import type { CronMonthValueNumber } from "../types/CronMonthValueNumber";
  * @param value Value to check.
  */
 export const isCronMonthValueNumber = (
-	value: unknown
+	value: unknown,
 ): value is CronMonthValueNumber =>
 	isNumber(value) && numberBetween(1)(12)(value);

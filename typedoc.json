@@ -1,9 +1,8 @@
 {
-	"disableOutputCheck": true,
+	"cleanOutputDir": false,
+	"customCss": "./node_modules/@vangware/base/configurations/typedoc.css",
 	"entryPoints": ["./src/index.ts"],
 	"gitRevision": "main",
 	"hideGenerator": true,
-	"highlightTheme": "github-dark",
-	"logLevel": "Warn",
-	"theme": "./node_modules/@vangware/base/configurations/typedoc-theme"
+	"logLevel": "Warn"
 }
