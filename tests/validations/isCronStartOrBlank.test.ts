@@ -7,12 +7,12 @@ export default suite([
 		given: "a ? value",
 		must: "return true",
 		received: isCronStartOrBlank(CRON_START_OR_BLANK),
-		wanted: true
+		wanted: true,
 	},
 	{
 		given: "a value different than L",
 		must: "return false",
 		received: isCronStartOrBlank("INVALID"),
-		wanted: false
-	}
+		wanted: false,
+	},
 ]);

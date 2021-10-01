@@ -6,7 +6,7 @@ import {
 	QUARTZ_MINUTES_POSITION,
 	QUARTZ_MONTH_POSITION,
 	QUARTZ_SECONDS_POSITION,
-	QUARTZ_YEAR_POSITION
+	QUARTZ_YEAR_POSITION,
 } from "../constants";
 import type { CronQuartz } from "../types/CronQuartz";
 import { parseStringDayOfMonth } from "./parseStringDayOfMonth";
@@ -43,7 +43,7 @@ export const parseStringQuartz = (source: string): CronQuartz | undefined => {
 		dayOfMonth,
 		month,
 		dayOfWeek,
-		year
+		year,
 	].some(isUndefined)
 		? undefined
 		: ({
@@ -53,6 +53,6 @@ export const parseStringQuartz = (source: string): CronQuartz | undefined => {
 				minutes,
 				month,
 				seconds,
-				year
+				year,
 		  } as CronQuartz);
 };

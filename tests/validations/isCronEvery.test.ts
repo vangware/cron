@@ -7,12 +7,12 @@ export default suite([
 		given: "a * value",
 		must: "return true",
 		received: isCronEvery(CRON_EVERY),
-		wanted: true
+		wanted: true,
 	},
 	{
 		given: "a value different than *",
 		must: "return false",
 		received: isCronEvery("INVALID"),
-		wanted: false
-	}
+		wanted: false,
+	},
 ]);

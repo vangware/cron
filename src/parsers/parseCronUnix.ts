@@ -16,14 +16,14 @@ export const parseCronUnix = ({
 	hours,
 	dayOfMonth,
 	month,
-	dayOfWeek
+	dayOfWeek,
 }: CronUnix) => {
 	const parts = [
 		parseCronMinutes(minutes),
 		parseCronHours(hours),
 		parseCronDayOfMonth(dayOfMonth),
 		parseCronMonth(month),
-		parseCronDayOfWeek(dayOfWeek)
+		parseCronDayOfWeek(dayOfWeek),
 	];
 
 	return parts.some(isUndefined) ? undefined : arrayJoin(" ")(parts);

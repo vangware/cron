@@ -8,7 +8,7 @@ import { isCronDayOfWeekValueString } from "./isCronDayOfWeekValueString";
  * @param value Value to check.
  */
 export const isCronDayOfWeekValue = (
-	value: unknown
+	value: unknown,
 ): value is CronDayOfWeekValue =>
 	(isString(value) && isCronDayOfWeekValueString(value)) ||
 	(isNumber(value) && isCronDayOfWeekValueNumber(value));

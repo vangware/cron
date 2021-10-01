@@ -20,7 +20,7 @@ export const parseCronQuartz = ({
 	dayOfMonth,
 	month,
 	dayOfWeek,
-	year
+	year,
 }: CronQuartz) => {
 	const parts = [
 		parseCronSeconds(seconds),
@@ -29,7 +29,7 @@ export const parseCronQuartz = ({
 		parseCronDayOfMonth(dayOfMonth),
 		parseCronMonth(month),
 		parseCronDayOfWeek(dayOfWeek),
-		parseCronYear(year)
+		parseCronYear(year),
 	];
 
 	return parts.some(isUndefined) ? undefined : arrayJoin(" ")(parts);

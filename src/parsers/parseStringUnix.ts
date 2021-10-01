@@ -4,7 +4,7 @@ import {
 	UNIX_DAY_OF_WEEK_POSITION,
 	UNIX_HOURS_POSITION,
 	UNIX_MINUTES_POSITION,
-	UNIX_MONTH_POSITION
+	UNIX_MONTH_POSITION,
 } from "../constants";
 import type { CronUnix } from "../types/CronUnix";
 import { parseStringDayOfMonth } from "./parseStringDayOfMonth";
@@ -30,7 +30,7 @@ export const parseStringUnix = (source: string): CronUnix | undefined => {
 		parts && parseStringDayOfWeek(parts[UNIX_DAY_OF_WEEK_POSITION]);
 
 	return [parts, minutes, hours, dayOfMonth, month, dayOfWeek].some(
-		isUndefined
+		isUndefined,
 	)
 		? undefined
 		: ({
@@ -38,6 +38,6 @@ export const parseStringUnix = (source: string): CronUnix | undefined => {
 				dayOfWeek,
 				hours,
 				minutes,
-				month
+				month,
 		  } as CronUnix);
 };

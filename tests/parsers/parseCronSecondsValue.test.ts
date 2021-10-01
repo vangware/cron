@@ -7,18 +7,18 @@ export default suite([
 		given: "A valid seconds value",
 		must: "return it",
 		received: parseCronSecondsValue(10),
-		wanted: "10"
+		wanted: "10",
 	},
 	{
 		given: "Other valid seconds value",
 		must: "return it",
 		received: parseCronSecondsValue(59),
-		wanted: "59"
+		wanted: "59",
 	},
 	{
 		given: "Invalid seconds value",
 		must: "return it",
 		received: parseCronSecondsValue(99 as CronSecondsValue),
-		wanted: undefined
-	}
+		wanted: undefined,
+	},
 ]);

@@ -8,5 +8,5 @@ import { isStringDayOfWeekValueNumber } from "./isStringDayOfWeekValueNumber";
  */
 export const isStringDayOfWeekValue = validateOr([
 	isCronDayOfWeekValueString,
-	isStringDayOfWeekValueNumber
+	isStringDayOfWeekValueNumber,
 ]);

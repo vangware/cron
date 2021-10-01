@@ -2,7 +2,7 @@ import {
 	isNumber,
 	isUndefined,
 	numberBetween,
-	stringParseDecimal
+	stringParseDecimal,
 } from "@vangware/utils";
 import { CRON_STEPS_SEPARATOR } from "../constants";
 import type { CronSteps } from "../types/CronSteps";

@@ -13,9 +13,9 @@ export default suite([
 			minutes: "*",
 			month: "*",
 			seconds: "*",
-			year: "*"
+			year: "*",
 		}),
-		wanted: "* * * * * * *"
+		wanted: "* * * * * * *",
 	},
 	{
 		given: "A CronQuartz object with lists",
@@ -27,9 +27,9 @@ export default suite([
 			minutes: [1, 2],
 			month: [1, 2],
 			seconds: [1, 2],
-			year: [1989, 2020]
+			year: [1989, 2020],
 		}),
-		wanted: "1,2 1,2 1,2 1,2 1,2 1,2 1989,2020"
+		wanted: "1,2 1,2 1,2 1,2 1,2 1,2 1989,2020",
 	},
 	{
 		given: "A CronQuartz object with ranges",
@@ -41,9 +41,9 @@ export default suite([
 			minutes: { from: 1, to: 2 },
 			month: { from: 1, to: 2 },
 			seconds: { from: 1, to: 2 },
-			year: { from: 1989, to: 2020 }
+			year: { from: 1989, to: 2020 },
 		}),
-		wanted: "1-2 1-2 1-2 1-2 1-2 1-2 1989-2020"
+		wanted: "1-2 1-2 1-2 1-2 1-2 1-2 1989-2020",
 	},
 	{
 		given: "A CronQuartz object with steps",
@@ -55,9 +55,9 @@ export default suite([
 			minutes: { every: 2, start: 1 },
 			month: { every: 2, start: 1 },
 			seconds: { every: 2, start: 1 },
-			year: { every: 10, start: 1989 }
+			year: { every: 10, start: 1989 },
 		}),
-		wanted: "1/2 1/2 1/2 1/2 1/2 1/2 1989/10"
+		wanted: "1/2 1/2 1/2 1/2 1/2 1/2 1989/10",
 	},
 	{
 		given: "A CronQuartz object with mixed values",
@@ -69,9 +69,9 @@ export default suite([
 			minutes: [{ from: 1, to: 2 }, 3, 4],
 			month: ["SEP", "OCT"],
 			seconds: { every: 3, start: { from: 1, to: 2 } },
-			year: { every: 10, start: "*" }
+			year: { every: 10, start: "*" },
 		}),
-		wanted: "1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10"
+		wanted: "1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10",
 	},
 	{
 		given: "An object with undefined values",
@@ -83,8 +83,8 @@ export default suite([
 			minutes: "*",
 			month: "*",
 			seconds: "*",
-			year: "*"
+			year: "*",
 		}),
-		wanted: undefined
-	}
+		wanted: undefined,
+	},
 ]);

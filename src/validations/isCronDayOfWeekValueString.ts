@@ -6,6 +6,6 @@ import type { CronDayOfWeekValueString } from "../types/CronDayOfWeekValueString
  * @param value Value to check.
  */
 export const isCronDayOfWeekValueString = (
-	value: unknown
+	value: unknown,
 ): value is CronDayOfWeekValueString =>
 	isString(value) && stringTest(/^(?:SUN|MON|TUE|WED|THU|FRI|SAT)$/iu)(value);

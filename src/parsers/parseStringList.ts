@@ -29,7 +29,7 @@ export const parseStringList =
 			value =>
 				parseStringSteps(limit)(parser)(value) ??
 				parseStringRange<Value>(parser)(value) ??
-				parser(value)
+				parser(value),
 		)(isStringList(source) ? source.split(CRON_LIST_SEPARATOR) : []);
 
 		return list.length === 0 || list.some(isUndefined)

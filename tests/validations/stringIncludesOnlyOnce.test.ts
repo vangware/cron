@@ -8,18 +8,18 @@ export default suite([
 		given: "valid value with once appearance",
 		must: "return true",
 		received: includesCommaOnce("a,b"),
-		wanted: true
+		wanted: true,
 	},
 	{
 		given: "invalid value with multiple appearances",
 		must: "return false",
 		received: includesCommaOnce("a,b,c"),
-		wanted: false
+		wanted: false,
 	},
 	{
 		given: "invalid value with no appearances",
 		must: "return false",
 		received: includesCommaOnce("a"),
-		wanted: false
-	}
+		wanted: false,
+	},
 ]);

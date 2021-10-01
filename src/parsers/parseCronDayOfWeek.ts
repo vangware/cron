@@ -24,5 +24,5 @@ export const parseCronDayOfWeek = (source: CronDayOfWeek) =>
 		source as Exclude<
 			CronDayOfWeek,
 			CronLast | CronLastValue | CronSpecificDayOfWeek | CronStartOrBlank
-		>
+		>,
 	);
