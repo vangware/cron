@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { parseStringHoursValue } from "../../src/parsers/parseStringHoursValue";
+import { parseStringHoursValue } from "../../src/parsers/parseStringHoursValue.js";
 
 export default suite([
 	{

@@ -1,5 +1,5 @@
-import type { CronRange } from "./CronRange";
-import type { CronSteps } from "./CronSteps";
+import type { CronRange } from "./CronRange.js";
+import type { CronSteps } from "./CronSteps.js";
 
 /**
  * Cron list item.

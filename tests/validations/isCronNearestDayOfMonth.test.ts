@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { isCronNearestDayOfMonth } from "../../src/validations/isCronNearestDayOfMonth";
+import { isCronNearestDayOfMonth } from "../../src/validations/isCronNearestDayOfMonth.js";
 
 export default suite([
 	{

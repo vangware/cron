@@ -1,8 +1,10 @@
-import type { CronLast } from "../types/CronLast";
-import { isCronLast } from "../validations/isCronLast";
+import type { CronLast } from "../types/CronLast.js";
+import { isCronLast } from "../validations/isCronLast.js";
 
 /**
  * Parses `CronLast` into a string.
+ *
+ * @category Parser
  * @param source `CronLast` to be parsed.
  * @returns A string or `undefined` if invalid.
  */

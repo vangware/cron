@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { isStringList } from "../../src/validations/isStringList";
+import { isStringList } from "../../src/validations/isStringList.js";
 
 export default suite([
 	{

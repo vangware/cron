@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { stringIncludesOnlyOnce } from "../../src/validations/stringIncludesOnlyOnce";
+import { stringIncludesOnlyOnce } from "../../src/validations/stringIncludesOnlyOnce.js";
 
 const includesCommaOnce = stringIncludesOnlyOnce(",");
 

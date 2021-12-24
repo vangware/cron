@@ -1,6 +1,6 @@
 import { suite } from "@vangware/test";
-import { CRON_START_OR_BLANK } from "../../src/constants";
-import { parseCronStartOrBlank } from "../../src/parsers/parseCronStartOrBlank";
+import { CRON_START_OR_BLANK } from "../../src/constants.js";
+import { parseCronStartOrBlank } from "../../src/parsers/parseCronStartOrBlank.js";
 
 export default suite([
 	{

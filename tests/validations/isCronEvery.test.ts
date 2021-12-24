@@ -1,6 +1,6 @@
 import { suite } from "@vangware/test";
-import { CRON_EVERY } from "../../src/constants";
-import { isCronEvery } from "../../src/validations/isCronEvery";
+import { CRON_EVERY } from "../../src/constants.js";
+import { isCronEvery } from "../../src/validations/isCronEvery.js";
 
 export default suite([
 	{

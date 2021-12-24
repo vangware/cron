@@ -1,9 +1,11 @@
 import { numberBetween } from "@vangware/utils";
-import { splitExpression } from "../utils/splitExpression";
-import { isStringYearValue } from "../validations/isStringYearValue";
+import { splitExpression } from "../utils/splitExpression.js";
+import { isStringYearValue } from "../validations/isStringYearValue.js";
 
 /**
  * Parses given string expression.
+ *
+ * @category Parser
  * @param source string to be parsed.
  * @returns An array of 7 elements or `undefined` if invalid.
  */

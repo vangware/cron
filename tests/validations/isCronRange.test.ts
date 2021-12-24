@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { isCronRange } from "../../src/validations/isCronRange";
+import { isCronRange } from "../../src/validations/isCronRange.js";
 
 export default suite([
 	{

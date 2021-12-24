@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { parseStringDayOfMonthValue } from "../../src/parsers/parseStringDayOfMonthValue";
+import { parseStringDayOfMonthValue } from "../../src/parsers/parseStringDayOfMonthValue.js";
 
 export default suite([
 	{

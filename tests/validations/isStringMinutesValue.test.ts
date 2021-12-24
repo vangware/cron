@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { isStringMinutesValue } from "../../src/validations/isStringMinutesValue";
+import { isStringMinutesValue } from "../../src/validations/isStringMinutesValue.js";
 
 export default suite([
 	{

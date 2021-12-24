@@ -1,8 +1,10 @@
 import { isString, stringTest } from "@vangware/utils";
-import type { CronMonthValueString } from "../types/CronMonthValueString";
+import type { CronMonthValueString } from "../types/CronMonthValueString.js";
 
 /**
  * Check if given is `CronMonthValueString`.
+ *
+ * @category Validation
  * @param value Value to check.
  */
 export const isCronMonthValueString = (

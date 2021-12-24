@@ -1,7 +1,7 @@
-import type { CronDayOfWeekValue } from "./CronDayOfWeekValue";
-import type { CronLastValue } from "./CronLastValue";
-import type { CronPartExtended } from "./CronPartExtended";
-import type { CronSpecificDayOfWeek } from "./CronSpecificDayOfWeek";
+import type { CronDayOfWeekValue } from "./CronDayOfWeekValue.js";
+import type { CronLastValue } from "./CronLastValue.js";
+import type { CronPartExtended } from "./CronPartExtended.js";
+import type { CronSpecificDayOfWeek } from "./CronSpecificDayOfWeek.js";
 
 /**
  * Cron day of week.

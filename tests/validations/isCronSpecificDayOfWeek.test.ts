@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { isCronSpecificDayOfWeek } from "../../src/validations/isCronSpecificDayOfWeek";
+import { isCronSpecificDayOfWeek } from "../../src/validations/isCronSpecificDayOfWeek.js";
 
 export default suite([
 	{

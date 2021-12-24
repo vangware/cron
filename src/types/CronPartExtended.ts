@@ -1,6 +1,6 @@
-import type { CronLast } from "./CronLast";
-import type { CronPart } from "./CronPart";
-import type { CronStartOrBlank } from "./CronStartOrBlank";
+import type { CronLast } from "./CronLast.js";
+import type { CronPart } from "./CronPart.js";
+import type { CronStartOrBlank } from "./CronStartOrBlank.js";
 
 /**
  * Cron part extended (used by `CronDayOfWeek` and `DayOfMonth`).

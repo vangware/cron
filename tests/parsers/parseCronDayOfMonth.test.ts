@@ -3,8 +3,8 @@ import {
 	CRON_EVERY,
 	CRON_LAST,
 	CRON_START_OR_BLANK,
-} from "../../src/constants";
-import { parseCronDayOfMonth } from "../../src/parsers/parseCronDayOfMonth";
+} from "../../src/constants.js";
+import { parseCronDayOfMonth } from "../../src/parsers/parseCronDayOfMonth.js";
 
 export default suite([
 	{

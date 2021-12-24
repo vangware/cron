@@ -4,16 +4,18 @@ import {
 	numberBetween,
 	stringParseDecimal,
 } from "@vangware/utils";
-import { CRON_STEPS_SEPARATOR } from "../constants";
-import type { CronSteps } from "../types/CronSteps";
-import type { LimitTuple } from "../types/LimitTuple";
-import type { StringValueParser } from "../types/StringValueParser";
-import { isStringSteps } from "../validations/isStringSteps";
-import { parseCronEvery } from "./parseCronEvery";
-import { parseStringRange } from "./parseStringRange";
+import { CRON_STEPS_SEPARATOR } from "../constants.js";
+import type { CronSteps } from "../types/CronSteps.js";
+import type { LimitTuple } from "../types/LimitTuple.js";
+import type { StringValueParser } from "../types/StringValueParser.js";
+import { isStringSteps } from "../validations/isStringSteps.js";
+import { parseCronEvery } from "./parseCronEvery.js";
+import { parseStringRange } from "./parseStringRange.js";
 
 /**
  * Parses a string into a `CronSteps`.
+ *
+ * @category Parser
  * @param limit `LimitTuple` for `CronSteps`.
  * @returns Curried function with `limit` in context.
  */

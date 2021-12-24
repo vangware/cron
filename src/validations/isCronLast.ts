@@ -1,9 +1,11 @@
 import { isString } from "@vangware/utils";
-import { CRON_LAST } from "../constants";
-import type { CronLast } from "../types/CronLast";
+import { CRON_LAST } from "../constants.js";
+import type { CronLast } from "../types/CronLast.js";
 
 /**
  * Check if given is `CronLast`.
+ *
+ * @category Validation
  * @param value Value to check.
  */
 export const isCronLast = (value: unknown): value is CronLast =>

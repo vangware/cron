@@ -1,4 +1,4 @@
-import type { CronListItem } from "./CronListItem";
+import type { CronListItem } from "./CronListItem.js";
 
 /**
  * Cron list (value1,value2,valueN).

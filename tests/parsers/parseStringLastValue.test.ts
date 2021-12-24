@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { parseStringLastValue } from "../../src/parsers/parseStringLastValue";
+import { parseStringLastValue } from "../../src/parsers/parseStringLastValue.js";
 
 export default suite([
 	{

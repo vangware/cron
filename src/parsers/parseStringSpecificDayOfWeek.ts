@@ -1,12 +1,14 @@
 import { stringParseDecimal } from "@vangware/utils";
-import { CRON_SPECIFIC_SEPARATOR } from "../constants";
-import type { CronDayOfWeekValueNumber } from "../types/CronDayOfWeekValueNumber";
-import type { CronSpecificDayOfWeek } from "../types/CronSpecificDayOfWeek";
-import type { CronWeekValue } from "../types/CronWeekValue";
-import { isStringSpecificDayOfWeek } from "../validations/isStringSpecificDayOfWeek";
+import { CRON_SPECIFIC_SEPARATOR } from "../constants.js";
+import type { CronDayOfWeekValueNumber } from "../types/CronDayOfWeekValueNumber.js";
+import type { CronSpecificDayOfWeek } from "../types/CronSpecificDayOfWeek.js";
+import type { CronWeekValue } from "../types/CronWeekValue.js";
+import { isStringSpecificDayOfWeek } from "../validations/isStringSpecificDayOfWeek.js";
 
 /**
  * Parses a string into a `CronSpecificDayOfWeek`.
+ *
+ * @category Parser
  * @param source string to be parsed.
  * @returns A `CronSpecificDayOfWeek` or `undefined` if invalid.
  */
