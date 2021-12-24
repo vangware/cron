@@ -1,7 +1,7 @@
 import { suite } from "@vangware/test";
-import { CRON_EVERY } from "../../src/constants";
-import { parseStringList } from "../../src/parsers/parseStringList";
-import { parseStringSecondsValue } from "../../src/parsers/parseStringSecondsValue";
+import { CRON_EVERY } from "../../src/constants.js";
+import { parseStringList } from "../../src/parsers/parseStringList.js";
+import { parseStringSecondsValue } from "../../src/parsers/parseStringSecondsValue.js";
 
 const parseStringListSeconds = parseStringList([0, 59])(
 	parseStringSecondsValue,

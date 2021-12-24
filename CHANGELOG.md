@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 -   This project adheres to [Semantic Versioning][semver].
 -   This project uses [Gitmoji][gitmoji]
 
+## 5.0.0
+
+-   :arrow_up: dependency upgrade.
+-   :truck: move to ESM only.
+-   :memo: improved docs.
+
 ## 4.1.11
 
 -   :arrow_up: dependency upgrade.

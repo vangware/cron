@@ -1,8 +1,10 @@
-import type { CronSpecificDayOfWeek } from "../types/CronSpecificDayOfWeek";
-import { isCronSpecificDayOfWeek } from "../validations/isCronSpecificDayOfWeek";
+import type { CronSpecificDayOfWeek } from "../types/CronSpecificDayOfWeek.js";
+import { isCronSpecificDayOfWeek } from "../validations/isCronSpecificDayOfWeek.js";
 
 /**
  * Parses `CronSpecificDayOfWeek` into a string.
+ *
+ * @category Parser
  * @param source `CronSpecificDayOfWeek` to be parsed.
  * @returns A string or `undefined` if invalid.
  */

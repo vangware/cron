@@ -1,6 +1,6 @@
 import { suite } from "@vangware/test";
-import { CRON_START_OR_BLANK } from "../../src/constants";
-import { isCronStartOrBlank } from "../../src/validations/isCronStartOrBlank";
+import { CRON_START_OR_BLANK } from "../../src/constants.js";
+import { isCronStartOrBlank } from "../../src/validations/isCronStartOrBlank.js";
 
 export default suite([
 	{

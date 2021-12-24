@@ -1,6 +1,6 @@
 import { suite } from "@vangware/test";
-import { CRON_LAST } from "../../src/constants";
-import { isCronLast } from "../../src/validations/isCronLast";
+import { CRON_LAST } from "../../src/constants.js";
+import { isCronLast } from "../../src/validations/isCronLast.js";
 
 export default suite([
 	{

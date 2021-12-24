@@ -2,13 +2,11 @@ pre-push:
     commands:
         clean:
             run: rimraf ./dist
-        pre-compile-import:
-            run: tsc --noEmit --project tsconfig.import.json
-        pre-compile-require:
-            run: tsc --noEmit --project tsconfig.require.json
+        pre-compile:
+            run: tsc --noEmit --project tsconfig.dist.json
         lint:
             run: eslint {src,tests}/**/*.ts
         test:
-            run: c8 test
+            run: NODE_OPTIONS='--loader ts-node/esm' c8 test
         document:
             run: typedoc

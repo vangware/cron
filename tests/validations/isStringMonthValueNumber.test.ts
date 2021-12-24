@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { isStringMonthValueNumber } from "../../src/validations/isStringMonthValueNumber";
+import { isStringMonthValueNumber } from "../../src/validations/isStringMonthValueNumber.js";
 
 export default suite([
 	{

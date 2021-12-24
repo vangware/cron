@@ -1,6 +1,6 @@
 import { suite } from "@vangware/test";
-import { CRON_SPECIFIC_SEPARATOR } from "../../src/constants";
-import { parseCronSpecificDayOfWeek } from "../../src/parsers/parseCronSpecificDayOfWeek";
+import { CRON_SPECIFIC_SEPARATOR } from "../../src/constants.js";
+import { parseCronSpecificDayOfWeek } from "../../src/parsers/parseCronSpecificDayOfWeek.js";
 
 export default suite([
 	{

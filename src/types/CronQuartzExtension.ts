@@ -1,5 +1,5 @@
-import type { CronSeconds } from "./CronSeconds";
-import type { CronYear } from "./CronYear";
+import type { CronSeconds } from "./CronSeconds.js";
+import type { CronYear } from "./CronYear.js";
 
 /**
  * Cron expression parts coming with Quartz.

@@ -1,6 +1,6 @@
 import { suite } from "@vangware/test";
-import type { CronDayOfMonth } from "../../src";
-import { parseCronQuartz } from "../../src/parsers/parseCronQuartz";
+import { parseCronQuartz } from "../../src/parsers/parseCronQuartz.js";
+import type { CronDayOfMonth } from "../../src/types/CronDayOfMonth.js";
 
 export default suite([
 	{

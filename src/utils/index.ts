@@ -1,2 +1,2 @@
-export { splitExpression } from "./splitExpression";
-export { validateOr } from "./validateOr";
+export { splitExpression } from "./splitExpression.js";
+export { validateOr } from "./validateOr.js";

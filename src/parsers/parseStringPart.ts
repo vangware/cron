@@ -1,13 +1,15 @@
-import type { CronPart } from "../types/CronPart";
-import type { LimitTuple } from "../types/LimitTuple";
-import type { StringValueParser } from "../types/StringValueParser";
-import { parseCronEvery } from "./parseCronEvery";
-import { parseStringList } from "./parseStringList";
-import { parseStringRange } from "./parseStringRange";
-import { parseStringSteps } from "./parseStringSteps";
+import type { CronPart } from "../types/CronPart.js";
+import type { LimitTuple } from "../types/LimitTuple.js";
+import type { StringValueParser } from "../types/StringValueParser.js";
+import { parseCronEvery } from "./parseCronEvery.js";
+import { parseStringList } from "./parseStringList.js";
+import { parseStringRange } from "./parseStringRange.js";
+import { parseStringSteps } from "./parseStringSteps.js";
 
 /**
  * Parses a string into a `CronPart`.
+ *
+ * @category Parser
  * @param limit `LimitTuple` to be used when parsing `CronSteps`.
  * @returns Curried function with `limit` in context.
  */

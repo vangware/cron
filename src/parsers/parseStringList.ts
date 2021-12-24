@@ -1,15 +1,17 @@
 import { arrayMap, isUndefined } from "@vangware/utils";
-import { CRON_LIST_SEPARATOR } from "../constants";
-import type { CronList } from "../types/CronList";
-import type { CronListItem } from "../types/CronListItem";
-import type { LimitTuple } from "../types/LimitTuple";
-import type { StringValueParser } from "../types/StringValueParser";
-import { isStringList } from "../validations/isStringList";
-import { parseStringRange } from "./parseStringRange";
-import { parseStringSteps } from "./parseStringSteps";
+import { CRON_LIST_SEPARATOR } from "../constants.js";
+import type { CronList } from "../types/CronList.js";
+import type { CronListItem } from "../types/CronListItem.js";
+import type { LimitTuple } from "../types/LimitTuple.js";
+import type { StringValueParser } from "../types/StringValueParser.js";
+import { isStringList } from "../validations/isStringList.js";
+import { parseStringRange } from "./parseStringRange.js";
+import { parseStringSteps } from "./parseStringSteps.js";
 
 /**
  * Parses a string into a `CronList`.
+ *
+ * @category Parser
  * @param limit `LimitTuple` to be used when parsing `CronSteps`.
  * @returns Curried function with `limit` in context.
  */

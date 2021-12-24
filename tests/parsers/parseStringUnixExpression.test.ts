@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { parseStringUnixExpression } from "../../src/parsers/parseStringUnixExpression";
+import { parseStringUnixExpression } from "../../src/parsers/parseStringUnixExpression.js";
 
 export default suite([
 	{

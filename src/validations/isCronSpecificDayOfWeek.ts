@@ -1,10 +1,12 @@
 import { isNumber, isObject } from "@vangware/utils";
-import type { CronSpecificDayOfWeek } from "../types/CronSpecificDayOfWeek";
-import { isCronDayOfWeekValueNumber } from "./isCronDayOfWeekValueNumber";
-import { isCronWeekValue } from "./isCronWeekValue";
+import type { CronSpecificDayOfWeek } from "../types/CronSpecificDayOfWeek.js";
+import { isCronDayOfWeekValueNumber } from "./isCronDayOfWeekValueNumber.js";
+import { isCronWeekValue } from "./isCronWeekValue.js";
 
 /**
  * Check if given is `CronSpecificDayOfWeek`.
+ *
+ * @category Validation
  * @param value Value to check.
  */
 export const isCronSpecificDayOfWeek = (

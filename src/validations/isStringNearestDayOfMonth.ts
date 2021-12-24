@@ -2,6 +2,8 @@ import { isString, stringTest } from "@vangware/utils";
 
 /**
  * Check if given is a string representing a `CronNearestDayOfMonth`.
+ *
+ * @category Validation
  * @param value Value to check.
  */
 export const isStringNearestDayOfMonth = (value: unknown): value is string =>

@@ -1,8 +1,10 @@
-import { parseCronMonthValue } from "./parseCronMonthValue";
-import { parseCronPart } from "./parseCronPart";
+import { parseCronMonthValue } from "./parseCronMonthValue.js";
+import { parseCronPart } from "./parseCronPart.js";
 
 /**
  * Parses `CronMonth` into a string.
+ *
+ * @category Parser
  * @param source `CronMonth` to be parsed.
  * @returns A string or `undefined` if invalid.
  */

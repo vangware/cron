@@ -1,9 +1,11 @@
 import { stringParseDecimal } from "@vangware/utils";
-import type { CronNearestDayOfMonth } from "../types/CronNearestDayOfMonth";
-import { isStringNearestDayOfMonth } from "../validations/isStringNearestDayOfMonth";
+import type { CronNearestDayOfMonth } from "../types/CronNearestDayOfMonth.js";
+import { isStringNearestDayOfMonth } from "../validations/isStringNearestDayOfMonth.js";
 
 /**
  * Parses a string into a `CronNearestDayOfMonth`.
+ *
+ * @category Parser
  * @param source string to be parsed.
  * @returns A `CronNearestDayOfMonth` or `undefined` if invalid.
  */

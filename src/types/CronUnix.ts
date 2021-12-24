@@ -1,8 +1,8 @@
-import type { CronDayOfMonth } from "./CronDayOfMonth";
-import type { CronDayOfWeek } from "./CronDayOfWeek";
-import type { CronHours } from "./CronHours";
-import type { CronMinutes } from "./CronMinutes";
-import type { CronMonth } from "./CronMonth";
+import type { CronDayOfMonth } from "./CronDayOfMonth.js";
+import type { CronDayOfWeek } from "./CronDayOfWeek.js";
+import type { CronHours } from "./CronHours.js";
+import type { CronMinutes } from "./CronMinutes.js";
+import type { CronMonth } from "./CronMonth.js";
 
 /**
  * Cron expression (UNIX).

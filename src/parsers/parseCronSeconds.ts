@@ -1,8 +1,10 @@
-import { parseCronPart } from "./parseCronPart";
-import { parseCronSecondsValue } from "./parseCronSecondsValue";
+import { parseCronPart } from "./parseCronPart.js";
+import { parseCronSecondsValue } from "./parseCronSecondsValue.js";
 
 /**
  * Parses `CronSeconds` into a string.
+ *
+ * @category Parser
  * @param source `CronSeconds` to be parsed.
  * @returns A string or `undefined` if invalid.
  */

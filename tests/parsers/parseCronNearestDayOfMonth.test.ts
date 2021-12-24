@@ -1,6 +1,6 @@
 import { suite } from "@vangware/test";
-import { parseCronNearestDayOfMonth } from "../../src/parsers/parseCronNearestDayOfMonth";
-import type { CronDayOfMonthValue } from "../../src/types/CronDayOfMonthValue";
+import { parseCronNearestDayOfMonth } from "../../src/parsers/parseCronNearestDayOfMonth.js";
+import type { CronDayOfMonthValue } from "../../src/types/CronDayOfMonthValue.js";
 
 export default suite([
 	{
