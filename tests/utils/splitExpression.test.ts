@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { splitExpression } from "../../src/utils/splitExpression";
+import { splitExpression } from "../../src/utils/splitExpression.js";
 
 export default suite([
 	{

@@ -1,12 +1,14 @@
-import type { CronDayOfMonth } from "../types/CronDayOfMonth";
-import { parseCronLast } from "./parseCronLast";
-import { parseCronStartOrBlank } from "./parseCronStartOrBlank";
-import { parseStringDayOfMonthValue } from "./parseStringDayOfMonthValue";
-import { parseStringNearestDayOfMonth } from "./parseStringNearestDayOfMonth";
-import { parseStringPart } from "./parseStringPart";
+import type { CronDayOfMonth } from "../types/CronDayOfMonth.js";
+import { parseCronLast } from "./parseCronLast.js";
+import { parseCronStartOrBlank } from "./parseCronStartOrBlank.js";
+import { parseStringDayOfMonthValue } from "./parseStringDayOfMonthValue.js";
+import { parseStringNearestDayOfMonth } from "./parseStringNearestDayOfMonth.js";
+import { parseStringPart } from "./parseStringPart.js";
 
 /**
  * Parses a string into a `CronDayOfMonth`.
+ *
+ * @category Parser
  * @param source string to be parsed.
  * @returns A `CronDayOfMonth` or `undefined` if invalid.
  */

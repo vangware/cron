@@ -5,17 +5,19 @@ import {
 	UNIX_HOURS_POSITION,
 	UNIX_MINUTES_POSITION,
 	UNIX_MONTH_POSITION,
-} from "../constants";
-import type { CronUnix } from "../types/CronUnix";
-import { parseStringDayOfMonth } from "./parseStringDayOfMonth";
-import { parseStringDayOfWeek } from "./parseStringDayOfWeek";
-import { parseStringHours } from "./parseStringHours";
-import { parseStringMinutes } from "./parseStringMinutes";
-import { parseStringMonth } from "./parseStringMonth";
-import { parseStringUnixExpression } from "./parseStringUnixExpression";
+} from "../constants.js";
+import type { CronUnix } from "../types/CronUnix.js";
+import { parseStringDayOfMonth } from "./parseStringDayOfMonth.js";
+import { parseStringDayOfWeek } from "./parseStringDayOfWeek.js";
+import { parseStringHours } from "./parseStringHours.js";
+import { parseStringMinutes } from "./parseStringMinutes.js";
+import { parseStringMonth } from "./parseStringMonth.js";
+import { parseStringUnixExpression } from "./parseStringUnixExpression.js";
 
 /**
  * Parses a string into a `CronUnix`.
+ *
+ * @category Parser
  * @param source string to be parsed.
  * @returns A `CronUnix` or `undefined` if invalid.
  */

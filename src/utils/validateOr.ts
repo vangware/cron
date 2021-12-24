@@ -1,5 +1,8 @@
 /**
  * Run several validations in the same string, true if any is true.
+ *
+ * @category Util
+ * @category Validation
  * @param validations List of validations.
  * @returns Curried function with `validations` in context.
  */

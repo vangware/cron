@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { isCronSteps } from "../../src/validations/isCronSteps";
+import { isCronSteps } from "../../src/validations/isCronSteps.js";
 
 export default suite([
 	{

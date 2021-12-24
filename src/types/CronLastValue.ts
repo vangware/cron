@@ -1,4 +1,4 @@
-import type { CronDayOfWeekValueNumber } from "./CronDayOfWeekValueNumber";
+import type { CronDayOfWeekValueNumber } from "./CronDayOfWeekValueNumber.js";
 
 /**
  * Cron every ({last}L).

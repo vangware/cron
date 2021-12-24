@@ -1,10 +1,12 @@
 import { isUndefined } from "@vangware/utils";
-import type { CronRange } from "../types/CronRange";
-import type { CronValueParser } from "../types/CronValueParser";
-import { isCronRange } from "../validations/isCronRange";
+import type { CronRange } from "../types/CronRange.js";
+import type { CronValueParser } from "../types/CronValueParser.js";
+import { isCronRange } from "../validations/isCronRange.js";
 
 /**
  * Parses `CronRange` into a string.
+ *
+ * @category Parser
  * @param parser `CronValueParser` for `CronRange`.
  * @returns Curried function with `parser` in context.
  */

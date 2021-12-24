@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { isStringNearestDayOfMonth } from "../../src/validations/isStringNearestDayOfMonth";
+import { isStringNearestDayOfMonth } from "../../src/validations/isStringNearestDayOfMonth.js";
 
 export default suite([
 	{

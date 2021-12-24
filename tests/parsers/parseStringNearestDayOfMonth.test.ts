@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { parseStringNearestDayOfMonth } from "../../src/parsers/parseStringNearestDayOfMonth";
+import { parseStringNearestDayOfMonth } from "../../src/parsers/parseStringNearestDayOfMonth.js";
 
 export default suite([
 	{

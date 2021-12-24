@@ -1,4 +1,4 @@
-import type { CronDayOfMonthValue } from "./CronDayOfMonthValue";
+import type { CronDayOfMonthValue } from "./CronDayOfMonthValue.js";
 
 /**
  * Nearest day of month ({nearest}W).

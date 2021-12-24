@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { parseStringYearValue } from "../../src/parsers/parseStringYearValue";
+import { parseStringYearValue } from "../../src/parsers/parseStringYearValue.js";
 
 export default suite([
 	{

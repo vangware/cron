@@ -1,6 +1,6 @@
 {
 	"cleanOutputDir": false,
-	"customCss": "./node_modules/@vangware/base/configurations/typedoc.css",
+	"customCss": "./node_modules/@vangware/configs/typedoc.css",
 	"entryPoints": ["./src/index.ts"],
 	"gitRevision": "main",
 	"hideGenerator": true,

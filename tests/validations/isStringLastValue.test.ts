@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { isStringLastValue } from "../../src/validations/isStringLastValue";
+import { isStringLastValue } from "../../src/validations/isStringLastValue.js";
 
 export default suite([
 	{

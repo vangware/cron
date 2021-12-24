@@ -1,8 +1,10 @@
 import { isNumber, numberBetween } from "@vangware/utils";
-import type { CronMinutesValue } from "../types/CronMinutesValue";
+import type { CronMinutesValue } from "../types/CronMinutesValue.js";
 
 /**
  * Check if given is `CronMinutesValue`.
+ *
+ * @category Validation
  * @param value Value to check.
  */
 export const isCronMinutesValue = (value: unknown): value is CronMinutesValue =>

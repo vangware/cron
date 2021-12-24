@@ -1,17 +1,19 @@
-import type { CronDayOfWeek } from "../types/CronDayOfWeek";
-import type { CronLast } from "../types/CronLast";
-import type { CronLastValue } from "../types/CronLastValue";
-import type { CronSpecificDayOfWeek } from "../types/CronSpecificDayOfWeek";
-import type { CronStartOrBlank } from "../types/CronStartOrBlank";
-import { parseCronDayOfWeekValue } from "./parseCronDayOfWeekValue";
-import { parseCronLast } from "./parseCronLast";
-import { parseCronLastValue } from "./parseCronLastValue";
-import { parseCronPart } from "./parseCronPart";
-import { parseCronSpecificDayOfWeek } from "./parseCronSpecificDayOfWeek";
-import { parseCronStartOrBlank } from "./parseCronStartOrBlank";
+import type { CronDayOfWeek } from "../types/CronDayOfWeek.js";
+import type { CronLast } from "../types/CronLast.js";
+import type { CronLastValue } from "../types/CronLastValue.js";
+import type { CronSpecificDayOfWeek } from "../types/CronSpecificDayOfWeek.js";
+import type { CronStartOrBlank } from "../types/CronStartOrBlank.js";
+import { parseCronDayOfWeekValue } from "./parseCronDayOfWeekValue.js";
+import { parseCronLast } from "./parseCronLast.js";
+import { parseCronLastValue } from "./parseCronLastValue.js";
+import { parseCronPart } from "./parseCronPart.js";
+import { parseCronSpecificDayOfWeek } from "./parseCronSpecificDayOfWeek.js";
+import { parseCronStartOrBlank } from "./parseCronStartOrBlank.js";
 
 /**
  * Parses `CronDayOfWeek` into a string.
+ *
+ * @category Parser
  * @param source `CronDayOfWeek` to be parsed.
  * @returns A string or `undefined` if invalid.
  */

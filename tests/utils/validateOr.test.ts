@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { validateOr } from "../../src/utils/validateOr";
+import { validateOr } from "../../src/utils/validateOr.js";
 
 const value = "1";
 

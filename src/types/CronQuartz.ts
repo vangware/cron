@@ -1,5 +1,5 @@
-import type { CronQuartzExtension } from "./CronQuartzExtension";
-import type { CronUnix } from "./CronUnix";
+import type { CronQuartzExtension } from "./CronQuartzExtension.js";
+import type { CronUnix } from "./CronUnix.js";
 
 /**
  * Cron object (Quartz).

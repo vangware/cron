@@ -1,5 +1,5 @@
-import type { CronPart } from "./CronPart";
-import type { CronSecondsValue } from "./CronSecondsValue";
+import type { CronPart } from "./CronPart.js";
+import type { CronSecondsValue } from "./CronSecondsValue.js";
 
 /**
  * Cron seconds.

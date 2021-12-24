@@ -1,13 +1,15 @@
 import { arrayJoin, isUndefined } from "@vangware/utils";
-import type { CronUnix } from "../types/CronUnix";
-import { parseCronDayOfMonth } from "./parseCronDayOfMonth";
-import { parseCronDayOfWeek } from "./parseCronDayOfWeek";
-import { parseCronHours } from "./parseCronHours";
-import { parseCronMinutes } from "./parseCronMinutes";
-import { parseCronMonth } from "./parseCronMonth";
+import type { CronUnix } from "../types/CronUnix.js";
+import { parseCronDayOfMonth } from "./parseCronDayOfMonth.js";
+import { parseCronDayOfWeek } from "./parseCronDayOfWeek.js";
+import { parseCronHours } from "./parseCronHours.js";
+import { parseCronMinutes } from "./parseCronMinutes.js";
+import { parseCronMonth } from "./parseCronMonth.js";
 
 /**
  * Parses `Cron` (UNIX) into a string.
+ *
+ * @category Parser
  * @param source `Cron` (UNIX) to be parsed.
  * @returns A string or `undefined` if invalid.
  */

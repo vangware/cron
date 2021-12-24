@@ -2,6 +2,8 @@ import { isString, stringTest } from "@vangware/utils";
 
 /**
  * Check if given is a string representing a `CronMonthValueNumber`.
+ *
+ * @category Validation
  * @param value Value to check.
  */
 export const isStringMonthValueNumber = (value: unknown): value is string =>

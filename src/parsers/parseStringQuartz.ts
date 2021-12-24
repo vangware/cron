@@ -7,19 +7,21 @@ import {
 	QUARTZ_MONTH_POSITION,
 	QUARTZ_SECONDS_POSITION,
 	QUARTZ_YEAR_POSITION,
-} from "../constants";
-import type { CronQuartz } from "../types/CronQuartz";
-import { parseStringDayOfMonth } from "./parseStringDayOfMonth";
-import { parseStringDayOfWeek } from "./parseStringDayOfWeek";
-import { parseStringHours } from "./parseStringHours";
-import { parseStringMinutes } from "./parseStringMinutes";
-import { parseStringMonth } from "./parseStringMonth";
-import { parseStringQuartzExpression } from "./parseStringQuartzExpression";
-import { parseStringSeconds } from "./parseStringSeconds";
-import { parseStringYear } from "./parseStringYear";
+} from "../constants.js";
+import type { CronQuartz } from "../types/CronQuartz.js";
+import { parseStringDayOfMonth } from "./parseStringDayOfMonth.js";
+import { parseStringDayOfWeek } from "./parseStringDayOfWeek.js";
+import { parseStringHours } from "./parseStringHours.js";
+import { parseStringMinutes } from "./parseStringMinutes.js";
+import { parseStringMonth } from "./parseStringMonth.js";
+import { parseStringQuartzExpression } from "./parseStringQuartzExpression.js";
+import { parseStringSeconds } from "./parseStringSeconds.js";
+import { parseStringYear } from "./parseStringYear.js";
 
 /**
  * Parses a string into a `CronQuartz`.
+ *
+ * @category Parser
  * @param source string to be parsed.
  * @returns A `Cron` or `undefined` if invalid.
  */

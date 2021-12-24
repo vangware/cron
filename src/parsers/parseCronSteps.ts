@@ -1,15 +1,17 @@
 import { isUndefined, numberBetween } from "@vangware/utils";
-import type { CronEvery } from "../types/CronEvery";
-import type { CronRange } from "../types/CronRange";
-import type { CronSteps } from "../types/CronSteps";
-import type { CronValueParser } from "../types/CronValueParser";
-import type { LimitTuple } from "../types/LimitTuple";
-import { isCronSteps } from "../validations/isCronSteps";
-import { parseCronEvery } from "./parseCronEvery";
-import { parseCronRange } from "./parseCronRange";
+import type { CronEvery } from "../types/CronEvery.js";
+import type { CronRange } from "../types/CronRange.js";
+import type { CronSteps } from "../types/CronSteps.js";
+import type { CronValueParser } from "../types/CronValueParser.js";
+import type { LimitTuple } from "../types/LimitTuple.js";
+import { isCronSteps } from "../validations/isCronSteps.js";
+import { parseCronEvery } from "./parseCronEvery.js";
+import { parseCronRange } from "./parseCronRange.js";
 
 /**
  * Parses `CronSteps` into a string.
+ *
+ * @category Parser
  * @param limit `LimitTuple` to be used when parsing `CronSteps`.
  * @returns Curried function with `limit` on context.
  */

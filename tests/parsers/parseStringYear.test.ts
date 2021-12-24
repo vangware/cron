@@ -1,6 +1,6 @@
 import { suite } from "@vangware/test";
-import { CRON_EVERY } from "../../src/constants";
-import { parseStringYear } from "../../src/parsers/parseStringYear";
+import { CRON_EVERY } from "../../src/constants.js";
+import { parseStringYear } from "../../src/parsers/parseStringYear.js";
 
 export default suite([
 	{

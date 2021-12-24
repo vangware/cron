@@ -1,5 +1,5 @@
-import type { CronEvery } from "./CronEvery";
-import type { CronRange } from "./CronRange";
+import type { CronEvery } from "./CronEvery.js";
+import type { CronRange } from "./CronRange.js";
 
 /**
  * Cron steps (start/every).

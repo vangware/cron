@@ -2,6 +2,8 @@ import { isString } from "@vangware/utils";
 
 /**
  * Checks if given search value appears just onces in given value.
+ *
+ * @category Validation
  * @param search Value to search.
  * @returns Curried function with `search` in context.
  */

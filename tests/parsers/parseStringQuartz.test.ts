@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { parseStringQuartz } from "../../src/parsers/parseStringQuartz";
+import { parseStringQuartz } from "../../src/parsers/parseStringQuartz.js";
 
 export default suite([
 	{

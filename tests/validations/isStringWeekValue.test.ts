@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { isStringWeekValue } from "../../src/validations/isStringWeekValue";
+import { isStringWeekValue } from "../../src/validations/isStringWeekValue.js";
 
 export default suite([
 	{

@@ -1,7 +1,7 @@
 import { suite } from "@vangware/test";
-import { CRON_EVERY } from "../../src/constants";
-import { parseCronEvery } from "../../src/parsers/parseCronEvery";
-import type { CronEvery } from "../../src/types/CronEvery";
+import { CRON_EVERY } from "../../src/constants.js";
+import { parseCronEvery } from "../../src/parsers/parseCronEvery.js";
+import type { CronEvery } from "../../src/types/CronEvery.js";
 
 export default suite([
 	{

@@ -1,8 +1,10 @@
 import { isNumber, numberBetween } from "@vangware/utils";
-import type { CronDayOfWeekValueNumber } from "../types/CronDayOfWeekValueNumber";
+import type { CronDayOfWeekValueNumber } from "../types/CronDayOfWeekValueNumber.js";
 
 /**
  * Check if given is `CronDayOfWeekValueNumber`.
+ *
+ * @category Validation
  * @param value Value to check.
  */
 export const isCronDayOfWeekValueNumber = (

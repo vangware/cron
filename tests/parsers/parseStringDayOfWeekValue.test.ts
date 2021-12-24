@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { parseStringDayOfWeekValue } from "../../src/parsers/parseStringDayOfWeekValue";
+import { parseStringDayOfWeekValue } from "../../src/parsers/parseStringDayOfWeekValue.js";
 
 export default suite([
 	{

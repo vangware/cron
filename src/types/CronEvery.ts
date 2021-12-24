@@ -1,4 +1,4 @@
-import type { CRON_EVERY } from "../constants";
+import type { CRON_EVERY } from "../constants.js";
 
 /**
  * Cron every (*).

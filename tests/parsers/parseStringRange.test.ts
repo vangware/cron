@@ -1,6 +1,6 @@
 import { suite } from "@vangware/test";
-import { parseStringRange } from "../../src/parsers/parseStringRange";
-import { parseStringSecondsValue } from "../../src/parsers/parseStringSecondsValue";
+import { parseStringRange } from "../../src/parsers/parseStringRange.js";
+import { parseStringSecondsValue } from "../../src/parsers/parseStringSecondsValue.js";
 
 const parseStringRangeSeconds = parseStringRange(parseStringSecondsValue);
 

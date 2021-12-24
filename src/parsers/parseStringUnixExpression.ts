@@ -1,7 +1,9 @@
-import { splitExpression } from "../utils/splitExpression";
+import { splitExpression } from "../utils/splitExpression.js";
 
 /**
  * Parses given expression or undefined if invalid.
+ *
+ * @category Parser
  * @param source string to be parsed.
  * @returns An array of 5 elements or `undefined` if invalid.
  */

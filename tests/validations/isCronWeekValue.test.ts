@@ -1,5 +1,5 @@
 import { suite } from "@vangware/test";
-import { isCronWeekValue } from "../../src/validations/isCronWeekValue";
+import { isCronWeekValue } from "../../src/validations/isCronWeekValue.js";
 
 export default suite([
 	{
