@@ -1,7 +1,7 @@
 {
 	"name": "@vangware/cron",
 	"description": "⏲️ Cron Quartz and Cron UNIX expression parser",
-	"version": "5.0.0",
+	"version": "5.0.1",
 	"author": {
 		"email": "hello@vangware.com",
 		"name": "Vangware",
@@ -9,24 +9,24 @@
 	},
 	"bugs": "https://github.com/vangware/cron/issues",
 	"dependencies": {
-		"@vangware/utils": "^8.0.0"
+		"@vangware/utils": "^8.0.2"
 	},
 	"devDependencies": {
 		"@arkweid/lefthook": "^0.7.7",
 		"@types/eslint": "^8.2.1",
-		"@types/node": "17.0.4",
+		"@types/node": "17.0.8",
 		"@types/prettier": "^2.4.2",
-		"@typescript-eslint/eslint-plugin": "^5.8.0",
-		"@typescript-eslint/parser": "^5.8.0",
-		"@vangware/configs": "^1.0.9",
-		"@vangware/test": "^8.0.0",
-		"c8": "^7.10.0",
-		"eslint": "^8.5.0",
+		"@typescript-eslint/eslint-plugin": "^5.9.0",
+		"@typescript-eslint/parser": "^5.9.0",
+		"@vangware/configs": "^1.0.12",
+		"@vangware/test": "^8.0.3",
+		"c8": "^7.11.0",
+		"eslint": "^8.6.0",
 		"eslint-config-prettier": "8.3.0",
 		"eslint-import-resolver-node": "^0.3.6",
 		"eslint-plugin-ban": "^1.6.0",
 		"eslint-plugin-functional": "^4.0.2",
-		"eslint-plugin-import": "^2.25.3",
+		"eslint-plugin-import": "^2.25.4",
 		"eslint-plugin-no-null": "^1.0.2",
 		"eslint-plugin-prefer-arrow": "^1.2.3",
 		"eslint-plugin-prettier": "^4.0.0",
@@ -54,7 +54,10 @@
 		"typescript"
 	],
 	"license": "MIT",
-	"repository": "vangware/cron",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vangware/cron.git"
+	},
 	"scripts": {
 		"clean": "rimraf ./dist",
 		"compile": "tsc --project tsconfig.dist.json",
