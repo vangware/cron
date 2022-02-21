@@ -1,8 +1,8 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { parseCronUnix } from "../../src/parsers/parseCronUnix.js";
 import type { CronDayOfMonth } from "../../src/types/CronDayOfMonth.js";
 
-export default suite([
+export default [
 	{
 		given: "A CronUnix object with all set to every",
 		must: "return * * * * *",
@@ -75,4 +75,4 @@ export default suite([
 		}),
 		wanted: undefined,
 	},
-]);
+] as Tests<string>;

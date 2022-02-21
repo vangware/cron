@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { parseStringQuartz } from "../../src/parsers/parseStringQuartz.js";
 
-export default suite([
+export default [
 	{
 		given: "A cron expression * * * * * * *",
 		must: "return a CronQuartz object with all set to every",
@@ -92,4 +92,4 @@ export default suite([
 		received: parseStringQuartz("INVALID"),
 		wanted: undefined,
 	},
-]);
+] as Tests;

@@ -1,8 +1,8 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { CRON_LAST } from "../../src/constants.js";
 import { isCronLast } from "../../src/validations/isCronLast.js";
 
-export default suite([
+export default [
 	{
 		given: "a L value",
 		must: "return true",
@@ -15,4 +15,4 @@ export default suite([
 		received: isCronLast("INVALID"),
 		wanted: false,
 	},
-]);
+] as Tests<boolean>;

@@ -1,4 +1,4 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import {
 	CRON_EVERY,
 	CRON_LAST,
@@ -6,7 +6,7 @@ import {
 } from "../../src/constants.js";
 import { parseCronDayOfWeek } from "../../src/parsers/parseCronDayOfWeek.js";
 
-export default suite([
+export default [
 	{
 		given: "every Friday",
 		must: "return 6",
@@ -81,4 +81,4 @@ export default suite([
 		received: parseCronDayOfWeek({ day: 1, week: 5 }),
 		wanted: "1#5",
 	},
-]);
+] as Tests<string>;

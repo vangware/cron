@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { isStringWeekValue } from "../../src/validations/isStringWeekValue.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid number value in the range 1-5",
 		must: "return true",
@@ -20,4 +20,4 @@ export default suite([
 		received: isStringWeekValue("INVALID"),
 		wanted: false,
 	},
-]);
+] as Tests<boolean>;

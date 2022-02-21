@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { isStringNearestDayOfMonth } from "../../src/validations/isStringNearestDayOfMonth.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid near value",
 		must: "return true",
@@ -26,4 +26,4 @@ export default suite([
 		received: isStringNearestDayOfMonth("INVALID"),
 		wanted: false,
 	},
-]);
+] as Tests<boolean>;

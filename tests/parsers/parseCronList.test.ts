@@ -1,11 +1,11 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { CRON_EVERY } from "../../src/constants.js";
 import { parseCronList } from "../../src/parsers/parseCronList.js";
 import { parseCronSecondsValue } from "../../src/parsers/parseCronSecondsValue.js";
 
 const parseCronSecondsList = parseCronList([0, 59])(parseCronSecondsValue);
 
-export default suite([
+export default [
 	{
 		given: "a valid list",
 		must: "return CronList",
@@ -39,4 +39,4 @@ export default suite([
 		received: parseCronSecondsList([{ every: 10, start: CRON_EVERY }, 10]),
 		wanted: "*/10,10",
 	},
-]);
+] as Tests<string>;

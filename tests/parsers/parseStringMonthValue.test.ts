@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { parseStringMonthValue } from "../../src/parsers/parseStringMonthValue.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid number between 1 and 12",
 		must: "return that number",
@@ -32,4 +32,4 @@ export default suite([
 		received: parseStringMonthValue("IDK"),
 		wanted: undefined,
 	},
-]);
+] as Tests;

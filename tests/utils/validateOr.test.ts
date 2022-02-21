@@ -1,9 +1,9 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { validateOr } from "../../src/utils/validateOr.js";
 
 const value = "1";
 
-export default suite([
+export default [
 	{
 		given: "an empty list of validations",
 		must: "return false",
@@ -37,4 +37,4 @@ export default suite([
 		])(value),
 		wanted: false,
 	},
-]);
+] as Tests;

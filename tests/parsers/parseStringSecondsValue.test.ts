@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { parseStringSecondsValue } from "../../src/parsers/parseStringSecondsValue.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid number between 1 and 59",
 		must: "return that number",
@@ -14,4 +14,4 @@ export default suite([
 		received: parseStringSecondsValue("61"),
 		wanted: undefined,
 	},
-]);
+] as Tests;

@@ -1,8 +1,8 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { parseCronYearValue } from "../../src/parsers/parseCronYearValue.js";
 import type { CronYearValue } from "../../src/types/CronYearValue.js";
 
-export default suite([
+export default [
 	{
 		given: "A valid seconds value",
 		must: "return it",
@@ -21,4 +21,4 @@ export default suite([
 		received: parseCronYearValue(3000 as CronYearValue),
 		wanted: undefined,
 	},
-]);
+] as Tests<string>;

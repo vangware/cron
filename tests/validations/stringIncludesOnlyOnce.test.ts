@@ -1,9 +1,9 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { stringIncludesOnlyOnce } from "../../src/validations/stringIncludesOnlyOnce.js";
 
 const includesCommaOnce = stringIncludesOnlyOnce(",");
 
-export default suite([
+export default [
 	{
 		given: "valid value with once appearance",
 		must: "return true",
@@ -22,4 +22,4 @@ export default suite([
 		received: includesCommaOnce("a"),
 		wanted: false,
 	},
-]);
+] as Tests<boolean>;

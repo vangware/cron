@@ -1,8 +1,8 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { CRON_EVERY } from "../../src/constants.js";
 import { parseCronHours } from "../../src/parsers/parseCronHours.js";
 
-export default suite([
+export default [
 	{
 		given: "between 10am and 11am",
 		must: "return 10",
@@ -47,4 +47,4 @@ export default suite([
 		received: parseCronHours([1, 2, 3, 4, { from: 5, to: 10 }]),
 		wanted: "1,2,3,4,5-10",
 	},
-]);
+] as Tests<string>;

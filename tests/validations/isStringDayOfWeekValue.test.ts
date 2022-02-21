@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { isStringDayOfWeekValue } from "../../src/validations/isStringDayOfWeekValue.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid number value in the range 0-7",
 		must: "return true",
@@ -38,4 +38,4 @@ export default suite([
 		received: isStringDayOfWeekValue("INVALID"),
 		wanted: false,
 	},
-]);
+] as Tests<boolean>;

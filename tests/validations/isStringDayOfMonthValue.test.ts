@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { isStringDayOfMonthValue } from "../../src/validations/isStringDayOfMonthValue.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid number value in the range 1-31",
 		must: "return true",
@@ -20,4 +20,4 @@ export default suite([
 		received: isStringDayOfMonthValue("INVALID"),
 		wanted: false,
 	},
-]);
+] as Tests<boolean>;

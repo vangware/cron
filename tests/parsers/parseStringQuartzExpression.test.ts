@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { parseStringQuartzExpression } from "../../src/parsers/parseStringQuartzExpression.js";
 
-export default suite([
+export default [
 	{
 		given: "an expression with 5 values",
 		must: "return a valid array",
@@ -44,4 +44,4 @@ export default suite([
 		received: parseStringQuartzExpression("1 1 1 1"),
 		wanted: undefined,
 	},
-]);
+] as Tests;

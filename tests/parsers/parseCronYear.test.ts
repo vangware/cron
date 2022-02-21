@@ -1,8 +1,8 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { CRON_EVERY } from "../../src/constants.js";
 import { parseCronYear } from "../../src/parsers/parseCronYear.js";
 
-export default suite([
+export default [
 	{
 		given: "in 1989",
 		must: "return *",
@@ -51,4 +51,4 @@ export default suite([
 		]),
 		wanted: "1989,1991,2015,2020,1989-2020",
 	},
-]);
+] as Tests<string>;
