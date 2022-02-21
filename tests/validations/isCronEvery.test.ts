@@ -1,8 +1,8 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { CRON_EVERY } from "../../src/constants.js";
 import { isCronEvery } from "../../src/validations/isCronEvery.js";
 
-export default suite([
+export default [
 	{
 		given: "a * value",
 		must: "return true",
@@ -15,4 +15,4 @@ export default suite([
 		received: isCronEvery("INVALID"),
 		wanted: false,
 	},
-]);
+] as Tests<boolean>;

@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { isStringSteps } from "../../src/validations/isStringSteps.js";
 
-export default suite([
+export default [
 	{
 		given: "a value with one dash",
 		must: "return true",
@@ -20,4 +20,4 @@ export default suite([
 		received: isStringSteps("value"),
 		wanted: false,
 	},
-]);
+] as Tests<boolean>;

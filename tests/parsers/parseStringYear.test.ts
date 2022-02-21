@@ -1,8 +1,8 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { CRON_EVERY } from "../../src/constants.js";
 import { parseStringYear } from "../../src/parsers/parseStringYear.js";
 
-export default suite([
+export default [
 	{
 		given: "in 1989",
 		must: "return *",
@@ -57,4 +57,4 @@ export default suite([
 		received: parseStringYear("1,2,3,4,INVALID"),
 		wanted: undefined,
 	},
-]);
+] as Tests;

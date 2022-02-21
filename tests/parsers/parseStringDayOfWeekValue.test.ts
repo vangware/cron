@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { parseStringDayOfWeekValue } from "../../src/parsers/parseStringDayOfWeekValue.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid number between 0 and 7",
 		must: "return that number",
@@ -32,4 +32,4 @@ export default suite([
 		received: parseStringDayOfWeekValue("IDK"),
 		wanted: undefined,
 	},
-]);
+] as Tests;

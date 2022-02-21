@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { parseStringNearestDayOfMonth } from "../../src/parsers/parseStringNearestDayOfMonth.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid W with value 2",
 		must: "return CronEvery",
@@ -14,4 +14,4 @@ export default suite([
 		received: parseStringNearestDayOfMonth("INVALID"),
 		wanted: undefined,
 	},
-]);
+] as Tests;

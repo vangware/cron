@@ -1,9 +1,9 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { CRON_LAST } from "../../src/constants.js";
 import { parseCronLastValue } from "../../src/parsers/parseCronLastValue.js";
 import type { CronDayOfWeekValueNumber } from "../../src/types/CronDayOfWeekValueNumber.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid L",
 		must: "return CronEvery",
@@ -16,4 +16,4 @@ export default suite([
 		received: parseCronLastValue({ last: 99 as CronDayOfWeekValueNumber }),
 		wanted: undefined,
 	},
-]);
+] as Tests<string>;

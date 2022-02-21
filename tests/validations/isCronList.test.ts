@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { isCronList } from "../../src/validations/isCronList.js";
 
-export default suite([
+export default [
 	{
 		given: "a value with commas",
 		must: "return true",
@@ -14,4 +14,4 @@ export default suite([
 		received: isCronList("value"),
 		wanted: false,
 	},
-]);
+] as Tests<boolean>;

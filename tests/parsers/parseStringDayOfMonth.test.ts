@@ -1,4 +1,4 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import {
 	CRON_EVERY,
 	CRON_LAST,
@@ -6,7 +6,7 @@ import {
 } from "../../src/constants.js";
 import { parseStringDayOfMonth } from "../../src/parsers/parseStringDayOfMonth.js";
 
-export default suite([
+export default [
 	{
 		given: "on the 10th day of ...",
 		must: "return 10",
@@ -81,4 +81,4 @@ export default suite([
 		received: parseStringDayOfMonth("1,2,3,4,INVALID"),
 		wanted: undefined,
 	},
-]);
+] as Tests;

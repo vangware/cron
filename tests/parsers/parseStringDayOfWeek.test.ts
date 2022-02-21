@@ -1,4 +1,4 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import {
 	CRON_EVERY,
 	CRON_LAST,
@@ -6,7 +6,7 @@ import {
 } from "../../src/constants.js";
 import { parseStringDayOfWeek } from "../../src/parsers/parseStringDayOfWeek.js";
 
-export default suite([
+export default [
 	{
 		given: "every Friday",
 		must: "return 6",
@@ -99,4 +99,4 @@ export default suite([
 		received: parseStringDayOfWeek("1,2,3,4,INVALID"),
 		wanted: undefined,
 	},
-]);
+] as Tests;

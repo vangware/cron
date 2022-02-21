@@ -1,4 +1,4 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { CRON_EVERY } from "../../src/constants.js";
 import { parseStringPart } from "../../src/parsers/parseStringPart.js";
 import { parseStringSecondsValue } from "../../src/parsers/parseStringSecondsValue.js";
@@ -7,7 +7,7 @@ const parseStringPartSeconds = parseStringPart([0, 59])(
 	parseStringSecondsValue,
 );
 
-export default suite([
+export default [
 	{
 		given: "a valid *",
 		must: "return CronEvery",
@@ -68,4 +68,4 @@ export default suite([
 		received: parseStringPartSeconds("13-10"),
 		wanted: { from: 13, to: 10 },
 	},
-]);
+] as Tests;

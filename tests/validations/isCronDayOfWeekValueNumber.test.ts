@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { isCronDayOfWeekValueNumber } from "../../src/validations/isCronDayOfWeekValueNumber.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid number value in the range 0-7",
 		must: "return true",
@@ -20,4 +20,4 @@ export default suite([
 		received: isCronDayOfWeekValueNumber("INVALID"),
 		wanted: false,
 	},
-]);
+] as Tests<boolean>;

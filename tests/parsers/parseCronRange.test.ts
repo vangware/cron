@@ -1,11 +1,11 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { parseCronRange } from "../../src/parsers/parseCronRange.js";
 import { parseCronSecondsValue } from "../../src/parsers/parseCronSecondsValue.js";
 import type { CronSecondsValue } from "../../src/types/CronSecondsValue.js";
 
 const parseCronRangeSeconds = parseCronRange(parseCronSecondsValue);
 
-export default suite([
+export default [
 	{
 		given: "a valid range",
 		must: "return CronRange object",
@@ -21,4 +21,4 @@ export default suite([
 		}),
 		wanted: undefined,
 	},
-]);
+] as Tests<string>;

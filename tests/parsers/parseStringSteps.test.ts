@@ -1,9 +1,9 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { CRON_EVERY } from "../../src/constants.js";
 import { parseStringSecondsValue } from "../../src/parsers/parseStringSecondsValue.js";
 import { parseStringSteps } from "../../src/parsers/parseStringSteps.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid steps value",
 		must: "return CronSteps object",
@@ -30,4 +30,4 @@ export default suite([
 		received: parseStringSteps([0, 31])(parseStringSecondsValue)("13"),
 		wanted: undefined,
 	},
-]);
+] as Tests;

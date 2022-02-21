@@ -1,8 +1,8 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { CRON_LAST } from "../../src/constants.js";
 import { parseCronLast } from "../../src/parsers/parseCronLast.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid L",
 		must: "return CronEvery",
@@ -15,4 +15,4 @@ export default suite([
 		received: parseCronLast("INVALID"),
 		wanted: undefined,
 	},
-]);
+] as Tests<string>;

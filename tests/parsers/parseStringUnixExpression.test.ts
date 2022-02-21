@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { parseStringUnixExpression } from "../../src/parsers/parseStringUnixExpression.js";
 
-export default suite([
+export default [
 	{
 		given: "an expression with 5 values",
 		must: "return a valid array",
@@ -26,4 +26,4 @@ export default suite([
 		received: parseStringUnixExpression("1 1 1 1"),
 		wanted: undefined,
 	},
-]);
+] as Tests;
