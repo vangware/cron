@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { isStringLastValue } from "../../src/validations/isStringLastValue.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid last value",
 		must: "return true",
@@ -26,4 +26,4 @@ export default suite([
 		received: isStringLastValue("INVALID"),
 		wanted: false,
 	},
-]);
+] as Tests<boolean>;

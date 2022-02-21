@@ -1,8 +1,8 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { parseCronDayOfMonthValue } from "../../src/parsers/parseCronDayOfMonthValue.js";
 import type { CronDayOfMonthValue } from "../../src/types/CronDayOfMonthValue.js";
 
-export default suite([
+export default [
 	{
 		given: "A valid dayOfMonth value",
 		must: "return that value",
@@ -21,4 +21,4 @@ export default suite([
 		received: parseCronDayOfMonthValue(99 as CronDayOfMonthValue),
 		wanted: undefined,
 	},
-]);
+] as Tests<string>;

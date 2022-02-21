@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { isCronLastValue } from "../../src/validations/isCronLastValue.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid last value",
 		must: "return true",
@@ -20,4 +20,4 @@ export default suite([
 		received: isCronLastValue("INVALID"),
 		wanted: false,
 	},
-]);
+] as Tests<boolean>;

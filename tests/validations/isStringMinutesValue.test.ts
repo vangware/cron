@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { isStringMinutesValue } from "../../src/validations/isStringMinutesValue.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid number value in the range 0-59",
 		must: "return true",
@@ -20,4 +20,4 @@ export default suite([
 		received: isStringMinutesValue("INVALID"),
 		wanted: false,
 	},
-]);
+] as Tests<boolean>;

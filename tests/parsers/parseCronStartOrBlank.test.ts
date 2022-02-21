@@ -1,8 +1,8 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { CRON_START_OR_BLANK } from "../../src/constants.js";
 import { parseCronStartOrBlank } from "../../src/parsers/parseCronStartOrBlank.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid ?",
 		must: "return CronEvery",
@@ -15,4 +15,4 @@ export default suite([
 		received: parseCronStartOrBlank("INVALID"),
 		wanted: undefined,
 	},
-]);
+] as Tests<string>;

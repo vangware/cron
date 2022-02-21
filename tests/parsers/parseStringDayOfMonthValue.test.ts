@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { parseStringDayOfMonthValue } from "../../src/parsers/parseStringDayOfMonthValue.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid number between 1 and 31",
 		must: "return that number",
@@ -14,4 +14,4 @@ export default suite([
 		received: parseStringDayOfMonthValue("32"),
 		wanted: undefined,
 	},
-]);
+] as Tests;

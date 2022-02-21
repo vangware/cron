@@ -1,8 +1,8 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { CRON_EVERY } from "../../src/constants.js";
 import { parseStringMinutes } from "../../src/parsers/parseStringMinutes.js";
 
-export default suite([
+export default [
 	{
 		given: "during minute 10",
 		must: "return *",
@@ -57,4 +57,4 @@ export default suite([
 		received: parseStringMinutes("1,2,3,4,INVALID"),
 		wanted: undefined,
 	},
-]);
+] as Tests;

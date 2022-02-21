@@ -1,9 +1,9 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { CRON_EVERY } from "../../src/constants.js";
 import { parseCronEvery } from "../../src/parsers/parseCronEvery.js";
 import type { CronEvery } from "../../src/types/CronEvery.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid *",
 		must: "return CronEvery",
@@ -16,4 +16,4 @@ export default suite([
 		received: parseCronEvery("INVALID" as CronEvery),
 		wanted: undefined,
 	},
-]);
+] as Tests<string>;

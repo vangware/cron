@@ -1,8 +1,8 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { parseCronNearestDayOfMonth } from "../../src/parsers/parseCronNearestDayOfMonth.js";
 import type { CronDayOfMonthValue } from "../../src/types/CronDayOfMonthValue.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid W with value 2",
 		must: "return CronEvery",
@@ -17,4 +17,4 @@ export default suite([
 		}),
 		wanted: undefined,
 	},
-]);
+] as Tests<string>;

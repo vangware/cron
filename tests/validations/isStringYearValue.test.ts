@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { isStringYearValue } from "../../src/validations/isStringYearValue.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid number value in the range 1970-2099",
 		must: "return true",
@@ -20,4 +20,4 @@ export default suite([
 		received: isStringYearValue("INVALID"),
 		wanted: false,
 	},
-]);
+] as Tests<boolean>;

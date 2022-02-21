@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { parseStringUnix } from "../../src/parsers/parseStringUnix.js";
 
-export default suite([
+export default [
 	{
 		given: "A cron expression * * * * *",
 		must: "return a CronUnix object with all set to every",
@@ -80,4 +80,4 @@ export default suite([
 		received: parseStringUnix("INVALID"),
 		wanted: undefined,
 	},
-]);
+] as Tests;

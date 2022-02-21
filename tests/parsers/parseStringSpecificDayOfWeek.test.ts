@@ -1,8 +1,8 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { CRON_SPECIFIC_SEPARATOR } from "../../src/constants.js";
 import { parseStringSpecificDayOfWeek } from "../../src/parsers/parseStringSpecificDayOfWeek.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid W with value 2",
 		must: "return CronEvery",
@@ -15,4 +15,4 @@ export default suite([
 		received: parseStringSpecificDayOfWeek(CRON_SPECIFIC_SEPARATOR),
 		wanted: undefined,
 	},
-]);
+] as Tests;

@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { isStringRange } from "../../src/validations/isStringRange.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid range (number-number)",
 		must: "return true",
@@ -20,4 +20,4 @@ export default suite([
 		received: isStringRange("value"),
 		wanted: false,
 	},
-]);
+] as Tests<boolean>;

@@ -1,4 +1,4 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { CRON_EVERY } from "../../src/constants.js";
 import { parseStringList } from "../../src/parsers/parseStringList.js";
 import { parseStringSecondsValue } from "../../src/parsers/parseStringSecondsValue.js";
@@ -7,7 +7,7 @@ const parseStringListSeconds = parseStringList([0, 59])(
 	parseStringSecondsValue,
 );
 
-export default suite([
+export default [
 	{
 		given: "a valid list",
 		must: "return CronList",
@@ -50,4 +50,4 @@ export default suite([
 		received: parseStringListSeconds("INVALID"),
 		wanted: undefined,
 	},
-]);
+] as Tests;

@@ -1,8 +1,8 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { CRON_START_OR_BLANK } from "../../src/constants.js";
 import { isCronStartOrBlank } from "../../src/validations/isCronStartOrBlank.js";
 
-export default suite([
+export default [
 	{
 		given: "a ? value",
 		must: "return true",
@@ -15,4 +15,4 @@ export default suite([
 		received: isCronStartOrBlank("INVALID"),
 		wanted: false,
 	},
-]);
+] as Tests<boolean>;

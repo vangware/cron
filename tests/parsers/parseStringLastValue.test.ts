@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { parseStringLastValue } from "../../src/parsers/parseStringLastValue.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid L with value 5",
 		must: "return CronEvery",
@@ -14,4 +14,4 @@ export default suite([
 		received: parseStringLastValue("INVALID"),
 		wanted: undefined,
 	},
-]);
+] as Tests;

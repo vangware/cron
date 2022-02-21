@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { isStringSpecificDayOfWeek } from "../../src/validations/isStringSpecificDayOfWeek.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid specific day of week value",
 		must: "return true",
@@ -20,4 +20,4 @@ export default suite([
 		received: isStringSpecificDayOfWeek("INVALID"),
 		wanted: false,
 	},
-]);
+] as Tests<boolean>;

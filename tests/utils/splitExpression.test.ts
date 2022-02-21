@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { splitExpression } from "../../src/utils/splitExpression.js";
 
-export default suite([
+export default [
 	{
 		given: "a list of values with multiple spaces in between",
 		must: "return array containing the trimmed values",
@@ -20,4 +20,4 @@ export default suite([
 		received: splitExpression("12345"),
 		wanted: ["12345"],
 	},
-]);
+] as Tests;

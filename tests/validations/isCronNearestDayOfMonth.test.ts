@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { isCronNearestDayOfMonth } from "../../src/validations/isCronNearestDayOfMonth.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid near value",
 		must: "return true",
@@ -20,4 +20,4 @@ export default suite([
 		received: isCronNearestDayOfMonth("INVALID"),
 		wanted: false,
 	},
-]);
+] as Tests<boolean>;

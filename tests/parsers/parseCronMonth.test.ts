@@ -1,8 +1,8 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { CRON_EVERY } from "../../src/constants.js";
 import { parseCronMonth } from "../../src/parsers/parseCronMonth.js";
 
-export default suite([
+export default [
 	{
 		given: "in October",
 		must: "return 10",
@@ -53,4 +53,4 @@ export default suite([
 		received: parseCronMonth([1, 2, 3, { from: 5, to: 7 }]),
 		wanted: "1,2,3,5-7",
 	},
-]);
+] as Tests<string>;

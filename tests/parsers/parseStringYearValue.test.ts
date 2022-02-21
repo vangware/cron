@@ -1,7 +1,7 @@
-import { suite } from "@vangware/test";
+import type { Tests } from "@vangware/test";
 import { parseStringYearValue } from "../../src/parsers/parseStringYearValue.js";
 
-export default suite([
+export default [
 	{
 		given: "a valid number between 1970 and 2099",
 		must: "return that number",
@@ -14,4 +14,4 @@ export default suite([
 		received: parseStringYearValue("3000"), // There is no future for cron
 		wanted: undefined,
 	},
-]);
+] as Tests;
