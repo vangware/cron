@@ -6,10 +6,14 @@ import { isStringYearValue } from "../validations/isStringYearValue.js";
 /**
  * Parses a string into a `CronYearValue`.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * parseStringYearValue("1989"); // 1989
+ * parseStringYearValue("3000"); // undefined
+ * ```
  * @param source string to be parsed.
  * @returns A `CronYearValue` or `undefined` if invalid.
- * @example
  */
 export const parseStringYearValue: StringValueParser<CronYearValue> = source =>
 	isStringYearValue(source)

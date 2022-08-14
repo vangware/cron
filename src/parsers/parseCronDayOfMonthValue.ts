@@ -5,7 +5,13 @@ import { isCronDayOfMonthValue } from "../validations/isCronDayOfMonthValue.js";
 /**
  * Parses `CronDayOfMonthValue` into a string.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * parseCronDayOfMonthValue(1); // "1"
+ * parseCronDayOfMonthValue(31); // "31"
+ * parseCronDayOfMonthValue(99); // undefined
+ * ```
  * @param source `CronDayOfMonthValue` to be parsed.
  * @returns A string or `undefined` if invalid.
  */

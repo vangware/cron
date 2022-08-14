@@ -6,10 +6,14 @@ import { isStringSecondsValue } from "../validations/isStringSecondsValue.js";
 /**
  * Parses a string into a `CronSecondsValue`.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * parseStringSecondsValue("10"); // 10
+ * parseStringSecondsValue("61"); // undefined
+ * ```
  * @param source string to be parsed.
  * @returns A `CronSecondsValue` or `undefined` if invalid.
- * @example
  */
 export const parseStringSecondsValue: StringValueParser<
 	CronSecondsValue

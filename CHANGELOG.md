@@ -5,10 +5,11 @@ All notable changes to this project will be documented in this file.
 -   This project adheres to [Semantic Versioning][semver].
 -   This project uses [Gitmoji][gitmoji]
 
-## 5.0.2
+## 5.1.0
 
 -   :arrow_up: dependency upgrade.
 -   :fire: remove `@vangware/utils` everywhere and use the new libs instead.
+-   :memo: update docs.
 
 ## 5.0.1
 

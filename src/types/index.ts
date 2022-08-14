@@ -17,6 +17,7 @@ export type { CronMonth } from "./CronMonth.js";
 export type { CronMonthValue } from "./CronMonthValue.js";
 export type { CronMonthValueNumber } from "./CronMonthValueNumber.js";
 export type { CronMonthValueString } from "./CronMonthValueString.js";
+export type { CronNearest } from "./CronNearest.js";
 export type { CronNearestDayOfMonth } from "./CronNearestDayOfMonth.js";
 export type { CronPart } from "./CronPart.js";
 export type { CronPartExtended } from "./CronPartExtended.js";

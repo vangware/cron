@@ -6,10 +6,14 @@ import { isStringHoursValue } from "../validations/isStringHoursValue.js";
 /**
  * Parses a string into a `CronHoursValue`.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * parseStringHoursValue("10"); // 10
+ * parseStringHoursValue("25"); // undefined
+ * ```
  * @param source string to be parsed.
  * @returns A `CronHoursValue` or `undefined` if invalid.
- * @example
  */
 export const parseStringHoursValue: StringValueParser<
 	CronHoursValue

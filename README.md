@@ -35,7 +35,7 @@ parseCronQuartz(cron); // "1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10"
 import {
 	parseStringQuartz,
 	parseCronQuartz,
-} from "https://cdn.skypack.dev/@vangware/cron?dts";
+} from "https://esm.sh/@vangware/cron?dts";
 
 const cron = parseStringQuartz("1-2/3 1-2,3,4 * 2W SEP,OCT 1L */10");
 /*
@@ -67,6 +67,10 @@ Changelog can be found [HERE][changelog].
 ## Test coverage
 
 Test coverage can be found [HERE][coverage].
+
+## To do
+
+A **big** change is coming with stricter types and a better DX. Stay tuned.
 
 <!-- Reference -->
 

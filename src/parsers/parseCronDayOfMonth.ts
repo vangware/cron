@@ -11,7 +11,21 @@ import { parseCronStartOrBlank } from "./parseCronStartOrBlank.js";
 /**
  * Parses `CronDayOfMonth` into a string.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * parseCronDayOfMonth(10); // "10"
+ * parseCronDayOfMonth("*"); // "*"
+ * parseCronDayOfMonth("?"); // "?"
+ * parseCronDayOfMonth({ every: 10, start: 2 }); // "2/10"
+ * parseCronDayOfMonth({ every: 10, start: "L" }); // "L/10"
+ * parseCronDayOfMonth([1, 2, 3, 4]); // "1,2,3,4"
+ * parseCronDayOfMonth({ from: 5, to: 10 }); // "5-10"
+ * parseCronDayOfMonth([1, 2, 3, 4, { from: 5, to: 10 }]); // "1,2,3,4,5-10"
+ * parseCronDayOfMonth("L"); // "L"
+ * parseCronDayOfMonth({ nearest: 1 }); // "1W"
+ * parseCronDayOfMonth({ every: 99, start: "*" }); // undefined
+ * ```
  * @param source `CronDayOfMonth` to be parsed.
  * @returns A string or `undefined` if invalid.
  */

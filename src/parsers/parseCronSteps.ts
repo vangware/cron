@@ -11,24 +11,25 @@ import { parseCronRange } from "./parseCronRange.js";
 /**
  * Parses `CronSteps` into a string.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * const parseCronStepsSeconds = parseCronSteps([0, 59])(parseCronSecondsValue);
+ *
+ * parseCronStepsSeconds({ every: 10, start: 13 }); // "13/10"
+ * parseCronStepsSeconds({ every: 99, start: 13 }); // undefined
+ * parseCronStepsSeconds({
+ * 	every: 10,
+ * 	start: { from: 13, to: 10 },
+ * }); // "13-10/10"
+ * parseCronStepsSeconds({ every: 10, start: "?" }); // "?/10"
+ * ```
  * @param limit `LimitTuple` to be used when parsing `CronSteps`.
  * @returns Curried function with `limit` on context.
- * @example
  */
 export const parseCronSteps =
 	([minimum, maximum]: LimitTuple) =>
-	/**
-	 * @param parser `CronValueParser` for `CronSteps`.
-	 * @returns Curried function with `limit` and `parser` in context.
-	 * @example
-	 */
 	<Value>(parser: CronValueParser<Value>) =>
-	/**
-	 * @param source `CronSteps` to be parsed.
-	 * @returns A string or `undefined` if invalid.
-	 * @example
-	 */
 	(source: CronSteps<Value>) => {
 		const valid = isCronSteps(source);
 		const start = valid

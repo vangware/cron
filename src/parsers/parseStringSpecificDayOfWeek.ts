@@ -1,4 +1,5 @@
 import { parseDecimal } from "@vangware/parsers";
+import type { Maybe } from "@vangware/types";
 import { CRON_SPECIFIC_SEPARATOR } from "../constants.js";
 import type { CronDayOfWeekValueNumber } from "../types/CronDayOfWeekValueNumber.js";
 import type { CronSpecificDayOfWeek } from "../types/CronSpecificDayOfWeek.js";
@@ -8,14 +9,18 @@ import { isStringSpecificDayOfWeek } from "../validations/isStringSpecificDayOfW
 /**
  * Parses a string into a `CronSpecificDayOfWeek`.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * parseStringSpecificDayOfWeek("1#5"); // { day: 1, week: 5 }
+ * parseStringSpecificDayOfWeek("INVALID"); // undefined
+ * ```
  * @param source string to be parsed.
  * @returns A `CronSpecificDayOfWeek` or `undefined` if invalid.
- * @example
  */
 export const parseStringSpecificDayOfWeek = (
 	source: string,
-): CronSpecificDayOfWeek | undefined => {
+): Maybe<CronSpecificDayOfWeek> => {
 	const valid = isStringSpecificDayOfWeek(source);
 	const [dayString = "", weekString = ""] = valid
 		? source.split(CRON_SPECIFIC_SEPARATOR)
