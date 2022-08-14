@@ -8,10 +8,17 @@ import { isStringMonthValue } from "../validations/isStringMonthValue.js";
 /**
  * Parses a string into a `CronMonthValue`.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * parseStringMonthValue("10"); // 10
+ * parseStringMonthValue("OCT"); // "OCT"
+ * parseStringMonthValue("oct"); // "OCT"
+ * parseStringMonthValue("24"); // undefined
+ * parseStringMonthValue("IDK"); // undefined
+ * ```
  * @param source string to be parsed.
  * @returns A `CronMonthValue` or `undefined` if invalid.
- * @example
  */
 export const parseStringMonthValue: StringValueParser<
 	CronMonthValue

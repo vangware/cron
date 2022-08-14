@@ -5,7 +5,14 @@ import { isCronYearValue } from "../validations/isCronYearValue.js";
 /**
  * Parses `CronYearValue` into a string.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * parseCronYearValue(1989); // "1989"
+ * parseCronYearValue(2022); // "2022"
+ * parseCronYearValue(1969); // undefined
+ * parseCronYearValue(3000); // undefined
+ * ```
  * @param source `CronYearValue` to be parsed.
  * @returns A string or `undefined` if invalid.
  */

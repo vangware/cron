@@ -4,9 +4,15 @@ import type { CronMonthValueString } from "../types/CronMonthValueString.js";
 /**
  * Check if given is `CronMonthValueString`.
  *
- * @category Validation
- * @param value Value to check.
+ * @category Predicates
  * @example
+ * ```typescript
+ * isCronMonthValueString("OCT"); // true
+ * isCronMonthValueString("oct"); // true
+ * isCronMonthValueString("INVALID"); // false
+ * ```
+ * @param value Value to check.
+ * @returns Returns `true` if is `CronMonthValueString`, `false` otherwise.
  */
 export const isCronMonthValueString = (
 	value: unknown,

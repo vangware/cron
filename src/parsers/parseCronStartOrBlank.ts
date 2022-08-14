@@ -1,12 +1,16 @@
-import type { CronStartOrBlank } from "../types/CronStartOrBlank.js";
 import { isCronStartOrBlank } from "../validations/isCronStartOrBlank.js";
 
 /**
  * Parses `CronStartOrBlank` into a string.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * parseCronStartOrBlank("?"); // "?"
+ * parseCronStartOrBlank("💩"); // undefined
+ * ```
  * @param source `CronStartOrBlank` to be parsed.
  * @returns A string or `undefined` if invalid.
  */
-export const parseCronStartOrBlank = (source: CronStartOrBlank | string) =>
+export const parseCronStartOrBlank = (source: string) =>
 	isCronStartOrBlank(source) ? source : undefined;

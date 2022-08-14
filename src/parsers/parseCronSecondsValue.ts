@@ -5,7 +5,13 @@ import { isCronSecondsValue } from "../validations/isCronSecondsValue.js";
 /**
  * Parses `CronSecondsValue` into a string.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * parseCronSecondsValue(10); // "10"
+ * parseCronSecondsValue(59); // "59"
+ * parseCronSecondsValue(99); // undefined
+ * ```
  * @param source `CronSecondsValue` to be parsed.
  * @returns A string or `undefined` if invalid.
  */

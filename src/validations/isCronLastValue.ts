@@ -5,9 +5,14 @@ import { isCronDayOfWeekValueNumber } from "./isCronDayOfWeekValueNumber.js";
 /**
  * Check if given is `CronLastValue`.
  *
- * @category Validation
- * @param value Value to check.
+ * @category Predicates
  * @example
+ * ```typescript
+ * isCronLastValue({ last: 7 }); // true
+ * isCronLastValue({ last: 100 }); // false
+ * ```
+ * @param value Value to check.
+ * @returns Returns `true` if is `CronLastValue`, `false` otherwise.
  */
 export const isCronLastValue = (value: unknown): value is CronLastValue =>
 	isObject(value) &&

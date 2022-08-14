@@ -6,10 +6,14 @@ import { isStringDayOfMonthValue } from "../validations/isStringDayOfMonthValue.
 /**
  * Parses a string into a `CronDayOfMonthValue`.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * parseStringDayOfMonthValue("13"); // 13
+ * parseStringDayOfMonthValue("99"); // undefined
+ * ```
  * @param source string to be parsed.
  * @returns A `CronDayOfMonthValue` or `undefined` if invalid.
- * @example
  */
 export const parseStringDayOfMonthValue: StringValueParser<
 	CronDayOfMonthValue

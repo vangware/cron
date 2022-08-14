@@ -1,12 +1,6 @@
+skip_output:
+    - meta
 pre-push:
     commands:
-        clean:
-            run: rimraf ./dist
-        pre-compile:
-            run: tsc --noEmit --project tsconfig.dist.json
-        lint:
-            run: eslint {src,tests}/**/*.ts
-        test:
-            run: NODE_OPTIONS='--loader ts-node/esm' c8 test
-        document:
-            run: typedoc
+        "git:pre-push":
+            run: $(pwd)/node_modules/.bin/run-s git:pre-push

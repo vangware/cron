@@ -3,9 +3,14 @@ import { isString, match } from "@vangware/predicates";
 /**
  * Check if given is a string representing a `CronYearValue`.
  *
- * @category Validation
- * @param value Value to check.
+ * @category Predicates
  * @example
+ * ```typescript
+ * isStringYearValue("1989"); // true
+ * isStringYearValue("3000"); // false
+ * ```
+ * @param value Value to check.
+ * @returns Returns `true` if is a string representing a `CronYearValue`, `false` otherwise.
  */
 export const isStringYearValue = (value: unknown): value is string =>
 	isString(value) &&

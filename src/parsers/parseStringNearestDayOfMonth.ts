@@ -5,10 +5,14 @@ import { isStringNearestDayOfMonth } from "../validations/isStringNearestDayOfMo
 /**
  * Parses a string into a `CronNearestDayOfMonth`.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * parseStringNearestDayOfMonth("2W"); // { nearest: 2 }
+ * parseStringNearestDayOfMonth("INVALID"); // undefined
+ * ```
  * @param source string to be parsed.
  * @returns A `CronNearestDayOfMonth` or `undefined` if invalid.
- * @example
  */
 export const parseStringNearestDayOfMonth = (source: string) =>
 	isStringNearestDayOfMonth(source)

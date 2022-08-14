@@ -5,7 +5,13 @@ import { isCronDayOfWeekValue } from "../validations/isCronDayOfWeekValue.js";
 /**
  * Parses `CronDayOfWeekValue` into a string.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * parseCronDayOfWeekValue(1); // "1"
+ * parseCronDayOfWeekValue(7); // "7"
+ * parseCronDayOfWeekValue(99); // undefined
+ * ```
  * @param source `CronDayOfWeekValue` to be parsed.
  * @returns A string or `undefined` if invalid.
  */

@@ -1,4 +1,5 @@
 import type { Tests } from "@vangware/test";
+import type { Maybe } from "@vangware/types";
 import { parseCronMinutesValue } from "../../src/parsers/parseCronMinutesValue.js";
 import type { CronMinutesValue } from "../../src/types/CronMinutesValue.js";
 
@@ -16,9 +17,9 @@ export default [
 		wanted: "59",
 	},
 	{
-		given: "Invalid minutes value",
+		given: "Other valid minutes value",
 		must: "return it",
-		received: parseCronMinutesValue(99 as CronMinutesValue),
+		received: parseCronMinutesValue(99),
 		wanted: undefined,
 	},
-] as Tests<string>;
+] as Tests<Maybe<`${CronMinutesValue}`>>;

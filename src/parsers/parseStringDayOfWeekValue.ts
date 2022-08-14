@@ -8,10 +8,17 @@ import { isStringDayOfWeekValue } from "../validations/isStringDayOfWeekValue.js
 /**
  * Parses a string into a `CronDayOfWeekValue`.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * parseStringDayOfWeekValue("5"); // 5
+ * parseStringDayOfWeekValue("FRI"); // "FRI"
+ * parseStringDayOfWeekValue("fri"); // "FRI"
+ * parseStringDayOfWeekValue("8"); // undefined
+ * parseStringDayOfWeekValue("IDK"); // undefined
+ * ```
  * @param source string to be parsed.
  * @returns A `CronDayOfWeekValue` or `undefined` if invalid.
- * @example
  */
 export const parseStringDayOfWeekValue: StringValueParser<
 	CronDayOfWeekValue

@@ -5,10 +5,19 @@ import { isStringYearValue } from "../validations/isStringYearValue.js";
 /**
  * Parses given string expression.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * parseStringQuartzExpression("1 1 1 1 1"); // ["*", "1", "1", "1", "1", "1", "*"]
+ * parseStringQuartzExpression("1 1 1 1 1 1989"); // ["*", "1", "1", "1", "1", "1", "1989"]
+ * parseStringQuartzExpression("1 1 1 1 1 1"); // ["1", "1", "1", "1", "1", "1", "*"]
+ * parseStringQuartzExpression("1 1 1 1 1 1 1"); // ["1", "1", "1", "1", "1", "1", "1"]
+ * parseStringQuartzExpression(" 1  1   1    1    1   1  1 "); // ["1", "1", "1", "1", "1", "1", "1"]
+ * parseStringQuartzExpression("1 1 1 1 1 1 1 1"); // undefined
+ * parseStringQuartzExpression("1 1 1 1"); // undefined
+ * ```
  * @param source string to be parsed.
  * @returns An array of 7 elements or `undefined` if invalid.
- * @example
  */
 export const parseStringQuartzExpression = (source: string) => {
 	const parsed = splitExpression(source);

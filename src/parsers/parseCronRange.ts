@@ -6,10 +6,14 @@ import { isCronRange } from "../validations/isCronRange.js";
 /**
  * Parses `CronRange` into a string.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * parseCronRangeSeconds({ from: 13, to: 10 }); // "13-10"
+ * parseCronRangeSeconds({ from: 999, to: 999 }); // undefined
+ * ```
  * @param parser `CronValueParser` for `CronRange`.
  * @returns Curried function with `parser` in context.
- * @example
  */
 export const parseCronRange =
 	<Value>(parser: CronValueParser<Value>) =>

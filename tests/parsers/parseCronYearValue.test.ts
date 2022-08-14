@@ -12,8 +12,8 @@ export default [
 	{
 		given: "Other valid seconds value",
 		must: "return it",
-		received: parseCronYearValue(2020),
-		wanted: "2020",
+		received: parseCronYearValue(2022),
+		wanted: "2022",
 	},
 	{
 		given: "Invalid seconds value",

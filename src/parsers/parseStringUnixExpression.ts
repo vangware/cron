@@ -3,7 +3,14 @@ import { splitExpression } from "../utils/splitExpression.js";
 /**
  * Parses given expression or undefined if invalid.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * parseStringUnixExpression("1 1 1 1 1"); // ["1", "1", "1", "1", "1"]
+ * parseStringUnixExpression(" 1   1    1    1   1 "); // ["1", "1", "1", "1", "1"]
+ * parseStringUnixExpression("1 1 1 1 1 1"); // undefined
+ * parseStringUnixExpression("1 1 1 1"); // undefined
+ * ```
  * @param source string to be parsed.
  * @returns An array of 5 elements or `undefined` if invalid.
  */
