@@ -1,4 +1,4 @@
-import { isUndefined } from "@vangware/utils";
+import { isUndefined } from "@vangware/predicates";
 import { CRON_RANGE_SEPARATOR } from "../constants.js";
 import type { CronRange } from "../types/CronRange.js";
 import type { StringValueParser } from "../types/StringValueParser.js";
@@ -10,13 +10,10 @@ import { isStringRange } from "../validations/isStringRange.js";
  * @category Parser
  * @param parser `StringValueParser` for `CronRange`.
  * @returns Curried function with `parser` in context.
+ * @example
  */
 export const parseStringRange =
 	<Value>(parser: StringValueParser<Value>) =>
-	/**
-	 * @param source string to be parsed.
-	 * @returns A `CronRange` or `undefined` if invalid.
-	 */
 	(source: string): CronRange<Value> | undefined => {
 		const valid = isStringRange(source);
 		const [fromString = "", toString = ""] = valid

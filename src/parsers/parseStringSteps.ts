@@ -1,9 +1,5 @@
-import {
-	isNumber,
-	isUndefined,
-	numberBetween,
-	stringParseDecimal,
-} from "@vangware/utils";
+import { parseDecimal } from "@vangware/parsers";
+import { between, isNumber, isUndefined } from "@vangware/predicates";
 import { CRON_STEPS_SEPARATOR } from "../constants.js";
 import type { CronSteps } from "../types/CronSteps.js";
 import type { LimitTuple } from "../types/LimitTuple.js";
@@ -18,26 +14,21 @@ import { parseStringRange } from "./parseStringRange.js";
  * @category Parser
  * @param limit `LimitTuple` for `CronSteps`.
  * @returns Curried function with `limit` in context.
+ * @example
  */
 export const parseStringSteps =
 	([minimum, maximum]: LimitTuple) =>
-	/**
-	 * @param parser `StringValueParser` for `CronSteps`.
-	 * @returns Curried function with `limit` and `parser` in context.
-	 */
 	<Value>(parser: StringValueParser<Value>) =>
-	/**
-	 * @param source string to be parsed.
-	 * @returns A `CronSteps` or `undefined` if invalid.
-	 */
 	(source: string): CronSteps<Value> | undefined => {
 		const valid = isStringSteps(source);
 		const [startString = "", everyString = ""] = valid
 			? source.split(CRON_STEPS_SEPARATOR)
 			: [];
-		const everyNumber = stringParseDecimal(everyString);
+		const everyNumber = parseDecimal(everyString);
 		const every =
-			valid && numberBetween(minimum)(maximum)(everyNumber)
+			valid &&
+			isNumber(everyNumber) &&
+			between(minimum)(maximum)(everyNumber)
 				? everyNumber
 				: undefined;
 		const start = valid

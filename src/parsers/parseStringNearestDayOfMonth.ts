@@ -1,4 +1,4 @@
-import { stringParseDecimal } from "@vangware/utils";
+import { parseDecimal } from "@vangware/parsers";
 import type { CronNearestDayOfMonth } from "../types/CronNearestDayOfMonth.js";
 import { isStringNearestDayOfMonth } from "../validations/isStringNearestDayOfMonth.js";
 
@@ -8,8 +8,9 @@ import { isStringNearestDayOfMonth } from "../validations/isStringNearestDayOfMo
  * @category Parser
  * @param source string to be parsed.
  * @returns A `CronNearestDayOfMonth` or `undefined` if invalid.
+ * @example
  */
 export const parseStringNearestDayOfMonth = (source: string) =>
 	isStringNearestDayOfMonth(source)
-		? ({ nearest: stringParseDecimal(source) } as CronNearestDayOfMonth)
+		? ({ nearest: parseDecimal(source) } as CronNearestDayOfMonth)
 		: undefined;

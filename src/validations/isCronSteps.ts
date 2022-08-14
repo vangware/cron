@@ -1,4 +1,4 @@
-import { isNumber, isObject, isUndefined } from "@vangware/utils";
+import { isNumber, isObject, isUndefined } from "@vangware/predicates";
 import type { CronSteps } from "../types/CronSteps.js";
 
 /**
@@ -6,6 +6,7 @@ import type { CronSteps } from "../types/CronSteps.js";
  *
  * @category Validation
  * @param value Value to check.
+ * @example
  */
 export const isCronSteps = <Value>(value: unknown): value is CronSteps<Value> =>
 	isObject(value) &&

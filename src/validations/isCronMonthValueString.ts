@@ -1,4 +1,4 @@
-import { isString, stringTest } from "@vangware/utils";
+import { isString, match } from "@vangware/predicates";
 import type { CronMonthValueString } from "../types/CronMonthValueString.js";
 
 /**
@@ -6,11 +6,10 @@ import type { CronMonthValueString } from "../types/CronMonthValueString.js";
  *
  * @category Validation
  * @param value Value to check.
+ * @example
  */
 export const isCronMonthValueString = (
 	value: unknown,
 ): value is CronMonthValueString =>
 	isString(value) &&
-	stringTest(/^(?:JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)$/iu)(
-		value,
-	);
+	match(/^(?:JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)$/iu)(value);

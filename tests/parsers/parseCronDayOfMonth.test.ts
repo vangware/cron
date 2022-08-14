@@ -56,9 +56,7 @@ export default [
 		wanted: "5-10",
 	},
 	{
-		given:
-			// eslint-disable-next-line max-len
-			"on the 1st, 2nd, 3rd and 4th day and every day between 5th and 10th",
+		given: "on the 1st, 2nd, 3rd and 4th day and every day between 5th and 10th",
 		must: "return CronList",
 		received: parseCronDayOfMonth([1, 2, 3, 4, { from: 5, to: 10 }]),
 		wanted: "1,2,3,4,5-10",

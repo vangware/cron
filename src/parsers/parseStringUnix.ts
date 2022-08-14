@@ -1,4 +1,4 @@
-import { isUndefined } from "@vangware/utils";
+import { isUndefined } from "@vangware/predicates";
 import {
 	UNIX_DAY_OF_MONTH_POSITION,
 	UNIX_DAY_OF_WEEK_POSITION,
@@ -20,6 +20,7 @@ import { parseStringUnixExpression } from "./parseStringUnixExpression.js";
  * @category Parser
  * @param source string to be parsed.
  * @returns A `CronUnix` or `undefined` if invalid.
+ * @example
  */
 export const parseStringUnix = (source: string): CronUnix | undefined => {
 	const parts = parseStringUnixExpression(source);

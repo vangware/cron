@@ -1,10 +1,11 @@
-import { isString, stringTest } from "@vangware/utils";
+import { isString, match } from "@vangware/predicates";
 
 /**
  * Check if given is a string representing a `CronDayOfWeekValueNumber`.
  *
  * @category Validation
  * @param value Value to check.
+ * @example
  */
 export const isStringDayOfWeekValueNumber = (value: unknown): value is string =>
-	isString(value) && stringTest(/^[0-7]$/u)(value);
+	isString(value) && match(/^[0-7]$/u)(value);

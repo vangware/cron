@@ -1,4 +1,4 @@
-import { stringParseDecimal } from "@vangware/utils";
+import { parseDecimal } from "@vangware/parsers";
 import type { CronHoursValue } from "../types/CronHoursValue.js";
 import type { StringValueParser } from "../types/StringValueParser.js";
 import { isStringHoursValue } from "../validations/isStringHoursValue.js";
@@ -9,10 +9,11 @@ import { isStringHoursValue } from "../validations/isStringHoursValue.js";
  * @category Parser
  * @param source string to be parsed.
  * @returns A `CronHoursValue` or `undefined` if invalid.
+ * @example
  */
 export const parseStringHoursValue: StringValueParser<
 	CronHoursValue
 > = source =>
 	isStringHoursValue(source)
-		? (stringParseDecimal(source) as CronHoursValue)
+		? (parseDecimal(source) as CronHoursValue)
 		: undefined;

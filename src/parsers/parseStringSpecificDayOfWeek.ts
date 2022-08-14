@@ -1,4 +1,4 @@
-import { stringParseDecimal } from "@vangware/utils";
+import { parseDecimal } from "@vangware/parsers";
 import { CRON_SPECIFIC_SEPARATOR } from "../constants.js";
 import type { CronDayOfWeekValueNumber } from "../types/CronDayOfWeekValueNumber.js";
 import type { CronSpecificDayOfWeek } from "../types/CronSpecificDayOfWeek.js";
@@ -11,6 +11,7 @@ import { isStringSpecificDayOfWeek } from "../validations/isStringSpecificDayOfW
  * @category Parser
  * @param source string to be parsed.
  * @returns A `CronSpecificDayOfWeek` or `undefined` if invalid.
+ * @example
  */
 export const parseStringSpecificDayOfWeek = (
 	source: string,
@@ -22,8 +23,8 @@ export const parseStringSpecificDayOfWeek = (
 
 	return valid
 		? {
-				day: stringParseDecimal(dayString) as CronDayOfWeekValueNumber,
-				week: stringParseDecimal(weekString) as CronWeekValue,
+				day: parseDecimal(dayString) as CronDayOfWeekValueNumber,
+				week: parseDecimal(weekString) as CronWeekValue,
 		  }
 		: undefined;
 };
