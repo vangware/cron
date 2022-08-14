@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 -   This project adheres to [Semantic Versioning][semver].
 -   This project uses [Gitmoji][gitmoji]
 
+## 5.0.2
+
+-   :arrow_up: dependency upgrade.
+
 ## 5.0.1
 
 -   :arrow_up: dependency upgrade.
@@ -159,7 +163,8 @@ All notable changes to this project will be documented in this file.
 
 -   :arrow_up: dependency upgrade.
 -   :truck: rename several utils to have either `Quartz` or `Unix` as suffix.
--   :building_construction: change step parser to have limits (returning `undefined` when limit is exceeded).
+-   :building_construction: change step parser to have limits (returning
+    `undefined` when limit is exceeded).
 -   :white_check_mark: add all missing tests.
 
 ## 2.2.0
@@ -182,7 +187,8 @@ All notable changes to this project will be documented in this file.
 
 ## 2.0.0
 
--   :building_construction: had to change cron parsers to return undefined when invalid to be more consistent.
+-   :building_construction: had to change cron parsers to return undefined when
+    invalid to be more consistent.
 -   :white_check_mark: updated tests (have to add more later).
 
 ## 1.0.2
