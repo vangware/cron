@@ -4,9 +4,15 @@ import type { CronDayOfWeekValueNumber } from "../types/CronDayOfWeekValueNumber
 /**
  * Check if given is `CronDayOfWeekValueNumber`.
  *
- * @category Validation
- * @param value Value to check.
+ * @category Predicates
  * @example
+ * ```typescript
+ * isCronDayOfWeekValueNumber(5); // true
+ * isCronDayOfWeekValueNumber(10); // false
+ * isCronDayOfWeekValueNumber("INVALID"); // false
+ * ```
+ * @param value Value to check.
+ * @returns Returns `true` if is `CronDayOfWeekValueNumber`, `false` otherwise.
  */
 export const isCronDayOfWeekValueNumber = (
 	value: unknown,

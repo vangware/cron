@@ -1,14 +1,22 @@
+import type { Maybe } from "@vangware/types";
+import { isCronMinutesValue } from "../index.js";
 import type { CronMinutesValue } from "../types/CronMinutesValue.js";
-import type { CronValueParser } from "../types/CronValueParser.js";
-import { isCronMinutesValue } from "../validations/isCronMinutesValue.js";
 
 /**
  * Parses `CronMinutesValue` into a string.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * parseCronMinutesValue(0); // "0"
+ * parseCronMinutesValue(59); // "59"
+ * ```
  * @param source `CronMinutesValue` to be parsed.
  * @returns A string or `undefined` if invalid.
  */
-export const parseCronMinutesValue: CronValueParser<
-	CronMinutesValue
-> = source => (isCronMinutesValue(source) ? `${source}` : undefined);
+export const parseCronMinutesValue = <Source extends number>(source: Source) =>
+	(isCronMinutesValue(source)
+		? `${source}`
+		: undefined) as Source extends CronMinutesValue
+		? `${Source}`
+		: Maybe<`${CronMinutesValue}`>;

@@ -13,10 +13,20 @@ import { parseCronSteps } from "./parseCronSteps.js";
 /**
  * Parses `CronList` into a string.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * const parseCronSecondsList = parseCronList([0, 59])(parseCronSecondsValue);
+ *
+ * parseCronSecondsList([13, 10]); // "13,10",
+ * parseCronSecondsList([{ from: 13, to: 10 }, 10]); // "13-10,10",
+ * parseCronSecondsList([{ every: 10, start: 13 }, 10]); // "13/10,10",
+ * parseCronSecondsList([{ every: 10, start: { from: 13, to: 10 } }, 10]); // "13-10/10,10"
+ * parseCronSecondsList([{ every: 10, start: "L" }, 10]); // "L/10,10"
+ * parseCronSecondsList([]); // undefined
+ * ```
  * @param limit `LimitTuple` to be used when parsing `CronSteps`.
  * @returns Curried function with `limit` on context.
- * @example
  */
 export const parseCronList =
 	(limit: LimitTuple) =>

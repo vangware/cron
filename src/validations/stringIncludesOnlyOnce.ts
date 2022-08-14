@@ -3,10 +3,16 @@ import { isString } from "@vangware/predicates";
 /**
  * Checks if given search value appears just onces in given value.
  *
- * @category Validation
+ * @category Predicates
+ * @example
+ * ```typescript
+ * const includesCommaOnce = stringIncludesOnlyOnce(",");
+ * includesCommaOnce("value,value"); // true
+ * includesCommaOnce("value,value,value"); // false
+ * includesCommaOnce("value"); // false
+ * ```
  * @param search Value to search.
  * @returns Curried function with `search` in context.
- * @example
  */
 export const stringIncludesOnlyOnce =
 	(search: string) =>

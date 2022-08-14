@@ -1,3 +1,4 @@
+import type { Maybe } from "@vangware/types";
 import type { CronPart } from "../types/CronPart.js";
 import type { LimitTuple } from "../types/LimitTuple.js";
 import type { StringValueParser } from "../types/StringValueParser.js";
@@ -9,22 +10,29 @@ import { parseStringSteps } from "./parseStringSteps.js";
 /**
  * Parses a string into a `CronPart`.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * const parseStringPartSeconds = parseStringPart([0, 59])(
+ * 	parseStringSecondsValue,
+ * );
+ *
+ * parseStringPartSeconds("*"); // "*"
+ * parseStringPartSeconds("13,10"); // [13, 10]
+ * parseStringPartSeconds("13-10,10"); // [{ from: 13, to: 10 }, 10]
+ * parseStringPartSeconds("13/10,10"); // [{ every: 10, start: 13 }, 10]
+ * parseStringPartSeconds("?/10,10"); // [{ every: 10, start: "?" }, 10]
+ * parseStringPartSeconds("13/10"); // { every: 10, start: 13 }
+ * parseStringPartSeconds("?/10"); // { every: 10, start: "?" }
+ * parseStringPartSeconds("13-10"); // { from: 13, to: 10 }
+ * ```
  * @param limit `LimitTuple` to be used when parsing `CronSteps`.
  * @returns Curried function with `limit` in context.
  */
 export const parseStringPart =
 	(limit: LimitTuple) =>
-	/**
-	 * @param parser `StringValueParser` for `CronPart`.
-	 * @returns Curried function with `limit` and `parser` in context.
-	 */
 	<Value>(parser: StringValueParser<Value>) =>
-	/**
-	 * @param source string to be parsed.
-	 * @returns A `CronPart` or `undefined` if invalid.
-	 */
-	(source: string): CronPart<Value> | undefined =>
+	(source: string): Maybe<CronPart<Value>> =>
 		parseCronEvery(source) ??
 		parseStringList(limit)(parser)(source) ??
 		parseStringSteps(limit)(parser)(source) ??

@@ -4,9 +4,14 @@ import type { CronMonthValueNumber } from "../types/CronMonthValueNumber.js";
 /**
  * Check if given is `CronMonthValueNumber`.
  *
- * @category Validation
- * @param value Value to check.
+ * @category Predicates
  * @example
+ * ```typescript
+ * isCronMonthValueNumber(10); // true
+ * isCronMonthValueNumber(50); // false
+ * ```
+ * @param value Value to check.
+ * @returns Returns `true` if is `CronMonthValueNumber`, `false` otherwise.
  */
 export const isCronMonthValueNumber = (
 	value: unknown,

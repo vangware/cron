@@ -10,10 +10,54 @@ import { parseCronMonth } from "./parseCronMonth.js";
 /**
  * Parses `Cron` (UNIX) into a string.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * parseCronUnix({
+ * 	dayOfMonth: "*",
+ * 	dayOfWeek: "*",
+ * 	hours: "*",
+ * 	minutes: "*",
+ * 	month: "*",
+ * }); // "* * * * *"
+ * parseCronUnix({
+ * 	dayOfMonth: [1, 2],
+ * 	dayOfWeek: [1, 2],
+ * 	hours: [1, 2],
+ * 	minutes: [1, 2],
+ * 	month: [1, 2],
+ * }); // "1,2 1,2 1,2 1,2 1,2"
+ * parseCronUnix({
+ * 	dayOfMonth: { from: 1, to: 2 },
+ * 	dayOfWeek: { from: 1, to: 2 },
+ * 	hours: { from: 1, to: 2 },
+ * 	minutes: { from: 1, to: 2 },
+ * 	month: { from: 1, to: 2 },
+ * }); // "1-2 1-2 1-2 1-2 1-2"
+ * parseCronUnix({
+ * 	dayOfMonth: { every: 2, start: 1 },
+ * 	dayOfWeek: { every: 2, start: 1 },
+ * 	hours: { every: 2, start: 1 },
+ * 	minutes: { every: 2, start: 1 },
+ * 	month: { every: 2, start: 1 },
+ * }); // "1/2 1/2 1/2 1/2 1/2"
+ * parseCronUnix({
+ * 	dayOfMonth: { nearest: 2 },
+ * 	dayOfWeek: { last: 1 },
+ * 	hours: "*",
+ * 	minutes: [{ from: 1, to: 2 }, 3, 4],
+ * 	month: ["SEP", "OCT"],
+ * }); // "1-2,3,4 * 2W SEP,OCT 1L"
+ * parseCronUnix({
+ * 	dayOfMonth: undefined,
+ * 	dayOfWeek: "*",
+ * 	hours: "*",
+ * 	minutes: "*",
+ * 	month: "*",
+ * }); // undefined
+ * ```
  * @param source `Cron` (UNIX) to be parsed.
  * @returns A string or `undefined` if invalid.
- * @example
  */
 export const parseCronUnix = ({
 	minutes,

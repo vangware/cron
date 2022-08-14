@@ -12,21 +12,38 @@ import { parseCronSteps } from "./parseCronSteps.js";
 /**
  * Parses `CronPart` into a string.
  *
- * @category Parser
+ * @example
+ * ```typescript
+ * const parseCronPartSeconds = parseCronPart([0, 59])(parseCronSecondsValue);
+ *
+ * parseCronPartSeconds("*"); // "*"
+ * parseCronPartSeconds([13, 10]); // "13,10"
+ * parseCronPartSeconds([{ from: 13, to: 10 }, 10]); // "13-10,10"
+ * parseCronPartSeconds([{ every: 10, start: 13 }, 10]); // "13/10,10"
+ * parseCronPartSeconds([{ every: 99, start: 13 }, 10]); // undefined
+ * parseCronPartSeconds([{
+ * 	every: 10,
+ * 	start: { from: 13, to: 10 } }, 10
+ * ]); // "13-10/10,10"
+ * parseCronPartSeconds([{ every: 10, start: "?" }, 10]); // "?/10,10"
+ * parseCronPartSeconds({ every: 10, start: 13 }); // "13/10"
+ * parseCronPartSeconds({
+ * 	every: 10,
+ * 	start: { from: 13, to: 10 },
+ * }); // "13-10/10"
+ * parseCronPartSeconds({ every: 10, start: "?" }); // "?/10"
+ * parseCronPartSeconds({
+ * 	from: 13,
+ * 	to: 10,
+ * }); // "13-10"
+ * ```
+ * @category Parsers
  * @param limit `LimitTuple` to be used when parsing `CronSteps`.
  * @returns Curried function with `limit` on context.
  */
 export const parseCronPart =
 	(limit: LimitTuple) =>
-	/**
-	 * @param parser `CronValueParser` for `CronPart`.
-	 * @returns Curried function with `limit` and `parser` in context.
-	 */
 	<Value>(parser: CronValueParser<Value>) =>
-	/**
-	 * @param source `CronPart` to be parsed.
-	 * @returns A string or `undefined` if invalid.
-	 */
 	(
 		source:
 			| CronEvery

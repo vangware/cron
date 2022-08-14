@@ -1,4 +1,5 @@
 import { isUndefined } from "@vangware/predicates";
+import type { Maybe } from "@vangware/types";
 import {
 	QUARTZ_DAY_OF_MONTH_POSITION,
 	QUARTZ_DAY_OF_WEEK_POSITION,
@@ -21,12 +22,81 @@ import { parseStringYear } from "./parseStringYear.js";
 /**
  * Parses a string into a `CronQuartz`.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * parseStringQuartz("* * * * * * *");
+ * // {
+ * // 	dayOfMonth: "*",
+ * // 	dayOfWeek: "*",
+ * // 	hours: "*",
+ * // 	minutes: "*",
+ * // 	month: "*",
+ * // 	seconds: "*",
+ * // 	year: "*",
+ * // }
+ *
+ * parseStringQuartz("* * * * *");
+ * // {
+ * // 	dayOfMonth: "*",
+ * // 	dayOfWeek: "*",
+ * // 	hours: "*",
+ * // 	minutes: "*",
+ * // 	month: "*",
+ * // 	seconds: "*",
+ * // 	year: "*",
+ * // }
+ *
+ * parseStringQuartz("1,2 1,2 1,2 1,2 1,2 1,2 1989,2020");
+ * // {
+ * // 	dayOfMonth: [1, 2],
+ * // 	dayOfWeek: [1, 2],
+ * // 	hours: [1, 2],
+ * // 	minutes: [1, 2],
+ * // 	month: [1, 2],
+ * // 	seconds: [1, 2],
+ * // 	year: [1989, 2020],
+ * // }
+ *
+ * parseStringQuartz("1-2 1-2 1-2 1-2 1-2 1-2 1989-2020");
+ * // {
+ * // 	dayOfMonth: { from: 1, to: 2 },
+ * // 	dayOfWeek: { from: 1, to: 2 },
+ * // 	hours: { from: 1, to: 2 },
+ * // 	minutes: { from: 1, to: 2 },
+ * // 	month: { from: 1, to: 2 },
+ * // 	seconds: { from: 1, to: 2 },
+ * // 	year: { from: 1989, to: 2020 },
+ * // }
+ *
+ * parseStringQuartz("1/2 1/2 1/2 1/2 1/2 1/2 1989/10");
+ * // {
+ * // 	dayOfMonth: { every: 2, start: 1 },
+ * // 	dayOfWeek: { every: 2, start: 1 },
+ * // 	hours: { every: 2, start: 1 },
+ * // 	minutes: { every: 2, start: 1 },
+ * // 	month: { every: 2, start: 1 },
+ * // 	seconds: { every: 2, start: 1 },
+ * // 	year: { every: 10, start: 1989 },
+ * // }
+ *
+ * parseStringQuartz("1-2/3 1-2,3,4 * 2W SEP,OCT 1L ?/10");
+ * // {
+ * // 	dayOfMonth: { nearest: 2 },
+ * // 	dayOfWeek: { last: 1 },
+ * // 	hours: "*",
+ * // 	minutes: [{ from: 1, to: 2 }, 3, 4],
+ * // 	month: ["SEP", "OCT"],
+ * // 	seconds: { every: 3, start: { from: 1, to: 2 } },
+ * // 	year: { every: 10, start: "?" },
+ * // }
+ *
+ * parseStringQuartz("INVALID"); // undefined
+ * ```
  * @param source string to be parsed.
  * @returns A `Cron` or `undefined` if invalid.
- * @example
  */
-export const parseStringQuartz = (source: string): CronQuartz | undefined => {
+export const parseStringQuartz = (source: string): Maybe<CronQuartz> => {
 	const parts = parseStringQuartzExpression(source);
 	const seconds = parts && parseStringSeconds(parts[QUARTZ_SECONDS_POSITION]);
 	const minutes = parts && parseStringMinutes(parts[QUARTZ_MINUTES_POSITION]);

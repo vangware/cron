@@ -1,5 +1,6 @@
 import { parseDecimal } from "@vangware/parsers";
 import { between, isNumber, isUndefined } from "@vangware/predicates";
+import type { Maybe } from "@vangware/types";
 import { CRON_STEPS_SEPARATOR } from "../constants.js";
 import type { CronSteps } from "../types/CronSteps.js";
 import type { LimitTuple } from "../types/LimitTuple.js";
@@ -11,15 +12,23 @@ import { parseStringRange } from "./parseStringRange.js";
 /**
  * Parses a string into a `CronSteps`.
  *
- * @category Parser
+ * @category Parsers
+ * @example
+ * ```typescript
+ * const parseSecondsSteps = parseStringSteps([0, 59])(parseStringSecondsValue);
+ *
+ * parseSecondsSteps("13/10"); // { every: 10, start: 13 }
+ * parseSecondsSteps("13-10/10"); // { every: 10, start: { from: 13, to: 10 } }
+ * parseSecondsSteps("?/10"); // { every: 10, start: "?" }
+ * parseSecondsSteps("13"); // undefined
+ * ```
  * @param limit `LimitTuple` for `CronSteps`.
  * @returns Curried function with `limit` in context.
- * @example
  */
 export const parseStringSteps =
 	([minimum, maximum]: LimitTuple) =>
 	<Value>(parser: StringValueParser<Value>) =>
-	(source: string): CronSteps<Value> | undefined => {
+	(source: string): Maybe<CronSteps<Value>> => {
 		const valid = isStringSteps(source);
 		const [startString = "", everyString = ""] = valid
 			? source.split(CRON_STEPS_SEPARATOR)

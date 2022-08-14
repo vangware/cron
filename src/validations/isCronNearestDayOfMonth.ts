@@ -5,9 +5,14 @@ import { isCronDayOfMonthValue } from "./isCronDayOfMonthValue.js";
 /**
  * Check if given is `CronNearestDayOfMonth`.
  *
- * @category Validation
- * @param value Value to check.
+ * @category Predicates
  * @example
+ * ```typescript
+ * isCronNearestDayOfMonth({ nearest: 10 }); // true
+ * isCronNearestDayOfMonth({ nearest: 100 }); // false
+ * ```
+ * @param value Value to check.
+ * @returns Returns `true` if is `CronNearestDayOfMonth`, `false` otherwise.
  */
 export const isCronNearestDayOfMonth = (
 	value: unknown,

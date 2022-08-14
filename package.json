@@ -67,10 +67,11 @@
 		"clean": "rimraf ./dist",
 		"compile": "tsc --project tsconfig.dist.json",
 		"document": "typedoc",
+		"git:pre-push": "run-s --print-label clean pre-compile lint test document",
 		"lint": "eslint {src,tests}/**/*.ts",
 		"lint:fix": "eslint {src,tests}/**/*.ts --fix",
 		"pre-compile": "tsc --noemit --project tsconfig.dist.json",
-		"prepublishOnly": "run-s compile prettify",
+		"prepublishOnly": "run-s --print-label compile prettify",
 		"prettify": "prettier --write --loglevel warn './dist/**/*.{js,ts}'",
 		"test": "NODE_OPTIONS='--loader ts-node/esm' c8 test"
 	},
