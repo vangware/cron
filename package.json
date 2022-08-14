@@ -9,8 +9,8 @@
 	},
 	"bugs": "https://github.com/vangware/cron/issues",
 	"dependencies": {
-		"@vangware/iterables": "^2.0.0",
-		"@vangware/parsers": "^1.0.3",
+		"@vangware/iterables": "^2.0.1",
+		"@vangware/parsers": "^1.0.4",
 		"@vangware/predicates": "^1.2.0",
 		"@vangware/types": "^3.3.2"
 	},
