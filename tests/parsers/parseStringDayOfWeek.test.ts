@@ -62,9 +62,7 @@ export default [
 		wanted: { from: "MON", to: "SAT" },
 	},
 	{
-		given:
-			// eslint-disable-next-line max-len
-			"on every Sunday, Monday and Tuesday, and every day between Thursday and Saturday",
+		given: "on every Sunday, Monday and Tuesday, and every day between Thursday and Saturday",
 		must: "return CronList",
 		received: parseStringDayOfWeek("1,2,3,5-7"),
 		wanted: [1, 2, 3, { from: 5, to: 7 }],

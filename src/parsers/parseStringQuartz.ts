@@ -1,4 +1,4 @@
-import { isUndefined } from "@vangware/utils";
+import { isUndefined } from "@vangware/predicates";
 import {
 	QUARTZ_DAY_OF_MONTH_POSITION,
 	QUARTZ_DAY_OF_WEEK_POSITION,
@@ -24,6 +24,7 @@ import { parseStringYear } from "./parseStringYear.js";
  * @category Parser
  * @param source string to be parsed.
  * @returns A `Cron` or `undefined` if invalid.
+ * @example
  */
 export const parseStringQuartz = (source: string): CronQuartz | undefined => {
 	const parts = parseStringQuartzExpression(source);

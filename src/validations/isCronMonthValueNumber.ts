@@ -1,4 +1,4 @@
-import { isNumber, numberBetween } from "@vangware/utils";
+import { between, isNumber } from "@vangware/predicates";
 import type { CronMonthValueNumber } from "../types/CronMonthValueNumber.js";
 
 /**
@@ -6,8 +6,8 @@ import type { CronMonthValueNumber } from "../types/CronMonthValueNumber.js";
  *
  * @category Validation
  * @param value Value to check.
+ * @example
  */
 export const isCronMonthValueNumber = (
 	value: unknown,
-): value is CronMonthValueNumber =>
-	isNumber(value) && numberBetween(1)(12)(value);
+): value is CronMonthValueNumber => isNumber(value) && between(1)(12)(value);

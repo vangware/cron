@@ -1,4 +1,4 @@
-import { isNumber, numberBetween } from "@vangware/utils";
+import { between, isNumber } from "@vangware/predicates";
 import type { CronDayOfWeekValueNumber } from "../types/CronDayOfWeekValueNumber.js";
 
 /**
@@ -6,8 +6,8 @@ import type { CronDayOfWeekValueNumber } from "../types/CronDayOfWeekValueNumber
  *
  * @category Validation
  * @param value Value to check.
+ * @example
  */
 export const isCronDayOfWeekValueNumber = (
 	value: unknown,
-): value is CronDayOfWeekValueNumber =>
-	isNumber(value) && numberBetween(0)(7)(value);
+): value is CronDayOfWeekValueNumber => isNumber(value) && between(0)(7)(value);

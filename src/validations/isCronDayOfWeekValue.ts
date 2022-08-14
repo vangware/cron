@@ -1,4 +1,4 @@
-import { isNumber, isString } from "@vangware/utils";
+import { isNumber, isString } from "@vangware/predicates";
 import type { CronDayOfWeekValue } from "../types/CronDayOfWeekValue.js";
 import { isCronDayOfWeekValueNumber } from "./isCronDayOfWeekValueNumber.js";
 import { isCronDayOfWeekValueString } from "./isCronDayOfWeekValueString.js";
@@ -8,6 +8,7 @@ import { isCronDayOfWeekValueString } from "./isCronDayOfWeekValueString.js";
  *
  * @category Validation
  * @param value Value to check.
+ * @example
  */
 export const isCronDayOfWeekValue = (
 	value: unknown,

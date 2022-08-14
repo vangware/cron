@@ -1,4 +1,4 @@
-import { stringParseDecimal } from "@vangware/utils";
+import { parseDecimal } from "@vangware/parsers";
 import type { CronDayOfMonthValue } from "../types/CronDayOfMonthValue.js";
 import type { StringValueParser } from "../types/StringValueParser.js";
 import { isStringDayOfMonthValue } from "../validations/isStringDayOfMonthValue.js";
@@ -9,11 +9,11 @@ import { isStringDayOfMonthValue } from "../validations/isStringDayOfMonthValue.
  * @category Parser
  * @param source string to be parsed.
  * @returns A `CronDayOfMonthValue` or `undefined` if invalid.
+ * @example
  */
-// eslint-disable-next-line max-len
 export const parseStringDayOfMonthValue: StringValueParser<
 	CronDayOfMonthValue
 > = source =>
 	isStringDayOfMonthValue(source)
-		? (stringParseDecimal(source) as CronDayOfMonthValue)
+		? (parseDecimal(source) as CronDayOfMonthValue)
 		: undefined;

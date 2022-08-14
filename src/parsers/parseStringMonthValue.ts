@@ -1,4 +1,4 @@
-import { stringParseDecimal } from "@vangware/utils";
+import { parseDecimal } from "@vangware/parsers";
 import type { CronMonthValue } from "../types/CronMonthValue.js";
 import type { CronMonthValueNumber } from "../types/CronMonthValueNumber.js";
 import type { CronMonthValueString } from "../types/CronMonthValueString.js";
@@ -11,13 +11,14 @@ import { isStringMonthValue } from "../validations/isStringMonthValue.js";
  * @category Parser
  * @param source string to be parsed.
  * @returns A `CronMonthValue` or `undefined` if invalid.
+ * @example
  */
 export const parseStringMonthValue: StringValueParser<
 	CronMonthValue
 > = source => {
 	const valid = isStringMonthValue(source);
 	const cronMonthValueNumber = (
-		valid ? stringParseDecimal(source) : NaN
+		valid ? parseDecimal(source) : NaN
 	) as CronMonthValueNumber;
 
 	return valid

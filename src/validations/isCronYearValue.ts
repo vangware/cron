@@ -1,4 +1,4 @@
-import { isNumber, numberBetween } from "@vangware/utils";
+import { between, isNumber } from "@vangware/predicates";
 import type { CronYearValue } from "../types/CronYearValue.js";
 
 /**
@@ -6,6 +6,7 @@ import type { CronYearValue } from "../types/CronYearValue.js";
  *
  * @category Validation
  * @param value Value to check.
+ * @example
  */
 export const isCronYearValue = (value: unknown): value is CronYearValue =>
-	isNumber(value) && numberBetween(1970)(2099)(value);
+	isNumber(value) && between(1970)(2099)(value);

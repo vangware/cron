@@ -1,4 +1,4 @@
-import { stringParseDecimal } from "@vangware/utils";
+import { parseDecimal } from "@vangware/parsers";
 import type { CronDayOfWeekValue } from "../types/CronDayOfWeekValue.js";
 import type { CronDayOfWeekValueNumber } from "../types/CronDayOfWeekValueNumber.js";
 import type { CronDayOfWeekValueString } from "../types/CronDayOfWeekValueString.js";
@@ -11,13 +11,14 @@ import { isStringDayOfWeekValue } from "../validations/isStringDayOfWeekValue.js
  * @category Parser
  * @param source string to be parsed.
  * @returns A `CronDayOfWeekValue` or `undefined` if invalid.
+ * @example
  */
 export const parseStringDayOfWeekValue: StringValueParser<
 	CronDayOfWeekValue
 > = source => {
 	const valid = isStringDayOfWeekValue(source);
 	const cronDayOfWeekValueNumber = (
-		valid ? stringParseDecimal(source) : NaN
+		valid ? parseDecimal(source) : NaN
 	) as CronDayOfWeekValueNumber;
 
 	return valid
