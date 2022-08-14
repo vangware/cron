@@ -1,4 +1,5 @@
-import { arrayJoin, arrayMap, isUndefined } from "@vangware/utils";
+import { join, length, map, some } from "@vangware/iterables";
+import { isUndefined } from "@vangware/predicates";
 import { CRON_LIST_SEPARATOR } from "../constants.js";
 import type { CronList } from "../types/CronList.js";
 import type { CronRange } from "../types/CronRange.js";
@@ -15,27 +16,20 @@ import { parseCronSteps } from "./parseCronSteps.js";
  * @category Parser
  * @param limit `LimitTuple` to be used when parsing `CronSteps`.
  * @returns Curried function with `limit` on context.
+ * @example
  */
 export const parseCronList =
 	(limit: LimitTuple) =>
-	/**
-	 * @param parser `CronValuerParser` to parse `CronLists`.
-	 * @returns Curried function with `limit` and `parser` on context.
-	 */
 	<Value>(parser: CronValueParser<Value>) =>
-	/**
-	 * @param source `CronList` to be parsed.
-	 * @returns A string or `undefined` if invalid.
-	 */
 	(source: CronList<Value>) => {
-		const list = arrayMap(
+		const list = map(
 			value =>
 				parseCronSteps(limit)(parser)(value as CronSteps<Value>) ??
 				parseCronRange(parser)(value as CronRange<Value>) ??
 				parser(value as Value),
 		)(isCronList<Value>(source) ? source : []);
 
-		return list.length === 0 || list.some(isUndefined)
+		return length(list) === 0 || some(isUndefined)(list)
 			? undefined
-			: arrayJoin(CRON_LIST_SEPARATOR)(list);
+			: join(CRON_LIST_SEPARATOR)(list);
 	};

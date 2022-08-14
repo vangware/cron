@@ -40,9 +40,7 @@ export default [
 		wanted: "5-10",
 	},
 	{
-		given:
-			// eslint-disable-next-line max-len
-			"at 01am, 02am, 03am and 04am, and every hour between 05am and 10am",
+		given: "at 01am, 02am, 03am and 04am, and every hour between 05am and 10am",
 		must: "return CronList with CronRange in it",
 		received: parseCronHours([1, 2, 3, 4, { from: 5, to: 10 }]),
 		wanted: "1,2,3,4,5-10",

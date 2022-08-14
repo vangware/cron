@@ -46,9 +46,7 @@ export default [
 		wanted: "JAN-OCT",
 	},
 	{
-		given:
-			// eslint-disable-next-line max-len
-			"in January, February and March, and every month between May and July",
+		given: "in January, February and March, and every month between May and July",
 		must: "return CronList",
 		received: parseCronMonth([1, 2, 3, { from: 5, to: 7 }]),
 		wanted: "1,2,3,5-7",

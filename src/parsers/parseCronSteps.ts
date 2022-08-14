@@ -1,4 +1,4 @@
-import { isUndefined, numberBetween } from "@vangware/utils";
+import { between, isUndefined } from "@vangware/predicates";
 import type { CronEvery } from "../types/CronEvery.js";
 import type { CronRange } from "../types/CronRange.js";
 import type { CronSteps } from "../types/CronSteps.js";
@@ -14,17 +14,20 @@ import { parseCronRange } from "./parseCronRange.js";
  * @category Parser
  * @param limit `LimitTuple` to be used when parsing `CronSteps`.
  * @returns Curried function with `limit` on context.
+ * @example
  */
 export const parseCronSteps =
 	([minimum, maximum]: LimitTuple) =>
 	/**
 	 * @param parser `CronValueParser` for `CronSteps`.
 	 * @returns Curried function with `limit` and `parser` in context.
+	 * @example
 	 */
 	<Value>(parser: CronValueParser<Value>) =>
 	/**
 	 * @param source `CronSteps` to be parsed.
 	 * @returns A string or `undefined` if invalid.
+	 * @example
 	 */
 	(source: CronSteps<Value>) => {
 		const valid = isCronSteps(source);
@@ -34,7 +37,7 @@ export const parseCronSteps =
 			  parser(source.start as Value)
 			: undefined;
 		const every =
-			valid && numberBetween(minimum)(maximum)(source.every)
+			valid && between(minimum)(maximum)(source.every)
 				? source.every
 				: undefined;
 

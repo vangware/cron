@@ -1,4 +1,5 @@
-import { arrayJoin, isUndefined } from "@vangware/utils";
+import { join } from "@vangware/iterables";
+import { isUndefined } from "@vangware/predicates";
 import type { CronQuartz } from "../types/CronQuartz.js";
 import { parseCronDayOfMonth } from "./parseCronDayOfMonth.js";
 import { parseCronDayOfWeek } from "./parseCronDayOfWeek.js";
@@ -14,6 +15,7 @@ import { parseCronYear } from "./parseCronYear.js";
  * @category Parser
  * @param source `CronQuartz` to be parsed.
  * @returns A string or `undefined` if invalid.
+ * @example
  */
 export const parseCronQuartz = ({
 	seconds,
@@ -34,5 +36,5 @@ export const parseCronQuartz = ({
 		parseCronYear(year),
 	];
 
-	return parts.some(isUndefined) ? undefined : arrayJoin(" ")(parts);
+	return parts.some(isUndefined) ? undefined : join(" ")(parts);
 };

@@ -1,4 +1,4 @@
-import { isString } from "@vangware/utils";
+import { isString } from "@vangware/predicates";
 
 /**
  * Checks if given search value appears just onces in given value.
@@ -6,12 +6,10 @@ import { isString } from "@vangware/utils";
  * @category Validation
  * @param search Value to search.
  * @returns Curried function with `search` in context.
+ * @example
  */
 export const stringIncludesOnlyOnce =
 	(search: string) =>
-	/**
-	 * @param value Value to search on.
-	 */
 	(value: unknown): value is string =>
 		isString(value) &&
 		value.includes(search) &&

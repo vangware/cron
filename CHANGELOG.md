@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 ## 5.0.2
 
 -   :arrow_up: dependency upgrade.
+-   :fire: remove `@vangware/utils` everywhere and use the new libs instead.
 
 ## 5.0.1
 

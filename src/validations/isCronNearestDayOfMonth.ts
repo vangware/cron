@@ -1,4 +1,4 @@
-import { isNumber, isObject } from "@vangware/utils";
+import { isNumber, isObject } from "@vangware/predicates";
 import type { CronNearestDayOfMonth } from "../types/CronNearestDayOfMonth.js";
 import { isCronDayOfMonthValue } from "./isCronDayOfMonthValue.js";
 
@@ -7,6 +7,7 @@ import { isCronDayOfMonthValue } from "./isCronDayOfMonthValue.js";
  *
  * @category Validation
  * @param value Value to check.
+ * @example
  */
 export const isCronNearestDayOfMonth = (
 	value: unknown,

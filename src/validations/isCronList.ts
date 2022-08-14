@@ -1,4 +1,4 @@
-import { isArray } from "@vangware/utils";
+import { isArray } from "@vangware/predicates";
 import type { CronList } from "../types/CronList.js";
 
 /**
@@ -6,6 +6,7 @@ import type { CronList } from "../types/CronList.js";
  *
  * @category Validation
  * @param value Value to check.
+ * @example
  */
 export const isCronList = <Value>(value: unknown): value is CronList<Value> =>
 	isArray(value);

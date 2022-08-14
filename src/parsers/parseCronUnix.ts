@@ -1,4 +1,5 @@
-import { arrayJoin, isUndefined } from "@vangware/utils";
+import { join } from "@vangware/iterables";
+import { isUndefined } from "@vangware/predicates";
 import type { CronUnix } from "../types/CronUnix.js";
 import { parseCronDayOfMonth } from "./parseCronDayOfMonth.js";
 import { parseCronDayOfWeek } from "./parseCronDayOfWeek.js";
@@ -12,6 +13,7 @@ import { parseCronMonth } from "./parseCronMonth.js";
  * @category Parser
  * @param source `Cron` (UNIX) to be parsed.
  * @returns A string or `undefined` if invalid.
+ * @example
  */
 export const parseCronUnix = ({
 	minutes,
@@ -28,5 +30,5 @@ export const parseCronUnix = ({
 		parseCronDayOfWeek(dayOfWeek),
 	];
 
-	return parts.some(isUndefined) ? undefined : arrayJoin(" ")(parts);
+	return parts.some(isUndefined) ? undefined : join(" ")(parts);
 };

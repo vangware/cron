@@ -1,4 +1,4 @@
-import { numberBetween } from "@vangware/utils";
+import { between } from "@vangware/predicates";
 import { splitExpression } from "../utils/splitExpression.js";
 import { isStringYearValue } from "../validations/isStringYearValue.js";
 
@@ -8,11 +8,12 @@ import { isStringYearValue } from "../validations/isStringYearValue.js";
  * @category Parser
  * @param source string to be parsed.
  * @returns An array of 7 elements or `undefined` if invalid.
+ * @example
  */
 export const parseStringQuartzExpression = (source: string) => {
 	const parsed = splitExpression(source);
 	const { length } = parsed;
-	const valid = numberBetween(5)(7)(length);
+	const valid = between(5)(7)(length);
 	const missingSecondsAndYear = valid && length === 5;
 	const missingSecondsOrYear = valid && length === 6;
 	const missingSeconds = missingSecondsOrYear && isStringYearValue(parsed[5]);
