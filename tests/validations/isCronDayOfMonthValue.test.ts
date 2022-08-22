@@ -5,19 +5,19 @@ export default [
 	{
 		given: "a valid number value in the range 1-31",
 		must: "return true",
-		received: isCronDayOfMonthValue(13),
-		wanted: true,
+		received: () => isCronDayOfMonthValue(13),
+		wanted: () => true,
 	},
 	{
 		given: "an invalid number outside the range 1-31",
 		must: "return false",
-		received: isCronDayOfMonthValue(50),
-		wanted: false,
+		received: () => isCronDayOfMonthValue(50),
+		wanted: () => false,
 	},
 	{
 		given: "an invalid value",
 		must: "return false",
-		received: isCronDayOfMonthValue("INVALID"),
-		wanted: false,
+		received: () => isCronDayOfMonthValue("INVALID"),
+		wanted: () => false,
 	},
 ] as Tests<boolean>;

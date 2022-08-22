@@ -6,19 +6,19 @@ export default [
 	{
 		given: "A valid hours value",
 		must: "return it",
-		received: parseCronHoursValue(10),
-		wanted: "10",
+		received: () => parseCronHoursValue(10),
+		wanted: () => "10",
 	},
 	{
 		given: "Other valid hours value",
 		must: "return it",
-		received: parseCronHoursValue(23),
-		wanted: "23",
+		received: () => parseCronHoursValue(23),
+		wanted: () => "23",
 	},
 	{
 		given: "Invalid hours value",
 		must: "return it",
-		received: parseCronHoursValue(99 as CronHoursValue),
-		wanted: undefined,
+		received: () => parseCronHoursValue(99 as CronHoursValue),
+		wanted: () => undefined,
 	},
 ] as Tests<string>;

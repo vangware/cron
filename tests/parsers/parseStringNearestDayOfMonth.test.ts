@@ -5,13 +5,13 @@ export default [
 	{
 		given: "a valid W with value 2",
 		must: "return CronEvery",
-		received: parseStringNearestDayOfMonth("2W"),
-		wanted: { nearest: 2 },
+		received: () => parseStringNearestDayOfMonth("2W"),
+		wanted: () => ({ nearest: 2 }),
 	},
 	{
 		given: "an invalid W",
 		must: "return undefined",
-		received: parseStringNearestDayOfMonth("INVALID"),
-		wanted: undefined,
+		received: () => parseStringNearestDayOfMonth("INVALID"),
+		wanted: () => undefined,
 	},
 ] as Tests;

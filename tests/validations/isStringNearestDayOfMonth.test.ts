@@ -5,25 +5,25 @@ export default [
 	{
 		given: "a valid near value",
 		must: "return true",
-		received: isStringNearestDayOfMonth("10W"),
-		wanted: true,
+		received: () => isStringNearestDayOfMonth("10W"),
+		wanted: () => true,
 	},
 	{
 		given: "a valid lowercase near value",
 		must: "return true",
-		received: isStringNearestDayOfMonth("10w"),
-		wanted: true,
+		received: () => isStringNearestDayOfMonth("10w"),
+		wanted: () => true,
 	},
 	{
 		given: "an invalid near value with 3 digits",
 		must: "return false",
-		received: isStringNearestDayOfMonth("100w"),
-		wanted: false,
+		received: () => isStringNearestDayOfMonth("100w"),
+		wanted: () => false,
 	},
 	{
 		given: "an valid value",
 		must: "return false",
-		received: isStringNearestDayOfMonth("INVALID"),
-		wanted: false,
+		received: () => isStringNearestDayOfMonth("INVALID"),
+		wanted: () => false,
 	},
 ] as Tests<boolean>;
