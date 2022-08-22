@@ -6,19 +6,19 @@ export default [
 	{
 		given: "A valid dayOfMonth value",
 		must: "return that value",
-		received: parseCronDayOfMonthValue(1),
-		wanted: "1",
+		received: () => parseCronDayOfMonthValue(1),
+		wanted: () => "1",
 	},
 	{
 		given: "Other valid dayOfMonth value",
 		must: "return that value",
-		received: parseCronDayOfMonthValue(31),
-		wanted: "31",
+		received: () => parseCronDayOfMonthValue(31),
+		wanted: () => "31",
 	},
 	{
 		given: "Invalid dayOfMonth value",
 		must: "return undefined",
-		received: parseCronDayOfMonthValue(99 as CronDayOfMonthValue),
-		wanted: undefined,
+		received: () => parseCronDayOfMonthValue(99 as CronDayOfMonthValue),
+		wanted: () => undefined,
 	},
 ] as Tests<string>;

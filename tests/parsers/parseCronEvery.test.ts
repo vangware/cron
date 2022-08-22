@@ -7,13 +7,13 @@ export default [
 	{
 		given: "a valid *",
 		must: "return CronEvery",
-		received: parseCronEvery(CRON_EVERY),
-		wanted: CRON_EVERY,
+		received: () => parseCronEvery(CRON_EVERY),
+		wanted: () => CRON_EVERY,
 	},
 	{
 		given: "an invalid *",
 		must: "return undefined",
-		received: parseCronEvery("INVALID" as CronEvery),
-		wanted: undefined,
+		received: () => parseCronEvery("INVALID" as CronEvery),
+		wanted: () => undefined,
 	},
 ] as Tests<string>;

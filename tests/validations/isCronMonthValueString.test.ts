@@ -5,19 +5,19 @@ export default [
 	{
 		given: "a valid value in the range JAN-DEC",
 		must: "return true",
-		received: isCronMonthValueString("OCT"),
-		wanted: true,
+		received: () => isCronMonthValueString("OCT"),
+		wanted: () => true,
 	},
 	{
 		given: "a valid value in the range JAN-DEC in lowercase",
 		must: "return true",
-		received: isCronMonthValueString("oct"),
-		wanted: true,
+		received: () => isCronMonthValueString("oct"),
+		wanted: () => true,
 	},
 	{
 		given: "an invalid value",
 		must: "return false",
-		received: isCronMonthValueString("OCTOBER"),
-		wanted: false,
+		received: () => isCronMonthValueString("OCTOBER"),
+		wanted: () => false,
 	},
 ] as Tests<boolean>;

@@ -7,13 +7,14 @@ export default [
 	{
 		given: "a valid L",
 		must: "return CronEvery",
-		received: parseCronLastValue({ last: 1 }),
-		wanted: `1${CRON_LAST}`,
+		received: () => parseCronLastValue({ last: 1 }),
+		wanted: () => `1${CRON_LAST}`,
 	},
 	{
 		given: "an invalid L",
 		must: "return undefined",
-		received: parseCronLastValue({ last: 99 as CronDayOfWeekValueNumber }),
-		wanted: undefined,
+		received: () =>
+			parseCronLastValue({ last: 99 as CronDayOfWeekValueNumber }),
+		wanted: () => undefined,
 	},
 ] as Tests<string>;
