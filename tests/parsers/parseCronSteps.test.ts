@@ -9,28 +9,29 @@ export default [
 	{
 		given: "a valid steps value",
 		must: "return CronSteps object",
-		received: parseCronStepsSeconds({ every: 10, start: 13 }),
-		wanted: "13/10",
+		received: () => parseCronStepsSeconds({ every: 10, start: 13 }),
+		wanted: () => "13/10",
 	},
 	{
 		given: "an invalid steps value",
 		must: "return undefined",
-		received: parseCronStepsSeconds({ every: 99, start: 13 }),
-		wanted: undefined,
+		received: () => parseCronStepsSeconds({ every: 99, start: 13 }),
+		wanted: () => undefined,
 	},
 	{
 		given: "a valid steps value including a range",
 		must: "return CronSteps object",
-		received: parseCronStepsSeconds({
-			every: 10,
-			start: { from: 13, to: 10 },
-		}),
-		wanted: "13-10/10",
+		received: () =>
+			parseCronStepsSeconds({
+				every: 10,
+				start: { from: 13, to: 10 },
+			}),
+		wanted: () => "13-10/10",
 	},
 	{
 		given: "a valid steps value including an *",
 		must: "return CronSteps object",
-		received: parseCronStepsSeconds({ every: 10, start: CRON_EVERY }),
-		wanted: "*/10",
+		received: () => parseCronStepsSeconds({ every: 10, start: CRON_EVERY }),
+		wanted: () => "*/10",
 	},
 ] as Tests<string>;

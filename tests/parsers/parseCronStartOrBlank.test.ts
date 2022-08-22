@@ -6,13 +6,13 @@ export default [
 	{
 		given: "a valid ?",
 		must: "return CronEvery",
-		received: parseCronStartOrBlank(CRON_START_OR_BLANK),
-		wanted: CRON_START_OR_BLANK,
+		received: () => parseCronStartOrBlank(CRON_START_OR_BLANK),
+		wanted: () => CRON_START_OR_BLANK,
 	},
 	{
 		given: "an invalid ?",
 		must: "return undefined",
-		received: parseCronStartOrBlank("INVALID"),
-		wanted: undefined,
+		received: () => parseCronStartOrBlank("INVALID"),
+		wanted: () => undefined,
 	},
 ] as Tests<string>;

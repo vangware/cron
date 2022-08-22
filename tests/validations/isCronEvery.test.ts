@@ -6,13 +6,13 @@ export default [
 	{
 		given: "a * value",
 		must: "return true",
-		received: isCronEvery(CRON_EVERY),
-		wanted: true,
+		received: () => isCronEvery(CRON_EVERY),
+		wanted: () => true,
 	},
 	{
 		given: "a value different than *",
 		must: "return false",
-		received: isCronEvery("INVALID"),
-		wanted: false,
+		received: () => isCronEvery("INVALID"),
+		wanted: () => false,
 	},
 ] as Tests<boolean>;

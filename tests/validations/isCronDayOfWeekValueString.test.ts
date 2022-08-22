@@ -5,19 +5,19 @@ export default [
 	{
 		given: "a valid value in the range SUN-SAT",
 		must: "return true",
-		received: isCronDayOfWeekValueString("FRI"),
-		wanted: true,
+		received: () => isCronDayOfWeekValueString("FRI"),
+		wanted: () => true,
 	},
 	{
 		given: "a valid value in the range SUN-SAT in lowercase",
 		must: "return true",
-		received: isCronDayOfWeekValueString("fri"),
-		wanted: true,
+		received: () => isCronDayOfWeekValueString("fri"),
+		wanted: () => true,
 	},
 	{
 		given: "an invalid value",
 		must: "return false",
-		received: isCronDayOfWeekValueString("FRIDAY"),
-		wanted: false,
+		received: () => isCronDayOfWeekValueString("FRIDAY"),
+		wanted: () => false,
 	},
 ] as Tests<boolean>;

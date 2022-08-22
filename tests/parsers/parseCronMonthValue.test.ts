@@ -6,19 +6,19 @@ export default [
 	{
 		given: "A valid minutes value",
 		must: "return it",
-		received: parseCronMonthValue(10),
-		wanted: "10",
+		received: () => parseCronMonthValue(10),
+		wanted: () => "10",
 	},
 	{
 		given: "Other valid minutes value",
 		must: "return it",
-		received: parseCronMonthValue(12),
-		wanted: "12",
+		received: () => parseCronMonthValue(12),
+		wanted: () => "12",
 	},
 	{
 		given: "Invalid minutes value",
 		must: "return it",
-		received: parseCronMonthValue(99 as CronMonthValue),
-		wanted: undefined,
+		received: () => parseCronMonthValue(99 as CronMonthValue),
+		wanted: () => undefined,
 	},
 ] as Tests<string>;
