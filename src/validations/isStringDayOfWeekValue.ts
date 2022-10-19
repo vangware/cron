@@ -18,7 +18,7 @@ import { isStringDayOfWeekValueNumber } from "./isStringDayOfWeekValueNumber.js"
  * @param value Value to check.
  * @returns Returns `true` if is a string representing a `CronDayOfWeekValue`, `false` otherwise.
  */
-export const isStringDayOfWeekValue = validateOr([
+export const isStringDayOfWeekValue = validateOr(
 	isCronDayOfWeekValueString,
 	isStringDayOfWeekValueNumber,
-]);
+);
