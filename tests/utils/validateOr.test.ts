@@ -7,37 +7,37 @@ export default [
 	{
 		given: "an empty list of validations",
 		must: "return false",
-		received: () => validateOr([])(value),
+		received: () => validateOr()(value),
 		wanted: () => false,
 	},
 	{
 		given: "a list of validations where all pass",
 		must: "return true",
 		received: () =>
-			validateOr([
+			validateOr(
 				item => item === "1",
 				item => parseInt(item as string, 10) === 1,
-			])(value),
+			)(value),
 		wanted: () => true,
 	},
 	{
 		given: "a list of validations where some pass and some not",
 		must: "return true",
 		received: () =>
-			validateOr([
+			validateOr(
 				item => item === "1",
 				item => parseInt(item as string, 10) === 2,
-			])(value),
+			)(value),
 		wanted: () => true,
 	},
 	{
 		given: "a list of validations where none pass",
 		must: "return false",
 		received: () =>
-			validateOr([
+			validateOr(
 				item => item === "2",
 				item => parseInt(item as string, 10) === 2,
-			])(value),
+			)(value),
 		wanted: () => false,
 	},
 ] as Tests;

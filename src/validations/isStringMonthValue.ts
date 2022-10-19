@@ -18,7 +18,7 @@ import { isStringMonthValueNumber } from "./isStringMonthValueNumber.js";
  * @param value Value to check.
  * @returns Returns `true` if is a string representing a `CronMonthValue`, `false` otherwise.
  */
-export const isStringMonthValue = validateOr([
+export const isStringMonthValue = validateOr(
 	isCronMonthValueString,
 	isStringMonthValueNumber,
-]);
+);

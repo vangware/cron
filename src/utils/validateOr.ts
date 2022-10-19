@@ -25,6 +25,6 @@
  * @returns Curried function with `validations` in context.
  */
 export const validateOr =
-	(validations: ReadonlyArray<(value: unknown) => boolean>) =>
+	(...validations: ReadonlyArray<(value: unknown) => boolean>) =>
 	(value: unknown) =>
 		validations.some(validation => validation(value));
