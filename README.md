@@ -1,8 +1,7 @@
 <img alt="Vangware's Cron" src="./logo.svg" height="128" />
 
-![Build Status][build-status-badge] ![Coverage][coverage-badge]
-![License][license-badge] ![NPM Version][npm-version-badge]
-![Open Issues][open-issues-badge]
+![Coverage][coverage-badge] ![License][license-badge]
+![NPM Version][npm-version-badge] ![Open Issues][open-issues-badge]
 
 ⏲️ Cron Quartz and Cron UNIX expression parser.
 
@@ -74,8 +73,6 @@ A **big** change is coming with stricter types and a better DX. Stay tuned.
 
 <!-- Reference -->
 
-[build-status-badge]:
-	https://img.shields.io/github/workflow/status/vangware/cron/Test.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://github.com/vangware/cron/actions
 [changelog]: https://github.com/vangware/cron/blob/main/CHANGELOG.md
 [coverage-badge]:
 	https://img.shields.io/coveralls/github/vangware/cron.svg?style=for-the-badge&labelColor=666&color=0a8&link=https://coveralls.io/github/vangware/cron
