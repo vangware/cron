@@ -1,5 +1,5 @@
 {
-	"extends": "./node_modules/@vangware/configs/.tsconfig.json",
+	"extends": "@vangware/configs/typescript.config.json",
 	"compilerOptions": {
 		"outDir": "./dist"
 	},
