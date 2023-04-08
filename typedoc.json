@@ -3,5 +3,5 @@
 	"cname": "cron.vangware.com",
 	"entryPoints": ["./src"],
 	"extends": ["@vangware/configs/typedoc.json"],
-	"name": "@vangware/cron"
+	"name": "Cron by Vangware"
 }
