@@ -1,0 +1,55 @@
+name: Document
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+            - name: Use Checkout 3
+              uses: actions/checkout@v3
+
+            - name: Copy required files to docs
+              run: mkdir ./docs && cp ./favicon.ico ./logo.svg ./docs
+
+            - name: Use Node.js 19
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 19.x
+
+            - name: Use pnpm 8
+              uses: pnpm/action-setup@v2
+              with:
+                  version: 8.x
+                  run_install: true
+
+            - name: Install typedoc
+              run: pnpm i -g typedoc
+
+            - name: Generate Documentation
+              run: typedoc
+
+            - name: Upload Pages Artifact
+              uses: actions/upload-pages-artifact@v1
+              with:
+                  path: ./docs
+                  name: github-pages
+                  retention-days: 1
+    deploy:
+        name: Deploy
+        needs: build
+        runs-on: ubuntu-latest
+        permissions:
+            pages: write
+            id-token: write
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v1
