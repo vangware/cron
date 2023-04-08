@@ -1,4 +1,4 @@
-<img alt="Vangware's Cron" src="./logo.svg" height="128" />
+<img id="logo" alt="Cron by Vangware" src="./logo.svg" height="128" />
 
 ![Coverage][coverage-badge] ![License][license-badge]
 ![NPM Version][npm-version-badge] ![Open Issues][open-issues-badge]
