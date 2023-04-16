@@ -1,7 +1,7 @@
 {
 	"name": "@vangware/cron",
 	"description": "⏲️ Cron Quartz and Cron UNIX expression parser",
-	"version": "5.1.15",
+	"version": "5.1.16",
 	"author": {
 		"email": "hello@vangware.com",
 		"name": "Vangware",
