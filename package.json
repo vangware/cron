@@ -12,38 +12,42 @@
 		"url": "https://github.com/vangware/cron/issues"
 	},
 	"dependencies": {
-		"@vangware/iterables": "^3.0.5",
-		"@vangware/parsers": "^1.2.4",
-		"@vangware/predicates": "^2.1.5",
-		"@vangware/types": "^5.1.8"
+		"@vangware/iterables": "^3.0.7",
+		"@vangware/parsers": "^1.2.8",
+		"@vangware/predicates": "^2.1.9",
+		"@vangware/types": "^5.1.13"
 	},
 	"devDependencies": {
-		"@evilmartians/lefthook": "^1.3.10",
+		"@evilmartians/lefthook": "^1.3.12",
 		"@types/eslint": "^8.37.0",
-		"@types/node": "18.15.13",
+		"@types/node": "18.16.3",
 		"@types/prettier": "^2.7.2",
-		"@typescript-eslint/eslint-plugin": "^5.59.0",
-		"@typescript-eslint/parser": "^5.59.0",
-		"@vangware/configs": "^4.3.3",
-		"@vangware/test": "^10.2.2",
+		"@typescript-eslint/eslint-plugin": "^5.59.1",
+		"@typescript-eslint/parser": "^5.59.1",
+		"@vangware/configs": "^4.3.7",
+		"@vangware/test": "^10.3.0",
 		"c8": "^7.13.0",
-		"eslint": "^8.38.0",
+		"eslint": "^8.39.0",
 		"eslint-config-prettier": "8.8.0",
 		"eslint-import-resolver-node": "^0.3.7",
 		"eslint-plugin-ban": "^1.6.0",
 		"eslint-plugin-functional": "^5.0.8",
 		"eslint-plugin-import": "^2.27.5",
-		"eslint-plugin-jsdoc": "^43.0.7",
+		"eslint-plugin-jsdoc": "^43.1.1",
 		"eslint-plugin-no-null": "^1.0.2",
 		"eslint-plugin-prefer-arrow": "^1.2.3",
 		"eslint-plugin-prettier": "^4.2.1",
 		"eslint-plugin-react": "^7.32.2",
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"npm-run-all": "^4.1.5",
-		"prettier": "^2.8.7",
+		"prettier": "^2.8.8",
 		"rimraf": "^5.0.0",
-		"ts-node": "^10.9.1",
+		"tsx": "^3.12.7",
 		"typescript": "^5.0.4"
+	},
+	"engines": {
+		"node": ">=19",
+		"pnpm": ">=8"
 	},
 	"exports": {
 		".": "./dist/index.js",
@@ -74,7 +78,7 @@
 		"pre-compile": "tsc --noemit --project tsconfig.dist.json",
 		"prepublishOnly": "run-s --print-label compile prettify",
 		"prettify": "prettier --write --loglevel warn './dist/**/*.{js,ts}'",
-		"test": "NODE_OPTIONS='--loader ts-node/esm --no-warnings' c8 test"
+		"test": "NODE_OPTIONS='--loader tsx --no-warnings' c8 test"
 	},
 	"sideEffects": false,
 	"source": "./src/index.ts",
