@@ -16,10 +16,10 @@ jobs:
             - name: Copy required files to docs
               run: mkdir ./docs && cp ./favicon.ico ./logo.svg ./docs
 
-            - name: Use Node.js 19
+            - name: Use Node.js 20
               uses: actions/setup-node@v3
               with:
-                  node-version: 19
+                  node-version: 20
 
             - name: Use pnpm 8
               uses: pnpm/action-setup@v2
