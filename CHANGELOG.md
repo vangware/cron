@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 -   This project adheres to [Semantic Versioning][semver].
 -   This project uses [Gitmoji][gitmoji]
 
+## 5.1.21
+
+-   ⬆️ dependency upgrade.
+
 ## 5.1.20
 
 -   🔧 back to `node@>=20` babyyyy!
