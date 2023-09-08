@@ -12,18 +12,18 @@
 		"url": "https://github.com/vangware/cron/issues"
 	},
 	"dependencies": {
-		"@vangware/iterables": "^3.1.11",
-		"@vangware/parsers": "^1.4.6",
-		"@vangware/predicates": "^2.1.27",
-		"@vangware/types": "^6.2.2"
+		"@vangware/iterables": "^3.1.12",
+		"@vangware/parsers": "^1.4.7",
+		"@vangware/predicates": "^2.1.28",
+		"@vangware/types": "^6.2.4"
 	},
 	"devDependencies": {
-		"@evilmartians/lefthook": "^1.4.9",
-		"@types/node": "20.5.8",
-		"@vangware/configs": "^5.1.4",
-		"@vangware/test": "^10.3.19",
+		"@evilmartians/lefthook": "^1.4.10",
+		"@types/node": "20.6.0",
+		"@vangware/configs": "^5.1.6",
+		"@vangware/test": "^10.3.21",
 		"c8": "^8.0.1",
-		"eslint": "^8.48.0",
+		"eslint": "^8.49.0",
 		"eslint-config-prettier": "9.0.0",
 		"eslint-import-resolver-node": "^0.3.9",
 		"eslint-plugin-ban": "^1.6.0",
