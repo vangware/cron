@@ -7,8 +7,8 @@ jobs:
         name: Build
         runs-on: ubuntu-latest
         steps:
-            - name: Use Checkout 3
-              uses: actions/checkout@v3
+            - name: Use Checkout 4
+              uses: actions/checkout@v4
 
             - name: Use Node.js 20
               uses: actions/setup-node@v3
