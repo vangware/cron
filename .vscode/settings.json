@@ -1,28 +1,9 @@
 {
-	"cSpell.words": [
-		"Vangware",
-		"Vangware's",
-		"camelcase",
-		"editorconfig",
-		"eqeqeq",
-		"eslintconfig",
-		"iife",
-		"linebreak",
-		"multiselect",
-		"plusplus",
-		"pnpm",
-		"pnpx",
-		"prettierignore",
-		"singleline",
-		"stylelint",
-		"stylelintrc",
-		"taskify",
-		"tslib"
-	],
 	"editor.codeActionsOnSave": {
 		"source.organizeImports": true,
 		"source.fixAll.eslint": true
 	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.formatOnSave": true,
 	"eslint.validate": [
 		"javascript",

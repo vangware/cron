@@ -1,7 +1,8 @@
-### Linux ###
+### Linux ######################################################################
+
 *~
 
-# temporary files which can be created if a process still has a handle open of a deleted file
+# Temporary files which can be created if a process still has a handle open of a deleted file
 .fuse_hidden*
 
 # KDE directory preferences
@@ -13,7 +14,8 @@
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
-### macOS ###
+### macOS ######################################################################
+
 # General
 .DS_Store
 .AppleDouble
@@ -41,7 +43,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-### Node ###
+### Node #######################################################################
+
 # Logs
 logs
 *.log
@@ -123,7 +126,8 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-### Windows ###
+### Windows ####################################################################
+
 # Windows thumbnail cache files
 Thumbs.db
 ehthumbs.db
@@ -148,8 +152,16 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# Build
+### Project ####################################################################
+
+# Distribution directory
 dist/
 
-# pnpm
+# Documentation
+docs/
+
+# Lock files
+bun.lockb
+package-lock.json
 pnpm-lock.yaml
+yarn.lock
