@@ -2,6 +2,6 @@
 	"$schema": "https://typedoc.org/schema.json",
 	"cname": "cron.vangware.com",
 	"entryPoints": ["./src"],
-	"extends": ["@vangware/configs/typedoc.json"],
+	"extends": ["@vangware/configs/typedoc.config.json"],
 	"name": "Cron by Vangware"
 }
